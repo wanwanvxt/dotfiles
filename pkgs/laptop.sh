@@ -99,6 +99,12 @@ _packages=(
     # hyprland
     "hyprland"
     "hyprpaper"
+    "playerctl"
+    "brightnessctl"
+    "jq"
+    "slurp"
+    "grim"
+    "wl-clipboard"
 
     # ime
     "fcitx5"
@@ -108,10 +114,7 @@ _packages=(
     # cli utils
     "less"
     "tree"
-    "jq"
     "libnotify"
-    "brightnessctl"
-    "playerctl"
 
     # apps
     ## editor
