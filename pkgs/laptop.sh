@@ -115,6 +115,9 @@ _packages=(
     "fcitx5-configtool"
     "fcitx5-bamboo"
 
+    # dotfiles
+    "chezmoi"
+
     # cli utils
     "less"
     "tree"
@@ -137,10 +140,12 @@ _packages=(
     "rocm-smi-lib" # btop - amd gpu support
     "nvtop"
 
+    # gaming
+    "steam"
+    "gamemode"
+    "lib32-gamemode"
+
     # developments
     "python"
     "rust"
-
-    # dotfiles
-    "chezmoi"
 )
