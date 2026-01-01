@@ -13,5 +13,3 @@ export EDITOR=helix
 export VISUAL=helix
 export PAGER=less
 export FZF_DEFAULT_OPTS="--border --highlight-line"
-
-export AQ_DRM_DEVICES="/dev/dri/amd-igpu:/dev/dri/intel-igpu:/dev/dri/amd-dgpu:/dev/dri/nvidia-dgpu"
