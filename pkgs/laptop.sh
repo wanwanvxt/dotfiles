@@ -33,12 +33,16 @@ _packages=(
     "mesa-utils"
     "vulkan-icd-loader"
     "vulkan-tools"
+    "lib32-mesa"
+    "lib32-vulkan-icd-loader"
     ## amd
     "vulkan-radeon"
+    "lib32-vulkan-radeon"
     ## nvidia
     "nvidia-open"
     "nvidia-utils"
     "nvidia-prime"
+    "lib32-nvidia-utils"
 
     # misc
     "gnome-keyring"
