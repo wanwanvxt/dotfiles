@@ -1,0 +1,17 @@
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+if [[ -f "$HOME/.config/user-dirs.dirs" ]]; then
+    set -a
+    source "$HOME/.config/user-dirs.dirs"
+    set +a
+fi
+
+export EDITOR=helix
+export VISUAL=helix
+export PAGER=less
+export FZF_DEFAULT_OPTS="--border --highlight-line"
+
+export AQ_DRM_DEVICES="/dev/dri/amd-igpu:/dev/dri/intel-igpu:/dev/dri/amd-dgpu:/dev/dri/nvidia-dgpu"
