@@ -146,6 +146,16 @@ _packages=(
     "lib32-gamemode"
 
     # developments
+    "gcc"
+    "clang"
+    "cmake"
+    "xmake"
     "python"
+    "python-pip"
+    "ruff"
+    "odin"
+    "odinls-bin"
+    "odinfmt"
     "rust"
+    "rust-analyzer"
 )
