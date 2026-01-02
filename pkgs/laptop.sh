@@ -85,13 +85,6 @@ _packages=(
     "ttf-liberation"
     "ttf-0xproto-nerd"
 
-    # icons & color schemes
-    "bibata-cursor-theme-bin"
-    "papirus-icon-theme"
-    "materia-gtk-theme"
-    "materia-kde"
-    "kvantum-theme-materia"
-
     # theme manage
     "glib2"
     "qt5ct-kde"
@@ -99,6 +92,13 @@ _packages=(
     "kvantum-qt5"
     "kvantum"
     "matugen"
+
+    # icons & color schemes
+    "bibata-cursor-theme-bin"
+    "papirus-icon-theme"
+    "materia-gtk-theme"
+    "materia-kde"
+    "kvantum-theme-materia"
 
     # hyprland
     "hyprland"
