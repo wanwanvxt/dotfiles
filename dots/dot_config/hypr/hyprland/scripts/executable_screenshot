@@ -2,7 +2,7 @@
 
 set -l lock_file "/tmp/hyprland_script_screenshot.lock"
 
-function remove_lock_file --inherit-variable lock_file
+function remove_lock_file -V lock_file
     rm -f "$lock_file"
 end
 trap remove_lock_file EXIT
