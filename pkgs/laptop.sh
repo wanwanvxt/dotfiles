@@ -135,6 +135,10 @@ _packages=(
     "tumbler"                  # thunar - thumbnail previews
     "ffmpegthumbnailer"        # thunar - video thumbnails
     "freetype2"                # thunar - font thumbnails
+    "ark"
+    "7zip"       # ark - 7Z format support
+    "unarchiver" # ark - RAR format support
+    "unrar"      # ark - RAR decompression support
     ## browsers
     "firefox"
     ## others
