@@ -22,7 +22,6 @@ _packages=(
     "pipewire-alsa"
     "pipewire-pulse"
     "pipewire-jack"
-    "wireplumber"
 
     # bluetooth
     "bluez"
@@ -102,6 +101,7 @@ _packages=(
     # hyprland
     "hyprland"
     "hyprpaper"
+    "wireplumber"
     "playerctl"
     "brightnessctl"
     "jq"
