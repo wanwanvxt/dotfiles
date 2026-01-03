@@ -86,12 +86,11 @@ _packages=(
     "ttf-0xproto-nerd"
 
     # theme manage
-    "glib2"
     "qt5ct-kde"
     "qt6ct-kde"
     "kvantum-qt5"
     "kvantum"
-    "matugen"
+    "nwg-look"
 
     # icons & color schemes
     "bibata-cursor-theme-bin"

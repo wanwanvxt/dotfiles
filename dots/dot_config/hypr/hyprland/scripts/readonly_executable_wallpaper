@@ -17,4 +17,3 @@ test (count $all_wallpapers) -gt 0; or exit
 
 set -l new_wallpaper (random choice $all_wallpapers)
 hyprctl hyprpaper wallpaper ",$new_wallpaper"
-matugen image "$new_wallpaper"
