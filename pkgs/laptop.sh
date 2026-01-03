@@ -46,8 +46,6 @@ _packages=(
 
     # misc
     "gnome-keyring"
-    "udisks2"
-    "gvfs"
 
     # shells
     "bash"
@@ -124,20 +122,24 @@ _packages=(
     "libnotify"
 
     # apps
-    ## editor
+    ## editors
     "helix"
-    ## terminal
+    ## terminals
     "kitty"
-    ## file
+    ## files
     "thunar"
-    "tumbler" # thunar - thumbnail previews
-    "ffmpegthumbnailer" # thunar - video thumbnails
-    "freetype2" # thunar - font thumbnails
-    ## browser
+    "gvfs"                     # thunar - trash support, mounting with udisk and remote filesystems
+    "thunar-archive-plugin"    # thunar - archive creation and extraction
+    "thunar-media-tags-plugin" # thunar - view/edit ID3/OGG tags
+    "thunar-volman"            # thunar - removable device management
+    "tumbler"                  # thunar - thumbnail previews
+    "ffmpegthumbnailer"        # thunar - video thumbnails
+    "freetype2"                # thunar - font thumbnails
+    ## browsers
     "firefox"
     ## others
     "btop"
-    "rocm-smi-lib" # btop - amd gpu support
+    "rocm-smi-lib" # btop - AMD GPU support
     "nvtop"
 
     # gaming
