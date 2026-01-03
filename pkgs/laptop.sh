@@ -22,6 +22,7 @@ _packages=(
     "pipewire-alsa"
     "pipewire-pulse"
     "pipewire-jack"
+    "lib32-pipewire"
 
     # bluetooth
     "bluez"
