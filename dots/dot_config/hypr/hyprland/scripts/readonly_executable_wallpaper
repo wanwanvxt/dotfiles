@@ -13,22 +13,8 @@ set -l all_wallpapers (
         -iname "*.webp"              \
     \)
 )
-test (count $all_wallpapers) -gt 0 || exit
-
-# hyprpaper v0.8 can no longer query current wallpaper
-#set -l current_wallpaper (
-#    hyprctl hyprpaper listactive \
-#    | head -n 1                  \
-#    | string replace -r '\s*=\s*' ''
-#)
-
-#set -l new_wallpaper ""
-#while true
-#    set new_wallpaper (random choice $all_wallpapers)
-#    test "$new_wallpaper" != "$current_wallpaper" && break
-#end
-
-#hyprctl hyprpaper reload ,"$new_wallpaper"
+test (count $all_wallpapers) -gt 0; or exit
 
 set -l new_wallpaper (random choice $all_wallpapers)
 hyprctl hyprpaper wallpaper ",$new_wallpaper"
+matugen image "$new_wallpaper"

@@ -1,27 +1,27 @@
 #!/usr/bin/env fish
 
-set -l lock_file "/tmp/hyprland_script_screenshot.lock"
+set lock_file "/tmp/hyprland_script_screenshot.lock"
 
 function remove_lock_file -V lock_file
     rm -f "$lock_file"
 end
 trap remove_lock_file EXIT
-test -f "$lock_file" && exit 1
+test -f "$lock_file"; and exit 1
 touch "$lock_file"
 
 ## --- --- ---
 
-set -l screenshots_dir "$(xdg-user-dir PICTURES)/screenshots"
+set screenshots_dir "$(xdg-user-dir PICTURES)/screenshots"
 mkdir -p "$screenshots_dir"
 
-set -l file_name "screenshot_$(date +'%Y-%m-%d_%H%M%S.png')"
-set -l file_path "$screenshots_dir/$file_name"
+set file_name "screenshot_$(date +'%Y-%m-%d_%H%M%S.png')"
+set file_path "$screenshots_dir/$file_name"
 
 function opts
     fish_opt -s m -l mode --required-val
 end
 argparse (opts) -- $argv
-set -q _flag_mode || exit 1
+set -q _flag_mode; or exit 1
 
 set -l mode (echo $_flag_mode | tr '[:upper:]' '[:lower:]')
 switch $mode
