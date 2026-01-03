@@ -97,16 +97,21 @@ _packages=(
     "materia-kde"
     "kvantum-theme-materia"
 
-    # hyprland
-    "hyprland"
-    "hyprpaper"
+    # cli utils
+    "less"
+    "tree"
+    "jq"
     "wireplumber"
     "playerctl"
     "brightnessctl"
-    "jq"
+    "wl-clipboard"
+    "libnotify"
     "slurp"
     "grim"
-    "wl-clipboard"
+
+    # hyprland
+    "hyprland"
+    "hyprpaper"
 
     # ime
     "fcitx5"
