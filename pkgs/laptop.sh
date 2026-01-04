@@ -147,6 +147,9 @@ _packages=(
     ## browsers
     "firefox"
     ## others
+    "vlc"
+    "vlc-plugins-all" # vlc - all plugins
+    "pqiv"
     "btop"
     "rocm-smi-lib" # btop - AMD GPU support
     "nvtop"
