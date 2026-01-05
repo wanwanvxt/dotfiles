@@ -160,16 +160,27 @@ _packages=(
     "lib32-gamemode"
 
     # developments
+    ## c/cpp
     "gcc"
     "clang"
     "cmake"
     "xmake"
+    ## python
     "python"
     "python-pip"
     "ruff"
+    ## odin
     "odin"
     "odinls-bin"
     "odinfmt"
+    ## rust
     "rust"
     "rust-analyzer"
+    ## node
+    "nodejs"
+    "npm"
+    ## php
+    "php"
+    "composer"
+    "phpmyadmin"
 )
