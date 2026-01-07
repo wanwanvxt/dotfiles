@@ -179,8 +179,4 @@ _packages=(
     ## node
     "nodejs"
     "npm"
-    ## php
-    "php"
-    "composer"
-    "phpmyadmin"
 )
