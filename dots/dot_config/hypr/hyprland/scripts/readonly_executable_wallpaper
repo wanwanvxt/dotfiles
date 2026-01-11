@@ -5,12 +5,12 @@ mkdir -p "$wallpaper_dir"
 
 set -l all_wallpapers (
     find "$wallpaper_dir" -type f \( \
-        -iname "*.png"  -o           \
-        -iname "*.jpg"  -o           \
-        -iname "*.jpeg" -o           \
-        -iname "*.jpe"  -o           \
-        -iname "*.jxl"  -o           \
-        -iname "*.webp"              \
+        -iname '*.png'  -o           \
+        -iname '*.jpg'  -o           \
+        -iname '*.jpeg' -o           \
+        -iname '*.jpe'  -o           \
+        -iname '*.jxl'  -o           \
+        -iname '*.webp'              \
     \)
 )
 test (count $all_wallpapers) -gt 0; or exit

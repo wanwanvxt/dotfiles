@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set lock_file "/tmp/hyprland_script_screenshot.lock"
+set lock_file '/tmp/hyprland_script_screenshot.lock'
 
 function remove_lock_file -V lock_file
     rm -f "$lock_file"
@@ -33,6 +33,6 @@ switch $mode
         grim -g "$box" - | tee "$file_path" | wl-copy
     case area
         grim -g (slurp -d) - | tee "$file_path" | wl-copy
-    case "*"
+    case '*'
         exit 1
 end
