@@ -4,6 +4,9 @@ _packages=(
     "base"
     "base-devel"
     "linux"
+    "linux-headers"
+    "linux-cachyos-bore"
+    "linux-cachyos-bore-headers"
     "linux-firmware"
     "sof-firmware"
     "efibootmgr"
@@ -11,6 +14,10 @@ _packages=(
     "zram-generator"
     "yay-bin"
     "pacman-contrib"
+    "cachyos-keyring"
+    "cachyos-mirrorlist"
+    "cachyos-v3-mirrorlist"
+    "cachyos-v4-mirrorlist"
 
     # network
     "networkmanager"
@@ -39,7 +46,7 @@ _packages=(
     "vulkan-radeon"
     "lib32-vulkan-radeon"
     ## nvidia
-    "nvidia-open"
+    "nvidia-open-dkms"
     "nvidia-utils"
     "nvidia-prime"
     "lib32-nvidia-utils"
