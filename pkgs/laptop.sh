@@ -108,17 +108,17 @@ _packages=(
     "less"
     "tree"
     "jq"
-    "wireplumber"
-    "playerctl"
-    "brightnessctl"
-    "wl-clipboard"
-    "libnotify"
-    "slurp"
-    "grim"
 
     # hyprland
     "hyprland"
     "hyprpaper"
+    "hyprpicker"
+    "wireplumber"
+    "playerctl"
+    "brightnessctl"
+    "grimblast-git"
+    "wl-clipboard"
+    "libnotify"
 
     # ime
     "fcitx5"
@@ -127,11 +127,6 @@ _packages=(
 
     # dotfiles
     "chezmoi"
-
-    # cli utils
-    "less"
-    "tree"
-    "libnotify"
 
     # apps
     ## editors
