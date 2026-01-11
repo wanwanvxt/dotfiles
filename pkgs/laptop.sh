@@ -113,6 +113,7 @@ _packages=(
     "hyprland"
     "hyprpaper"
     "hyprpicker"
+    "quickshell"
     "wireplumber"
     "playerctl"
     "brightnessctl"
