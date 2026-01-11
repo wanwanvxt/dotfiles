@@ -118,6 +118,7 @@ _packages=(
     "brightnessctl"
     "grimblast-git"
     "wl-clipboard"
+    "cliphist"
     "libnotify"
 
     # ime
