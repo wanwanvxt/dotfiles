@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set -l wallpaper_dir "$(xdg-user-dir PICTURES)/wallpapers"
+set -l wallpaper_dir "$(xdg-user-dir WALLPAPERS)"
 mkdir -p "$wallpaper_dir"
 
 set -l all_wallpapers (
