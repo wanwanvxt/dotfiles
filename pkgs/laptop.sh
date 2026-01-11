@@ -153,6 +153,7 @@ _packages=(
     "btop"
     "rocm-smi-lib" # btop - AMD GPU support
     "nvtop"
+    "vesktop-bin"
 
     # gaming
     "steam"
