@@ -13,3 +13,7 @@ export EDITOR=helix
 export VISUAL=helix
 export PAGER=less
 export FZF_DEFAULT_OPTS="--border --highlight-line"
+
+export HYPR_APP_TERMINAL='kitty -1'
+export HYPR_APP_BROWSER=firefox
+export HYPR_APP_FILE=thunar
