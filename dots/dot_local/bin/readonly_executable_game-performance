@@ -3,8 +3,14 @@
 HAS_GAMEMODE=$(command -v gamemoderun)
 HAS_PRIME=$(command -v prime-run)
 
-if [ -n "$HAS_GAMEMODE" ] && [ -n "$HAS_PRIME" ]; then
+if [ -n "$HAS_GAMEMODE" ]; then
+    export LD_PRELOAD="${LD_PRELOAD:+$LD_PRELOAD:}/usr/\$LIB/libgamemode.so"
+fi
+if [ -n "$HAS_PRIME" ]; then
     export GAMEMODERUNEXEC="${GAMEMODERUNEXEC:+$GAMEMODERUNEXEC }prime-run"
+fi
+
+if [ -n "$HAS_GAMEMODE" ] && [ -n "$HAS_PRIME" ]; then
     exec gamemoderun "$@"
 elif [ -n "$HAS_GAMEMODE" ]; then
     echo "'prime-run' not found!"
