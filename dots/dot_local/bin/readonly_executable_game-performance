@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+HAS_GAMEMODE=$(command -v gamemoderun)
+HAS_PRIME=$(command -v prime-run)
+
+if [ -n "$HAS_GAMEMODE" ] && [ -n "$HAS_PRIME" ]; then
+    export GAMEMODERUNEXEC="${GAMEMODERUNEXEC:+$GAMEMODERUNEXEC }prime-run"
+    exec gamemoderun "$@"
+elif [ -n "$HAS_GAMEMODE" ]; then
+    echo "'prime-run' not found!"
+    exec gamemoderun "$@"
+elif [ -n "$HAS_PRIME" ]; then
+    echo "'gamemoderun' not found"
+    exec prime-run "$@"
+else
+    echo "'gamemoderun' not found"
+    echo "'prime-run' not found!"
+    exec "$@"
+fi
