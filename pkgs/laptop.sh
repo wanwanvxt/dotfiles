@@ -181,10 +181,4 @@ _packages=(
     "odin"
     "odinls-bin"
     "odinfmt"
-    ## rust
-    "rust"
-    "rust-analyzer"
-    ## node
-    "nodejs"
-    "npm"
 )
