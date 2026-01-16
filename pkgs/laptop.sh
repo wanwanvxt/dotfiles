@@ -165,6 +165,7 @@ _packages=(
     "steam"
     "gamemode"
     "lib32-gamemode"
+    "protonup-qt"
 
     # developments
     ## c/cpp
