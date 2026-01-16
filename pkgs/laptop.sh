@@ -58,9 +58,7 @@ _packages=(
     # shells
     "bash"
     "bash-completion"
-    "bash-language-server"
     "fish"
-    "fish-lsp"
     "starship"
     "fzf"
 
@@ -168,6 +166,9 @@ _packages=(
     "protonup-qt"
 
     # developments
+    ## shells
+    "bash-language-server"
+    "fish-lsp"
     ## c/cpp
     "gcc"
     "clang"
