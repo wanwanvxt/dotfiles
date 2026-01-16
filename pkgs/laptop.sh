@@ -181,4 +181,7 @@ _packages=(
     "odin"
     "odinls-bin"
     "odinfmt"
+    ## lua
+    "lua"
+    "lua-language-server"
 )
