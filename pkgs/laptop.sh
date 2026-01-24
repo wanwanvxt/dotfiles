@@ -133,6 +133,7 @@ _packages=(
     # apps
     ## editors
     "helix"
+    "code"
     ## terminals
     "kitty"
     ## files
@@ -168,9 +169,6 @@ _packages=(
     "pince"
 
     # developments
-    ## shells
-    "bash-language-server"
-    "fish-lsp"
     ## c/cpp
     "gcc"
     "clang"
@@ -179,12 +177,6 @@ _packages=(
     ## python
     "python"
     "python-pip"
-    "ruff"
     ## odin
     "odin"
-    "odinls-bin"
-    "odinfmt"
-    ## lua
-    "lua"
-    "lua-language-server"
 )
