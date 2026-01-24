@@ -1,5 +1,0 @@
-[language-server.qmlls]
-command = "qmlls6"
-
-[language-server.ols]
-command = "odinls"
