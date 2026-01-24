@@ -164,6 +164,7 @@ _packages=(
     "gamemode"
     "lib32-gamemode"
     "protonup-qt"
+    "pince"
 
     # developments
     ## shells
