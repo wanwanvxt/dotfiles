@@ -15,4 +15,9 @@ function get_gtk_value -a key -V gtk_cfg_file
     test -n "$line"; and string trim (string split -m1 '=' $line)[2]
 end
 
-hyprctl setcursor "$(get_gtk_value gtk-cursor-theme-name)" "$(get_gtk_value gtk-cursor-theme-size)"
+set cursor_theme_name "$(get_gtk_value gtk-cursor-theme-name)"
+set cursor_theme_size "$(get_gtk_value gtk-cursor-theme-size)"
+
+hyprctl setcursor "$cursor_theme_name" "$cursor_theme_size"
+printf "%s\n" "Xcursor.theme: $cursor_theme_name" "Xcursor.size: $cursor_theme_size" >"$HOME/.Xresources"
+xrdb -merge "$HOME/.Xresources"

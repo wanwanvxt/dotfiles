@@ -120,6 +120,7 @@ _packages=(
     "wl-clipboard"
     "cliphist"
     "libnotify"
+    "xorg-xrdb"
 
     # ime
     "fcitx5"
