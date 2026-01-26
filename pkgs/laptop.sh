@@ -13,12 +13,20 @@ _packages=(
     "efibootmgr"
     "grub"
     "zram-generator"
+    "pacman"
     "pacman-contrib"
-    "yay-bin"
+    "yay"
     "cachyos-keyring"
     "cachyos-mirrorlist"
     "cachyos-v3-mirrorlist"
     "cachyos-v4-mirrorlist"
+
+    # shells
+    "bash"
+    "bash-completion"
+    "fish"
+    "starship"
+    "fzf"
 
     # network
     "networkmanager"
@@ -54,13 +62,6 @@ _packages=(
 
     # misc
     "gnome-keyring"
-
-    # shells
-    "bash"
-    "bash-completion"
-    "fish"
-    "starship"
-    "fzf"
 
     # vcs
     "git"
@@ -179,4 +180,6 @@ _packages=(
     "python-pip"
     ## odin
     "odin"
+    ## rust
+    "rust"
 )
