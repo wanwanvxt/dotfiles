@@ -156,8 +156,8 @@ _packages=(
     "vlc"
     "vlc-plugins-all" # vlc - all plugins
     "pqiv"
+    "mission-center"
     "btop"
-    "rocm-smi-lib" # btop - AMD GPU support
     "nvtop"
     "easyeffects"
     "vesktop-bin"
