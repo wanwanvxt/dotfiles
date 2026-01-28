@@ -132,35 +132,25 @@ _packages=(
     "chezmoi"
 
     # apps
-    ## editors
-    "helix"
-    "code"
-    ## terminals
-    "kitty"
-    ## files
-    "thunar"
-    "gvfs"                     # thunar - trash support, mounting with udisk and remote filesystems
-    "thunar-archive-plugin"    # thunar - archive creation and extraction
-    "thunar-media-tags-plugin" # thunar - view/edit ID3/OGG tags
-    "thunar-volman"            # thunar - removable device management
-    "tumbler"                  # thunar - thumbnail previews
-    "ffmpegthumbnailer"        # thunar - video thumbnails
-    "freetype2"                # thunar - font thumbnails
-    "ark"
-    "7zip"       # ark - 7Z format support
-    "unarchiver" # ark - RAR format support
-    "unrar"      # ark - RAR decompression support
-    ## browsers
-    "firefox"
-    ## others
-    "vlc"
-    "vlc-plugins-all" # vlc - all plugins
-    "pqiv"
-    "mission-center"
-    "btop"
-    "nvtop"
-    "easyeffects"
-    "vesktop-bin"
+    "helix"   # editor
+    "code"    # editor
+    "kitty"   # terminal
+    "firefox" # browser
+    "dolphin"           # file manager
+    "ffmpegthumbnailer" ## dolphin - video thumbnails
+    "dolphin-plugins"   ## dolphin - extra plugins
+    "ark"        #- archiving and compression
+    "7zip"       ## ark - 7Z format support
+    "unarchiver" ## ark - RAR format support
+    "unrar"      ## ark - RAR decompression support
+    "pqiv"            # image viewer
+    "vlc"             # media player
+    "vlc-plugins-all" ## vlc - all plugins
+    "mission-center" # resource manager
+    "btop"           # resource manager
+    "nvtop"          # resource manager
+    "easyeffects" # audio effects
+    "vesktop-bin" # discord
 
     # gaming
     "steam"
