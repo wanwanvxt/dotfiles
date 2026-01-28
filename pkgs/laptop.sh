@@ -39,6 +39,7 @@ _packages=(
     "pipewire-pulse"
     "pipewire-jack"
     "lib32-pipewire"
+    "wireplumber"
 
     # bluetooth
     "bluez"
@@ -114,11 +115,9 @@ _packages=(
     "hyprpaper"
     "hyprpicker"
     "quickshell"
-    "wireplumber"
     "playerctl"
     "brightnessctl"
     "grimblast-git"
-    "wl-clipboard"
     "cliphist"
     "libnotify"
     "xorg-xrdb"
