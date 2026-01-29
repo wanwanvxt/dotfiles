@@ -114,7 +114,7 @@ _packages=(
     "hyprland"
     "hyprpaper"
     "hyprpicker"
-    "quickshell"
+    "megumi-shell" # my desktop shell
     "playerctl"
     "brightnessctl"
     "grimblast-git"
