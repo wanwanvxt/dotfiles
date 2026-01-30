@@ -135,9 +135,14 @@ _packages=(
     "code"    # editor
     "kitty"   # terminal
     "firefox" # browser
-    "dolphin"           # file manager
-    "ffmpegthumbnailer" ## dolphin - video thumbnails
-    "dolphin-plugins"   ## dolphin - extra plugins
+    "thunar"                   # file manager
+    "gvfs"                     ## thunar - trash support, mounting with udisk and remote filesystems
+    "thunar-archive-plugin"    ## thunar - archive creation and extraction
+    "thunar-media-tags-plugin" ## thunar - view/edit ID3/OGG tags
+    "thunar-volman"            ## thunar - removable device management
+    "tumbler"                  ## thunar - thumbnail previews
+    "ffmpegthumbnailer"        ## thunar - video thumbnails
+    "freetype2"                ## thunar - font thumbnails
     "ark"        #- archiving and compression
     "7zip"       ## ark - 7Z format support
     "unarchiver" ## ark - RAR format support
