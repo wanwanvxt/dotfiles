@@ -20,13 +20,7 @@ _pkgs=(
     'cachyos-mirrorlist'
     'cachyos-v3-mirrorlist'
     'cachyos-v4-mirrorlist'
-
-    # shells
-    'bash'
-    'bash-completion'
-    'fish'
-    'starship'
-    'fzf'
+    'cachyos-rate-mirrors'
 
     # network
     'networkmanager'
@@ -38,7 +32,6 @@ _pkgs=(
     'pipewire-alsa'
     'pipewire-pulse'
     'pipewire-jack'
-    'lib32-pipewire'
     'wireplumber'
 
     # bluetooth
@@ -50,24 +43,40 @@ _pkgs=(
     'mesa-utils'
     'vulkan-icd-loader'
     'vulkan-tools'
-    'lib32-mesa'
-    'lib32-vulkan-icd-loader'
     ## amd
     'vulkan-radeon'
-    'lib32-vulkan-radeon'
     ## nvidia
     'nvidia-open-dkms'
     'nvidia-utils'
     'nvidia-prime'
-    'lib32-nvidia-utils'
 
-    # misc
-    'gnome-keyring'
+    # shells
+    'bash'
+    'bash-completion'
+    'fish'
+    'starship'
+    'fzf'
 
     # vcs
     'git'
-    'lazygit'
     'openssh'
+
+    # cli
+    'helix' # editor
+    'less'  # pager
+    'chezmoi' # dotfiles
+    'lazygit' # git
+    'btop'  # resource manager
+    'nvtop' # resource manager
+    'tree'
+    'jq'
+
+    # hyprland
+    'hyprland'
+    'brightnessctl' ## hyprland - monitor brightness
+    'playerctl'     ## hyprland - mpris controller
+    'grimblast-git' ## hyprland - screenshot
+    'xorg-xrdb'     ## hyprland - x cursor
 
     # xdg
     'xdg-utils'
@@ -77,10 +86,10 @@ _pkgs=(
     'xdg-desktop-portal-hyprland'
 
     # gtk & qt
-    'gtk3'
     'gtk4'
-    'qt5-wayland'
+    'gtk3'
     'qt6-wayland'
+    'qt5-wayland'
 
     # fonts
     'fontconfig'
@@ -91,13 +100,6 @@ _pkgs=(
     'ttf-liberation'
     'ttf-0xproto-nerd'
 
-    # theme manage
-    'qt5ct-kde'
-    'qt6ct-kde'
-    'kvantum-qt5'
-    'kvantum'
-    'nwg-look'
-
     # icons & color schemes
     'bibata-cursor-theme-bin'
     'papirus-icon-theme'
@@ -105,36 +107,25 @@ _pkgs=(
     'materia-kde'
     'kvantum-theme-materia'
 
-    # cli utils
-    'less'
-    'tree'
-    'jq'
-
-    # hyprland
-    'hyprland'
-    'hyprpaper'
-    'hyprpicker'
-    'megumi-shell' # my desktop shell
-    'playerctl'
-    'brightnessctl'
-    'grimblast-git'
-    'cliphist'
-    'libnotify'
-    'xorg-xrdb'
+    # theme manage
+    'nwg-look'
+    'qt6ct-kde'
+    'qt5ct-kde'
+    'kvantum'
+    'kvantum-qt5'
 
     # ime
     'fcitx5'
-    'fcitx5-configtool'
-    'fcitx5-bamboo'
+    'fcitx5-configtool' ## fcitx5 - config tool
+    'fcitx5-bamboo'     ## fcitx5 - Vietnamese IME
 
-    # dotfiles
-    'chezmoi'
+    # my own desktop shell
+    'megumi-shell'
 
-    # apps
-    'helix'   # editor
-    'code'    # editor
+    # gui apps
     'kitty'   # terminal
     'firefox' # browser
+    'code'    # editor
     'thunar'                   # file manager
     'gvfs'                     ## thunar - trash support, mounting with udisk and remote filesystems
     'thunar-archive-plugin'    ## thunar - archive creation and extraction
@@ -142,24 +133,21 @@ _pkgs=(
     'thunar-volman'            ## thunar - removable device management
     'tumbler'                  ## thunar - thumbnail previews
     'ffmpegthumbnailer'        ## thunar - video thumbnails
-    'freetype2'                ## thunar - font thumbnails
-    'ark'        #- archiving and compression
+    'ark'        # archiving and compression
     '7zip'       ## ark - 7Z format support
     'unarchiver' ## ark - RAR format support
     'unrar'      ## ark - RAR decompression support
-    'pqiv'            # image viewer
+    'imv'             # image viewer
     'vlc'             # media player
     'vlc-plugins-all' ## vlc - all plugins
-    'mission-center' # resource manager
-    'btop'           # resource manager
-    'nvtop'          # resource manager
     'easyeffects' # audio effects
-    'vesktop-bin' # discord
+    'vesktop' # discord
 
     # gaming
     'steam'
+    'lib32-vulkan-radeon' ## steam - lib32-vulkan-driver
+    'lib32-nvidia-utils'  ## steam - lib32-vulkan-driver
     'gamemode'
-    'lib32-gamemode'
     'protonup-qt'
     'pince'
 
@@ -177,4 +165,4 @@ _pkgs=(
     ## rust
     'rust'
 )
-echo '${_pkgs[@]}'
+echo "${_pkgs[@]}"
