@@ -1,6 +1,6 @@
-_aur_helper="yay"
-_packages=(
-    # base
+#!/usr/bin/env bash
+
+_pkgs=(
     "base"
     "base-devel"
     "linux"
@@ -177,3 +177,4 @@ _packages=(
     ## rust
     "rust"
 )
+echo "${_pkgs[@]}"
