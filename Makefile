@@ -2,9 +2,9 @@ HOSTNAME := $(shell hostnamectl hostname)
 PKGS     := $(shell sh pkgs/$(HOSTNAME))
 PACMAN   := $(shell command -v yay || command -v paru || echo 'sudo pacman')
 
-.PHONY: all pkgs dots
+.PHONY: all pkgs megumi-shell dots
 
-all: pkgs dots
+all: pkgs megumi-shell dots
 
 pkgs:
 	@if [ -n '$(PKGS)' ]; then \
@@ -21,6 +21,9 @@ pkgs:
 			fi \
 		fi \
 	fi
+
+megumi-shell:
+	@cd megumi-shell && makepkg -fsi
 
 dots:
 	@command -v chezmoi && chezmoi apply -vS ./dots || true
