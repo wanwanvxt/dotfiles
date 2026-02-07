@@ -1,5 +1,5 @@
 HOSTNAME := $(shell hostnamectl hostname)
-PKGS     := $(shell bash pkgs/$(HOSTNAME))
+PKGS     := $(shell sh pkgs/$(HOSTNAME))
 PACMAN   := $(shell command -v yay || command -v paru || echo 'sudo pacman')
 
 .PHONY: all pkgs dots
