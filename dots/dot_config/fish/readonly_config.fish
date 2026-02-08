@@ -1,7 +1,7 @@
 if status is-interactive
     set -g fish_greeting
 
-    alias rm='trash'
+    alias rm="echo 'YOU CANNOT USE THIS COMMAND.'; false"
     alias hx='helix'
     alias lg='lazygit'
 
