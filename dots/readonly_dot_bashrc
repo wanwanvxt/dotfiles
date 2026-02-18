@@ -2,7 +2,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias rm="echo 'YOU CANNOT USE THIS COMMAND.'; false"
+alias rm="echo 'YOU SHOULD NOT USE THIS COMMAND.'; false"
 alias hx='helix'
 alias lg='lazygit'
 
