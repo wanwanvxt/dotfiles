@@ -124,6 +124,7 @@ _pkgs=(
     'imv'             # image viewer
     'vlc'             # media player
     'vlc-plugins-all' ## vlc - all plugins
+    'selectdefaultapplication-git'
     'easyeffects' # audio effects
     'vesktop' # discord
 
