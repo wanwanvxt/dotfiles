@@ -120,6 +120,7 @@ _pkgs=(
     'pcmanfm-qt' # file manager
     'gvfs'       ## pcmanfm - various features
     'lxqt-archiver' # archiving and compression
+    '7zip'          ## lxqt-archiver - 7Z support
     'imv'             # image viewer
     'vlc'             # media player
     'vlc-plugins-all' ## vlc - all plugins
