@@ -117,17 +117,9 @@ _pkgs=(
     'kitty'   # terminal
     'firefox' # browser
     'code'    # editor
-    'thunar'                   # file manager
-    'gvfs'                     ## thunar - trash support, mounting with udisk and remote filesystems
-    'thunar-archive-plugin'    ## thunar - archive creation and extraction
-    'thunar-media-tags-plugin' ## thunar - view/edit ID3/OGG tags
-    'thunar-volman'            ## thunar - removable device management
-    'tumbler'                  ## thunar - thumbnail previews
-    'ffmpegthumbnailer'        ## thunar - video thumbnails
-    'ark'        # archiving and compression
-    '7zip'       ## ark - 7Z format support
-    'unarchiver' ## ark - RAR format support
-    'unrar'      ## ark - RAR decompression support
+    'pcmanfm-qt' # file manager
+    'gvfs'       ## pcmanfm - various features
+    'lxqt-archiver' # archiving and compression
     'imv'             # image viewer
     'vlc'             # media player
     'vlc-plugins-all' ## vlc - all plugins
