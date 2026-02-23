@@ -13,9 +13,8 @@ _pkgs=(
     'efibootmgr'
     'grub'
     'zram-generator'
-    'pacman'
-    'pacman-contrib'
     'yay'
+    'pacman-contrib'
     'cachyos-keyring'
     'cachyos-mirrorlist'
     'cachyos-v3-mirrorlist'
@@ -51,8 +50,6 @@ _pkgs=(
     'nvidia-prime'
 
     # shells
-    'bash'
-    'bash-completion'
     'fish'
     'starship'
     'fzf'
@@ -64,36 +61,31 @@ _pkgs=(
     # cli
     'helix' # editor
     'less'  # pager
+    'tree'
+    'trash-cli'
     'chezmoi' # dotfiles
     'lazygit' # git
     'btop'  # resource manager
     'nvtop' # resource manager
-    'tree'
-    'trash-cli'
-    'jq'
 
     # hyprland
     'hyprland'
+    'xdg-desktop-portal-hyprland'
+    'xdg-desktop-portal-gtk'
+    'qt6-wayland'
+    'qt5-wayland'
     'brightnessctl' ## hyprland - monitor brightness
     'playerctl'     ## hyprland - mpris controller
     'grimblast-git' ## hyprland - screenshot
     'xorg-xrdb'     ## hyprland - x cursor
+    'jq'            ## hyprland - JSON utils
+    'quickshell' # desktop shell
 
     # xdg
     'xdg-utils'
     'xdg-user-dirs'
-    'xdg-desktop-portal'
-    'xdg-desktop-portal-gtk'
-    'xdg-desktop-portal-hyprland'
-
-    # gtk & qt
-    'gtk4'
-    'gtk3'
-    'qt6-wayland'
-    'qt5-wayland'
 
     # fonts
-    'fontconfig'
     'noto-fonts'
     'noto-fonts-cjk'
     'noto-fonts-emoji'
@@ -119,9 +111,6 @@ _pkgs=(
     'fcitx5'
     'fcitx5-configtool' ## fcitx5 - config tool
     'fcitx5-bamboo'     ## fcitx5 - Vietnamese IME
-
-    # my own desktop shell
-    'megumi-shell'
 
     # gui apps
     'kitty'   # terminal
