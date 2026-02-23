@@ -49,25 +49,6 @@ _pkgs=(
     'nvidia-utils'
     'nvidia-prime'
 
-    # shells
-    'fish'
-    'starship'
-    'fzf'
-
-    # vcs
-    'git'
-    'openssh'
-
-    # cli
-    'helix' # editor
-    'less'  # pager
-    'tree'
-    'trash-cli'
-    'chezmoi' # dotfiles
-    'lazygit' # git
-    'btop'  # resource manager
-    'nvtop' # resource manager
-
     # hyprland
     'hyprland'
     'xdg-desktop-portal-hyprland'
@@ -80,6 +61,7 @@ _pkgs=(
     'xorg-xrdb'     ## hyprland - x cursor
     'jq'            ## hyprland - JSON utils
     'quickshell' # desktop shell
+    'cliphist'   ## quickshell - clipboard manager
 
     # xdg
     'xdg-utils'
@@ -111,6 +93,25 @@ _pkgs=(
     'fcitx5'
     'fcitx5-configtool' ## fcitx5 - config tool
     'fcitx5-bamboo'     ## fcitx5 - Vietnamese IME
+
+    # shells
+    'fish'
+    'starship'
+    'fzf'
+
+    # vcs
+    'git'
+    'openssh'
+
+    # cli
+    'helix' # editor
+    'less'  # pager
+    'tree'
+    'trash-cli'
+    'lazygit' # git
+    'chezmoi' # dotfiles
+    'btop'  # resource manager
+    'nvtop' # resource manager
 
     # gui apps
     'kitty'   # terminal
