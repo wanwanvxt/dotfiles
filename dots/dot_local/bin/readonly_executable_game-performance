@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 HAS_GAMEMODE=$(command -v gamemoderun)
 HAS_PRIME=$(command -v prime-run)
