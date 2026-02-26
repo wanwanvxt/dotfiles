@@ -2,5 +2,5 @@
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 if [[ -z "$DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
-    exec niri-session
+    exec niri-session -l
 fi
