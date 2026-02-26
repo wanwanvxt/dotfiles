@@ -4,7 +4,7 @@ PACMAN   := $(shell command -v yay || command -v paru || echo 'sudo pacman')
 
 .PHONY: all pkgs dots cachyos-repo
 
-all: pkgs dots
+all: cachyos-repo pkgs dots
 
 pkgs:
 	@if [ -n '$(PKGS)' ]; then \
