@@ -23,4 +23,4 @@ pkgs:
 	fi
 
 dots:
-	@command -v chezmoi && chezmoi apply -vS ./dots || true
+	@command -v chezmoi && chezmoi apply -S ./dots || true
