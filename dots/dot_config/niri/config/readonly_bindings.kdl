@@ -16,7 +16,7 @@ binds {
     Alt+F4     repeat=false { close-window; }
     Mod+F      repeat=false { fullscreen-window; }
     Mod+Ctrl+F repeat=false { maximize-window-to-edges; }
-    Mod+V      repeat=false { toggle-window-floating; }
+    Mod+Space  repeat=false { toggle-window-floating; }
     Mod+R      { switch-preset-column-width; }
     Mod+Ctrl+R { switch-preset-window-height; }
     //#
