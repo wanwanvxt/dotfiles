@@ -1,4 +1,1 @@
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE"
-
-// ime
-spawn-sh-at-startup "fcitx5 -r"
