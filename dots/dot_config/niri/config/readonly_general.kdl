@@ -68,7 +68,7 @@ layout {
         proportion 0.66667
         fixed 1280
     }
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.66667; }
     preset-window-heights {
         proportion 0.33333
         proportion 0.5
