@@ -102,7 +102,6 @@ recent-windows {
         active-color "#00ff99"
         urgent-color "#ffaa00"
         padding 32
-        corner-radius 8
     }
     previews {
         max-height 720
