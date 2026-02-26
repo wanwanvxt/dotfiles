@@ -1,150 +1,44 @@
 #!/bin/sh
 
 _pkgs=(
-    'base'
-    'base-devel'
-    'linux'
-    'linux-headers'
-    'linux-cachyos-bore'
-    'linux-cachyos-bore-headers'
-    'linux-firmware'
-    'sof-firmware'
-    'btrfs-progs'
-    'efibootmgr'
-    'grub'
-    'zram-generator'
-    'yay'
-    'pacman-contrib'
-    'cachyos-keyring'
-    'cachyos-mirrorlist'
-    'cachyos-v3-mirrorlist'
-    'cachyos-v4-mirrorlist'
-    'cachyos-rate-mirrors'
+    'base{,-devel}' 'linux{,-headers}' '{linux,sof}-firmware'
+    'btrfs-progs' 'efibootmgr' 'grub' 'zram-generator' 'pacman-contrib' 'yay'
+    'linux-cachyos-bore{,-headers}' 'cachyos-{keyring,{v3-,v4-,}mirrorlist,rate-mirrors}'
 
-    # network
-    'networkmanager'
+    # network & bluetooth
+    'networkmanager' 'openssh' 'bluez{,-utils}'
 
-    # audio
-    'rtkit'
-    'pipewire'
-    'pipewire-audio'
-    'pipewire-alsa'
-    'pipewire-pulse'
-    'pipewire-jack'
-    'wireplumber'
+    # audio (pipewire)
+    'rtkit' 'pipewire{,-audio,-alsa,-pulse,-jack}' 'wireplumber'
 
-    # bluetooth
-    'bluez'
-    'bluez-utils'
+    # graphics drivers
+    'mesa{,-utils}' 'vulkan-{icd-loader,tools}'
+    'vulkan-radeon' 'nvidia-{open-dkms,utils,prime}'
+    lib32-{mesa,vulkan-icd-loader,vulkan-radeon,nvidia-utils}
 
-    # graphics
-    'mesa'
-    'mesa-utils'
-    'vulkan-icd-loader'
-    'vulkan-tools'
-    ## amd
-    'vulkan-radeon'
-    ## nvidia
-    'nvidia-open-dkms'
-    'nvidia-utils'
-    'nvidia-prime'
+    # window manager (niri)
+    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gnome,gtk}' 'xdg-{utils,user-dirs}'
+    'quickshell' 'cliphist' 'brightnessctl' 'playerctl'
 
-    # niri
-    'niri'
-    'xwayland-satellite'
-    'xdg-desktop-portal-gnome'
-    'xdg-desktop-portal-gtk'
-    'brightnessctl' ## niri - monitor brightness
-    'playerctl'     ## niri - mpris controller
-    'quickshell' # desktop shell
-    'cliphist'   ## quickshell - clipboard manager
+    # looks & feel
+    'nwg-look' 'qt{6,5}ct-kde' 'kvantum{,-qt5}'
+    'noto-fonts{,-cjk,-emoji,-extra}' 'ttf-{liberation,0xproto-nerd}'
+    'bibata-cursor-theme-bin' 'papirus-icon-theme'
+    'materia-{gtk-theme,kde}' 'kvantum-theme-materia'
+    'fcitx5{,-configtool,-bamboo}'
 
-    # xdg
-    'xdg-utils'
-    'xdg-user-dirs'
-
-    # fonts
-    'noto-fonts'
-    'noto-fonts-cjk'
-    'noto-fonts-emoji'
-    'noto-fonts-extra'
-    'ttf-liberation'
-    'ttf-0xproto-nerd'
-
-    # icons & color schemes
-    'bibata-cursor-theme-bin'
-    'papirus-icon-theme'
-    'materia-gtk-theme'
-    'materia-kde'
-    'kvantum-theme-materia'
-
-    # theme manage
-    'nwg-look'
-    'qt6ct-kde'
-    'qt5ct-kde'
-    'kvantum'
-    'kvantum-qt5'
-
-    # ime
-    'fcitx5'
-    'fcitx5-configtool' ## fcitx5 - config tool
-    'fcitx5-bamboo'     ## fcitx5 - Vietnamese IME
-
-    # shells
-    'fish'
-    'starship'
-    'fzf'
-
-    # vcs
-    'git'
-    'openssh'
-
-    # cli
-    'helix' # editor
-    'less'  # pager
-    'trash-cli'
-    'tree'
-    'jq'
-    'lazygit' # git
-    'chezmoi' # dotfiles
-    'btop'  # resource manager
-    'nvtop' # resource manager
+    # shell & cli tools
+    'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
+    'helix' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
-    'kitty'   # terminal
-    'firefox' # browser
-    'code'    # editor
-    'pcmanfm-qt' # file manager
-    'gvfs'       ## pcmanfm - various features
-    'lxqt-archiver' # archiving and compression
-    '7zip'          ## lxqt-archiver - 7Z support
-    'imv'             # image viewer
-    'vlc'             # media player
-    'vlc-plugins-all' ## vlc - all plugins
+    'kitty' 'firefox' '{pcmanfm-qt,gvfs,lxqt-archiver,7zip}'
+    'imv' 'vlc{,-plugins-all}' 'code' 'vesktop' 'easyeffects'
+    '{steam,gamemode,protonup-qt,pince}'
     'selectdefaultapplication-git'
-    'easyeffects' # audio effects
-    'vesktop' # discord
-
-    # gaming
-    'steam'
-    'lib32-vulkan-radeon' ## steam - lib32-vulkan-driver
-    'lib32-nvidia-utils'  ## steam - lib32-vulkan-driver
-    'gamemode'
-    'protonup-qt'
-    'pince'
 
     # developments
-    ## c/cpp
-    'gcc'
-    'clang'
-    'cmake'
-    'xmake'
-    ## python
-    'python'
-    'python-pip'
-    ## odin
-    'odin'
-    ## rust
-    'rust'
+    '{cmake,xmake}' 'python{,-pip}' 'odin' 'rust'
 )
-echo "${_pkgs[@]}"
+
+eval echo "${_pkgs[@]}"
