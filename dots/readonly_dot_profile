@@ -14,4 +14,8 @@ fi
 export EDITOR=helix
 export VISUAL=helix
 export PAGER=less
-export FZF_DEFAULT_OPTS="--border --highlight-line"
+export FZF_DEFAULT_OPTS='--border --highlight-line'
+
+export NIRI_APP_TERMINAL='kitty -1'
+export NIRI_APP_FILE_MANAGER='pcmanfm-qt'
+export NIRI_APP_BROWSER='firefox'

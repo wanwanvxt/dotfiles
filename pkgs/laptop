@@ -49,17 +49,13 @@ _pkgs=(
     'nvidia-utils'
     'nvidia-prime'
 
-    # hyprland
-    'hyprland'
-    'xdg-desktop-portal-hyprland'
+    # niri
+    'niri'
+    'xwayland-satellite'
+    'xdg-desktop-portal-gnome'
     'xdg-desktop-portal-gtk'
-    'qt6-wayland'
-    'qt5-wayland'
-    'brightnessctl' ## hyprland - monitor brightness
-    'playerctl'     ## hyprland - mpris controller
-    'grimblast-git' ## hyprland - screenshot
-    'xorg-xrdb'     ## hyprland - x cursor
-    'jq'            ## hyprland - JSON utils
+    'brightnessctl' ## niri - monitor brightness
+    'playerctl'     ## niri - mpris controller
     'quickshell' # desktop shell
     'cliphist'   ## quickshell - clipboard manager
 
@@ -106,8 +102,9 @@ _pkgs=(
     # cli
     'helix' # editor
     'less'  # pager
-    'tree'
     'trash-cli'
+    'tree'
+    'jq'
     'lazygit' # git
     'chezmoi' # dotfiles
     'btop'  # resource manager

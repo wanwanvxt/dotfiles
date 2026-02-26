@@ -1,0 +1,141 @@
+output "eDP-1" {
+    scale 1
+    transform "normal"
+    variable-refresh-rate
+    focus-at-startup
+}
+
+input {
+    keyboard {
+        xkb { layout "us"; }
+        repeat-delay 250
+        repeat-rate 25
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        scroll-factor 0.5
+    }
+
+    mouse {
+        accel-profile "flat"
+        scroll-factor 1
+    }
+
+    warp-mouse-to-focus mode="center-xy"
+    focus-follows-mouse max-scroll-amount="10%"
+
+    mod-key "Super"
+    mod-key-nested "Alt"
+}
+
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+    }
+
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms 100
+        max-speed 1500
+    }
+
+    hot-corners { top-left; }
+}
+
+layout {
+    gaps 8
+    struts {
+        top 0
+        bottom 0
+        left 0
+        right 0
+    }
+
+    center-focused-column "on-overflow"
+    always-center-single-column
+    default-column-display "normal"
+    tab-indicator { off; }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        fixed 1280
+    }
+    default-column-width {}
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        fixed 720
+    }
+
+    focus-ring {
+        width 2
+        active-color "#00ff99"
+        inactive-color "#808080"
+        urgent-color "#ffaa00"
+    }
+    border { off; }
+    shadow {
+        on
+        softness 4
+        spread 2
+        offset x=0 y=0
+        draw-behind-window true
+        color "#000000"
+    }
+    insert-hint { color "#00ff9950"; }
+    background-color "#222222"
+}
+
+recent-windows {
+    debounce-ms 300
+    open-delay-ms 150
+    highlight {
+        active-color "#00ff99"
+        urgent-color "#ffaa00"
+        padding 32
+        corner-radius 8
+    }
+    previews {
+        max-height 720
+        max-scale 0.5
+    }
+}
+
+overview {
+    zoom 0.75
+    backdrop-color "#323232"
+    workspace-shadow {
+        on
+        softness 32
+        spread 8
+        offset x=0 y=0
+        color "#00000050"
+    }
+}
+
+animations {
+    // using default
+}
+
+prefer-no-csd
+
+screenshot-path "~/pictures/screenshots/screenshot_%Y%m%d-%H%M%S.png"
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+    hide-after-inactive-ms 5000
+}
+
+xwayland-satellite { path "xwayland-satellite"; }
+
+hotkey-overlay { skip-at-startup; }
