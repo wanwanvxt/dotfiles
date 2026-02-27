@@ -10,25 +10,6 @@ recent-windows {
 binds {
     Ctrl+Alt+Delete repeat=false { quit; }
 
-    // windows
-    Mod+Tab repeat=false { toggle-overview; }
-    //#
-    Mod+Escape repeat=false { close-window; }
-    Mod+F      repeat=false { fullscreen-window; }
-    Mod+G      repeat=false { maximize-window-to-edges; }
-    Mod+V      repeat=false { toggle-window-floating; }
-    Mod+Period { switch-preset-column-width; }
-    Mod+Comma  { switch-preset-window-height; }
-    //#
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
-
     // workspaces
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -40,6 +21,49 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace 10; }
+    Mod+Prior { focus-workspace-up; }
+    Mod+Next  { focus-workspace-down; }
+
+    // windows
+    Mod+Tab repeat=false { toggle-overview; }
+    //#
+    Mod+Escape repeat=false { close-window; }
+    Alt+F4     repeat=false { close-window; }
+    Mod+F      repeat=false { fullscreen-window; }
+    Mod+G      repeat=false { maximize-window-to-edges; }
+    Mod+V      repeat=false { toggle-window-floating; }
+    Mod+BracketLeft  { switch-preset-column-width; }
+    Mod+BracketRight { switch-preset-window-height; }
+    //#
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+Home  { focus-column-first; }
+    Mod+End   { focus-column-last; }
+    //#
+    Mod+Shift+H     { swap-window-left; }
+    Mod+Shift+J     { move-window-to-workspace-down; }
+    Mod+Shift+K     { move-window-to-workspace-up; }
+    Mod+Shift+L     { swap-window-right; }
+    Mod+Shift+Left  { swap-window-left; }
+    Mod+Shift+Down  { move-window-to-workspace-down; }
+    Mod+Shift+Up    { move-window-to-workspace-up; }
+    Mod+Shift+Right { swap-window-right; }
+    Mod+Shift+1     { move-window-to-workspace 1; }
+    Mod+Shift+2     { move-window-to-workspace 2; }
+    Mod+Shift+3     { move-window-to-workspace 3; }
+    Mod+Shift+4     { move-window-to-workspace 4; }
+    Mod+Shift+5     { move-window-to-workspace 5; }
+    Mod+Shift+6     { move-window-to-workspace 6; }
+    Mod+Shift+7     { move-window-to-workspace 7; }
+    Mod+Shift+8     { move-window-to-workspace 8; }
+    Mod+Shift+9     { move-window-to-workspace 9; }
+    Mod+Shift+0     { move-window-to-workspace 10; }
 
     // apps
     Mod+T repeat=false { spawn-sh "${NIRI_APP_TERMINAL:-$TERMINAL}"; }
