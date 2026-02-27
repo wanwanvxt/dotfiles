@@ -91,7 +91,7 @@ layout {
         draw-behind-window true
         color "#000000"
     }
-    insert-hint { color "#00ff9950"; }
+    insert-hint { color "#00ff9980"; }
     background-color "#222222"
 }
 
