@@ -11,14 +11,14 @@ binds {
     Ctrl+Alt+Delete repeat=false { quit; }
 
     // windows
-    Mod+Tab    repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
     //#
-    Alt+F4     repeat=false { close-window; }
+    Mod+Escape repeat=false { close-window; }
     Mod+F      repeat=false { fullscreen-window; }
-    Mod+Ctrl+F repeat=false { maximize-window-to-edges; }
-    Mod+Space  repeat=false { toggle-window-floating; }
-    Mod+R      { switch-preset-column-width; }
-    Mod+Ctrl+R { switch-preset-window-height; }
+    Mod+G      repeat=false { maximize-window-to-edges; }
+    Mod+V      repeat=false { toggle-window-floating; }
+    Mod+Period { switch-preset-column-width; }
+    Mod+Comma  { switch-preset-window-height; }
     //#
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
@@ -47,9 +47,9 @@ binds {
     Mod+B repeat=false { spawn-sh "${NIRI_APP_BROWSER:-$BROWSER}"; }
 
     // misc
-    Print       repeat=false { screenshot-screen; }
-    Alt+Print   repeat=false { screenshot-window; }
-    Mod+Shift+S repeat=false { screenshot; }
+    Print      repeat=false { screenshot-screen; }
+    Alt+Print  repeat=false { screenshot-window; }
+    Ctrl+Print repeat=false { screenshot; }
 
     // fn keys
     XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%+ -q"; }
