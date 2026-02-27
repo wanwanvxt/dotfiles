@@ -28,7 +28,7 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
+    'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
     'helix' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
@@ -38,7 +38,7 @@ _pkgs=(
     'selectdefaultapplication-git'
 
     # developments
-    '{cmake,xmake}' 'python{,-pip}' 'odin' 'rust'
+    '{gcc,clang,cmake,xmake}' 'python{,-pip}' 'odin' 'rust'
 )
 
 eval echo "${_pkgs[@]}"
