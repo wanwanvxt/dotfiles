@@ -30,7 +30,7 @@ binds {
     Mod+Escape repeat=false { close-window; }
     Alt+F4     repeat=false { close-window; }
     Mod+F      repeat=false { fullscreen-window; }
-    Mod+G      repeat=false { maximize-window-to-edges; }
+    Mod+D      repeat=false { maximize-window-to-edges; }
     Mod+V      repeat=false { toggle-window-floating; }
     Mod+BracketLeft  { switch-preset-column-width; }
     Mod+BracketRight { switch-preset-window-height; }
