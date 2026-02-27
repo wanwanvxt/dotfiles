@@ -95,6 +95,11 @@ layout {
     background-color "#222222"
 }
 
+window-rule {
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
 recent-windows {
     debounce-ms 300
     open-delay-ms 150
