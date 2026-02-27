@@ -2,6 +2,9 @@
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 if [[ -z "$DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
-    export QT_QPA_PLATFORMTHEME='qt5ct'
-    exec niri-session -l
+    if pgrep -u "$USER" -x niri >/dev/null 2>&1; then
+        echo "A niri session is already running."
+    else
+        exec systemd-cat -t niri niri --session
+    fi
 fi
