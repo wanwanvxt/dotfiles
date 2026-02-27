@@ -92,7 +92,7 @@ layout {
         color "#000000"
     }
     insert-hint { color "#00ff9980"; }
-    background-color "#222222"
+    background-color "transparent"
 }
 
 window-rule {
@@ -118,14 +118,8 @@ recent-windows {
 
 overview {
     zoom 0.75
-    backdrop-color "#323232"
-    workspace-shadow {
-        on
-        softness 32
-        spread 8
-        offset x=0 y=0
-        color "#00000050"
-    }
+    backdrop-color "#222222"
+    workspace-shadow { off; }
 }
 
 animations {
