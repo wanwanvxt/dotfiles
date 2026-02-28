@@ -11,8 +11,8 @@ if [[ -f "$HOME/.config/user-dirs.dirs" ]]; then
     set +a
 fi
 
-export EDITOR=helix
-export VISUAL=helix
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER=less
 export FZF_DEFAULT_OPTS='--border --highlight-line'
 

@@ -3,7 +3,8 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias rm="echo 'YOU SHOULD NOT USE THIS COMMAND.'; false"
-alias hx='helix'
+alias vim='nvim'
+alias vi='nvim'
 alias lg='lazygit'
 
 eval "$(fzf --bash)"
