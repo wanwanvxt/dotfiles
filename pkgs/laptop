@@ -29,7 +29,7 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
-    'helix' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
+    'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
     'kitty' 'firefox' '{pcmanfm-qt,gvfs,lxqt-archiver,7zip}'
