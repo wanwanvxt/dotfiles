@@ -38,7 +38,7 @@ _pkgs=(
     'selectdefaultapplication-git'
 
     # developments
-    '{gcc,clang,cmake,xmake}' 'python{,-pip}' 'odin' 'rust'
+    'python{,-pip}' 'odin'
 )
 
 eval echo "${_pkgs[@]}"
