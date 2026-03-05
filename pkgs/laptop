@@ -29,6 +29,7 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
+    'python{,-pip}' '{cmake,xmake}'
     'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
@@ -36,9 +37,6 @@ _pkgs=(
     'imv' 'vlc{,-plugins-all}' 'code' 'vesktop' 'easyeffects'
     '{steam,gamemode,protonup-qt,pince}'
     'selectdefaultapplication-git'
-
-    # developments
-    'python{,-pip}' 'odin'
 )
 
 eval echo "${_pkgs[@]}"
