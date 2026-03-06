@@ -33,7 +33,7 @@ _pkgs=(
     'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
-    'kitty' 'firefox' '{pcmanfm-qt,gvfs,lxqt-archiver,7zip}'
+    'kitty' 'firefox' '{pcmanfm-qt,gvfs,lxqt-archiver,7zip}' 'keepassxc'
     'imv' 'vlc{,-plugins-all}' 'code' 'vesktop' 'easyeffects'
     '{steam,gamemode,protonup-qt,pince}'
     'selectdefaultapplication-git'
