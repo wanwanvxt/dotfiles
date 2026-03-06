@@ -29,7 +29,7 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
-    'python{,-pip}' '{cmake,xmake}'
+    'python{,-pip}' 'cmake' 'odin'
     'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
 
     # gui apps
