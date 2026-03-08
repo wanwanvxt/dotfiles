@@ -1,6 +1,0 @@
-include "configs/general.kdl"
-include "configs/bindings.kdl"
-include "configs/rules.kdl"
-include "configs/env.kdl"
-include "configs/startup.kdl"
-include "configs/custom.kdl"
