@@ -14,3 +14,4 @@ fi
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
+export FZF_DEFAULT_OPTS='--border --highlight-line'
