@@ -43,8 +43,8 @@ binds {
     Mod+Right { focus-column-right; }
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
-    Mod+Comma  { switch-preset-column-width; }
-    Mod+Period { switch-preset-window-height; }
+    Mod+C { switch-preset-column-width; }
+    Mod+X { switch-preset-window-height; }
     //#
     Mod+Shift+H { swap-window-left; }
     Mod+Shift+J { move-window-to-workspace-down; }
