@@ -1,0 +1,5 @@
+include "configs/envvars.kdl"
+include "configs/autostart.kdl"
+include "configs/general.kdl"
+include "configs/rules.kdl"
+include "configs/bindings.kdl"

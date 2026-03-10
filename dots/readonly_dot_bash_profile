@@ -2,9 +2,9 @@
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 if [[ -z "$DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
-    if pgrep -u "$USER" -x Hyprland >/dev/null 2>&1; then
-        echo "A Hyprland session is already running."
+    if pgrep -u "$USER" -x niri >/dev/null 2>&1; then
+        echo "A niri session is already running."
     else
-        exec systemd-cat -t hyprland start-hyprland
+        exec systemd-cat -t niri niri --session
     fi
 fi
