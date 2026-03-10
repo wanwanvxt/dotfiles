@@ -1,0 +1,91 @@
+recent-windows {
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+Grave       { next-window     filter="app-id"; }
+        Alt+Shift+Grave { previous-window filter="app-id"; }
+    }
+}
+
+binds {
+    Ctrl+Alt+Delete repeat=false { quit; }
+
+    // workspaces
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+    Mod+Page_Up   { focus-workspace-up; }
+    Mod+Page_Down { focus-workspace-down; }
+
+    // windows
+    Mod+Tab repeat=false { toggle-overview; }
+    //#
+    Mod+Escape repeat=false { close-window; }
+    Alt+F4     repeat=false { close-window; }
+    Mod+F      repeat=false { fullscreen-window; }
+    Mod+D      repeat=false { maximize-window-to-edges; }
+    Mod+V      repeat=false { toggle-window-floating; }
+    //#
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-down; }
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Comma  { switch-preset-column-width; }
+    Mod+Period { switch-preset-window-height; }
+    //#
+    Mod+Shift+H { swap-window-left; }
+    Mod+Shift+J { move-window-to-workspace-down; }
+    Mod+Shift+K { move-window-to-workspace-up; }
+    Mod+Shift+L { swap-window-right; }
+    Mod+Shift+Up    { move-window-to-workspace-up; }
+    Mod+Shift+Down  { move-window-to-workspace-down; }
+    Mod+Shift+Left  { swap-window-left; }
+    Mod+Shift+Right { swap-window-right; }
+    Mod+Shift+Page_Up   { move-window-to-workspace-up; }
+    Mod+Shift+Page_Down { move-window-to-workspace-down; }
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+Shift+0 { move-window-to-workspace 10; }
+
+    // apps
+    Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
+    Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
+    Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
+
+    // misc
+    Print      repeat=false { screenshot-screen; }
+    Alt+Print  repeat=false { screenshot-window; }
+    Ctrl+Print repeat=false { screenshot; }
+
+    // media
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%+ -q"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%- -q"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
+    XF86AudioMute    repeat=false allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute repeat=false allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioPlay repeat=false allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop repeat=false allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev repeat=false allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext repeat=false allow-when-locked=true { spawn-sh "playerctl next"; }
+}
