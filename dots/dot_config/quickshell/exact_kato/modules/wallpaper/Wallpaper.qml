@@ -1,5 +1,3 @@
-pragma ComponentBehavior: Bound
-
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
@@ -7,14 +5,12 @@ import qs.common.settings
 import qs.common.utils
 
 Scope {
-    id: root
-
-    readonly property string defaultWall: FileUtils.shellAssetsPath("img/default.png")
-
     Variants {
         model: Quickshell.screens
         delegate: PanelWindow {
+            id: root
             required property ShellScreen modelData
+            readonly property string defaultWall: FileUtils.shellAssetsPath("img/default.png")
             screen: modelData
             exclusionMode: ExclusionMode.Ignore
             anchors {
