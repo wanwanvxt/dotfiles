@@ -14,10 +14,10 @@ _pkgs=(
     # graphics drivers
     'mesa{,-utils}' 'vulkan-{icd-loader,tools}'
     'vulkan-radeon' 'nvidia-{open-dkms,utils,prime}'
-    lib32-{mesa,vulkan-icd-loader,vulkan-radeon,nvidia-utils}
+    'lib32-{mesa,vulkan-icd-loader,vulkan-radeon,nvidia-utils}'
 
-    # window manager (niri)
-    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
+    # window manager (hyprland)
+    'hyprland' 'xdg-desktop-portal-{hyprland,gtk}'
     'xdg-{utils,user-dirs}' 'dex' 'brightnessctl' 'playerctl'
     'quickshell' 'cliphist'
 
