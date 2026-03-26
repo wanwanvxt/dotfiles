@@ -3,13 +3,6 @@ local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
 local shared = require("my.plugins.lines.shared")
 
-local Bufnr = {
-    provider = function(self)
-        return string.format("%d. ", self.bufnr)
-    end,
-    hl = "Comment",
-}
-
 local FileIcon = {
     condition = function()
         return not vim.g.is_tty
@@ -94,21 +87,11 @@ local BufferBlock = {
     hl = function(self)
         return self.is_active and "TabLineSel" or "TabLine"
     end,
-    Bufnr,
+    shared.Space,
     FileBlock,
     CloseButton,
+    shared.Space,
 }
-BufferBlock = hl_utils.surround(
-    { utils.symbol_guard("", " "), utils.symbol_guard("", " ") },
-    function(self)
-        if self.is_active then
-            return hl_utils.get_highlight("TabLineSel").bg
-        else
-            return hl_utils.get_highlight("TabLine").bg
-        end
-    end,
-    BufferBlock
-)
 
 local get_bufs = function()
     return vim.tbl_filter(function(bufnr)
