@@ -9,6 +9,7 @@ return {
             }
         },
     },
+    pylsp = { cmd = { "pylsp" } },
     clangd = { cmd = { "clangd" } },
     qmlls = { cmd = { "qmlls6" } },
     ols = { cmd = { "ols" } },
