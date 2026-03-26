@@ -1,4 +1,6 @@
 return {
+    bashls = { cmd = { "bash-lanuage-server", "start" } },
+    fish_lsp = { cmd = { "fish-lsp", "start" } },
     lua_ls = {
         cmd = { "lua-language-server" },
         settings = {
