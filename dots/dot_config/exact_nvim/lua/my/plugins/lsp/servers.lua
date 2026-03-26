@@ -1,5 +1,5 @@
 return {
-    bashls = { cmd = { "bash-lanuage-server", "start" } },
+    bashls = { cmd = { "bash-language-server", "start" } },
     fish_lsp = { cmd = { "fish-lsp", "start" } },
     lua_ls = {
         cmd = { "lua-language-server" },
