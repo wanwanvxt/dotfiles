@@ -81,8 +81,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase  = true
 
 -- window
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.splitbelow  = true
+vim.opt.splitright  = true
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- mouse
 vim.opt.mouse       = "n"
