@@ -31,7 +31,8 @@ _pkgs=(
     # shell & cli tools
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
     'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
-    'lua{,-language-server}' 'python{,-pip}' 'cmake' 'clang'
+    'bash-language-server' 'fish-lsp'
+    'lua{,-language-server}' 'python{,-pip,-lsp-server}' 'cmake' 'clang'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
