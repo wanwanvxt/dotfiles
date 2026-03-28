@@ -15,7 +15,7 @@ local FileIcon = {
         return string.format("%s ", self.icon)
     end,
     hl = function(self)
-        return { fg = self.icon_color }
+        return { fg = self.is_active and self.icon_color or "gray" }
     end,
 }
 

@@ -66,7 +66,7 @@ local FileIcon = {
         return string.format("%s ", self.icon)
     end,
     hl = function(self)
-        return { fg = self.icon_color }
+        return { fg = hl_conds.is_active() and self.icon_color or "gray" }
     end,
 }
 
@@ -105,6 +105,18 @@ local FileFlags = {
     },
 }
 
+local FileEcoding = {
+    provider = function()
+        local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
+        local fmt = vim.bo.fileformat
+        local type = vim.bo.filetype
+        return string.format(" %s[%s] %s ", enc, fmt, type)
+    end,
+    hl = function()
+        return { bg = "bright_bg", fg = hl_conds.is_active() and "green" or "gray" }
+    end,
+}
+
 local FileBlock = {
     init = function(self)
         self.filepath = vim.api.nvim_buf_get_name(0)
@@ -114,15 +126,7 @@ local FileBlock = {
     FilePath,
     FileFlags,
     shared.Space,
-}
-
-local FileEncoding = {
-    provider = function()
-        local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
-        local fmt = vim.bo.fileformat
-        return string.format(" %s [%s] ", enc, fmt)
-    end,
-    hl = { bg = "bright_bg", fg = "orange" },
+    FileEcoding,
 }
 
 local LSPActive = {
@@ -191,7 +195,6 @@ local InactiveStatusLine = {
 local DefaultStatusLine = {
     Mode,
     FileBlock,
-    FileEncoding,
     shared.Align,
     Diagnostics,
     LSPActive,
