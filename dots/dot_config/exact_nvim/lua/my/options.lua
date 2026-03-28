@@ -43,7 +43,6 @@ if vim.fn["provider#clipboard#Executable"]() ~= "" then
     vim.opt.clipboard:append("unnamedplus")
 end
 
-vim.opt.termguicolors  = not vim.g.is_tty
 vim.cmd.colorscheme("default")
 vim.opt.number         = true
 vim.opt.relativenumber = true
