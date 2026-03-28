@@ -30,7 +30,7 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
-    'neovim' 'less' 'tree' 'trash-cli' 'namcap' 'jq' 'btop' 'nvtop'
+    'neovim' 'less' 'tree' 'trash-cli' 'namcap' 'devtools' 'jq' 'btop' 'nvtop'
     'bash-language-server' 'fish-lsp'
     'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}'
     '{odin,ols}'
