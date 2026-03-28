@@ -4,8 +4,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-        if not vim.g.is_tty then
-            vim.cmd.colorscheme("kanagawa-dragon")
-        end
+        vim.opt.termguicolors = true
+        vim.cmd.colorscheme("kanagawa-dragon")
     end
 }
