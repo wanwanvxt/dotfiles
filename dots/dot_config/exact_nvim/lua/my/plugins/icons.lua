@@ -1,5 +1,6 @@
 return {
     "nvim-mini/mini.icons",
+    enabled = not vim.g.is_tty,
     lazy = false,
     priority = 1000,
     config = function()

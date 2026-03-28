@@ -1,5 +1,6 @@
 return {
     "rebelot/kanagawa.nvim",
+    enabled = not vim.g.is_tty,
     lazy = false,
     priority = 1000,
     config = function()
