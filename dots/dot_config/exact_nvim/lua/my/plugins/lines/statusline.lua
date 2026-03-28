@@ -179,7 +179,7 @@ local Diagnostics = {
 
 local Location = {
     provider = " %l/%L:%c ",
-    hl = { bg = "green", fg = "black" },
+    hl = { bg = "green", fg = "black", bold = true },
 }
 
 ---
