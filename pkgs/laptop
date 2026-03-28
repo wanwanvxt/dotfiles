@@ -32,13 +32,13 @@ _pkgs=(
     'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
     'neovim' 'less' 'tree' 'jq' 'trash-cli' 'btop' 'nvtop'
     'bash-language-server' 'fish-lsp'
-    'lua{,-language-server}' 'python{,-pip,-lsp-server}' 'cmake' 'clang'
+    'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}'
+    '{odin,ols}'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
-    '{xarchiver,tar,7zip,unrar}' 'keepassxc'
-    'imv' 'vlc{,-plugins-all}' 'code' 'vesktop' 'easyeffects'
-    '{steam,gamemode,protonup-qt,pince}'
+    '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc'
+     'vesktop' 'easyeffects' '{steam,gamemode,protonup-qt,pince}'
     'selectdefaultapplication-git'
 )
 
