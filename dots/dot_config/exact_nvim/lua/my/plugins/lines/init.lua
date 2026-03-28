@@ -12,7 +12,7 @@ return {
                 black      = hl_utils.get_highlight("Ignore").bg,
                 white      = hl_utils.get_highlight("Title").fg,
 
-                red        = hl_utils.get_highlight("Exception").fg,
+                red        = hl_utils.get_highlight("Operator").fg,
                 green      = hl_utils.get_highlight("String").fg,
                 blue       = hl_utils.get_highlight("Function").fg,
                 yellow     = hl_utils.get_highlight("Identifier").fg,
