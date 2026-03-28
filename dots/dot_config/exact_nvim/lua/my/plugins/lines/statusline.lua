@@ -110,6 +110,9 @@ local FileEcoding = {
         local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         local fmt = vim.bo.fileformat
         local type = vim.bo.filetype
+        if not type or type == "" then
+            type = "unknown"
+        end
         return string.format(" %s[%s] %s ", enc, fmt, type)
     end,
     hl = function()
