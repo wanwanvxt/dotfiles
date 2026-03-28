@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+TERM_CMD=${TERMINAL:-'kitty -1'}
+
+FINAL_ARGS=()
+for arg in "$@"; do
+    [[ "$arg" != '-e' ]] && FINAL_ARGS+=("$arg")
+done
+
+exec $TERM_CMD -- "${FINAL_ARGS[@]}"
