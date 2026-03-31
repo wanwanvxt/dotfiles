@@ -16,8 +16,8 @@ _pkgs=(
     'vulkan-radeon' 'nvidia-{open-dkms,utils,prime}'
     'lib32-{mesa,vulkan-icd-loader,vulkan-radeon,nvidia-utils}'
 
-    # window manager (hyprland)
-    'hyprland' 'xdg-desktop-portal-{hyprland,gtk}'
+    # window manager (niri)
+    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
     'xdg-{utils,user-dirs}' 'dex' 'brightnessctl' 'playerctl'
     'quickshell' 'cliphist'
 
