@@ -8,7 +8,7 @@ recent-windows {
 }
 
 binds {
-    Ctrl+Alt+Delete repeate=false { quit; }
+    Ctrl+Alt+Delete repeat=false { quit; }
 
     // workspaces
     Mod+1     { focus-workspace 1; }
@@ -25,15 +25,17 @@ binds {
     Mod+Next  { focus-workspace-down; }
 
     // windows
-    Mod+Escape repeate=false { close-window; }
-    Mod+F4     repeate=false { close-window; }
-    Mod+F      repeate=false { fullscreen-window; }
-    Mod+D      repeate=false { maximize-window-to-edges; }
-    Mod+V      repeate=false { toggle-window-floating; }
+    Mod+Tab repeat=false { toggle-overview; }
+    //# common
+    Mod+Escape repeat=false { close-window; }
+    Mod+F4     repeat=false { close-window; }
+    Mod+F      repeat=false { fullscreen-window; }
+    Mod+D      repeat=false { maximize-window-to-edges; }
+    Mod+V      repeat=false { toggle-window-floating; }
     //# focus
     Mod+H    { focus-column-left; }
     Mod+J    { focus-window-down; }
-    Mod+K    { focus-column-up; }
+    Mod+K    { focus-window-up; }
     Mod+L    { focus-column-right; }
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -47,7 +49,7 @@ binds {
     Mod+Shift+7     { move-window-to-workspace 7; }
     Mod+Shift+8     { move-window-to-workspace 8; }
     Mod+Shift+9     { move-window-to-workspace 9; }
-    Mod+Shift+10    { move-window-to-workspace 10; }
+    Mod+Shift+0     { move-window-to-workspace 10; }
     Mod+Shift+Prior { move-window-to-workspace-up; }
     Mod+Shift+Next  { move-window-to-workspace-down; }
     Mod+Shift+H { swap-window-left; }
@@ -56,9 +58,9 @@ binds {
     Mod+Shift+L { swap-window-right; }
 
     // apps
-    Mod+T repeate=false { spawn-sh "$NIRI_APP_TERMINAL"; }
-    Mod+E repeate=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
-    Mod+B repeate=false { spawn-sh "$NIRI_APP_BROWSER"; }
+    Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
+    Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
+    Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
 
     // media
     XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%+"; }
@@ -73,7 +75,7 @@ binds {
     XF86AudioNext         allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // misc
-    Print      repeate=false { screenshot-screen; }
-    Alt+Print  repeate=false { screenshot-window; }
-    Ctrl+Print repeate=false { screenshot; }
+    Print      repeat=false { screenshot-screen; }
+    Alt+Print  repeat=false { screenshot-window; }
+    Ctrl+Print repeat=false { screenshot; }
 }
