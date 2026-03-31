@@ -3,3 +3,26 @@ window-rule {
     geometry-corner-radius      5
     draw-border-with-background false
 }
+
+// floating
+window-rule {
+    match app-id="thunar"
+    exclude title="^.* - Thunar$"
+
+    open-floating true
+}
+window-rule {
+    match app-id="xdg-desktop-portal-gtk"
+    match app-id="xarchiver" title="^Extract files$"
+
+    open-floating         true
+    default-column-width  { fixed 800; }
+    default-window-height { fixed 600; }
+}
+window-rule {
+    match app-id="firefox" title="^Picture-in-Picture$"
+
+    open-floating         true
+    default-column-width  { fixed 640; }
+    default-window-height { fixed 360; }
+}
