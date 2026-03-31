@@ -52,10 +52,17 @@ binds {
     Mod+Shift+0     { move-window-to-workspace 10; }
     Mod+Shift+Prior { move-window-to-workspace-up; }
     Mod+Shift+Next  { move-window-to-workspace-down; }
-    Mod+Shift+H { swap-window-left; }
+    Mod+Shift+H { consume-or-expel-window-left; }
     Mod+Shift+J { move-window-down; }
     Mod+Shift+K { move-window-up; }
-    Mod+Shift+L { swap-window-right; }
+    Mod+Shift+L { consume-or-expel-window-right; }
+    //# resizing
+    Mod+Up    { switch-preset-window-height-back; }
+    Mod+Down  { switch-preset-window-height; }
+    Mod+Left  { switch-preset-column-width-back; }
+    Mod+Right { switch-preset-column-width; }
+    Mod+Alt+Down  { reset-window-height; }
+    Mod+Alt+Right { maximize-column; }
 
     // apps
     Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
