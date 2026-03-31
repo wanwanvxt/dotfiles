@@ -15,19 +15,20 @@ window-rule {
     match app-id="xdg-desktop-portal-gtk"
     match app-id="xarchiver" title="^Extract files$"
 
-    open-floating         true
+    open-floating true
     default-column-width  { fixed 800; }
     default-window-height { fixed 600; }
 }
 window-rule {
     match app-id="firefox" title="^Picture-in-Picture$"
 
-    open-floating         true
+    open-floating true
     default-column-width  { fixed 640; }
     default-window-height { fixed 360; }
 }
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
 
+    open-focused false
     default-floating-position x=0 y=0 relative-to="bottom-right"
 }
