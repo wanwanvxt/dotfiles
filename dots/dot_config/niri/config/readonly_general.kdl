@@ -83,11 +83,12 @@ layout {
         inactive-color "#808080"
     }
     shadow {
-        softness 4
-        spread 2
-        offset x=0 y=0
-        draw-behind-window true
-        color "#000000"
+        on
+        softness 10
+        spread   2
+        offset   x=0 y=0
+        color    "#00000080"
+        draw-behind-window false
     }
     insert-hint { color "#00ff9980"; }
     background-color "transparent"
@@ -117,7 +118,12 @@ recent-windows {
 overview {
     zoom             0.75
     backdrop-color   "#222222"
-    workspace-shadow { off; }
+    workspace-shadow {
+        softness 15
+        spread   5
+        offset   x=0 y=0
+        color    "#00000080"
+    }
 }
 
 // misc
