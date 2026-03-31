@@ -2,9 +2,11 @@
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 if [[ -z "$DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
-    if pgrep -u "$USER" -x Hyprland >/dev/null 2>&1; then
-        echo "A Hyprland session is already running."
+    if pgrep -u "$USER" -x niri >/dev/null 2>&1; then
+        echo "A niri session is already running."; sleep 5
     else
-        exec systemd-cat -t Hyprland start-hyprland
+        export TERMINAL="$NIRI_APP_TERMINAL"
+        export BROWSER="$NIRI_APP_BROWSER"
+        exec systemd-cat -t niri -- niri --session
     fi
 fi
