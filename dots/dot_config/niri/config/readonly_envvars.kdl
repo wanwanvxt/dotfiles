@@ -6,7 +6,7 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     SDL_VIDEODRIVER              "wayland"
     SDL_VIDEO_DRIVER             "wayland"
-    PROTON_ENABLE_WAYLAND        "1"
+    // PROTON_ENABLE_WAYLAND        "1"
 
     // qt
     QT_QPA_PLATFORMTHEME                "qt6ct"
