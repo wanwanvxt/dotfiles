@@ -18,8 +18,7 @@ _pkgs=(
 
     # window manager (niri)
     'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
-    'xdg-{utils,user-dirs,sound}' 'dex' 'brightnessctl' 'playerctl'
-    'quickshell' 'cliphist'
+    'xdg-{utils,user-dirs,sound}' '{quickshell,cliphist}'
 
     # looks & feel
     'nwg-look' 'qt{6,5}ct-kde' 'kvantum{,-qt5}'
@@ -29,11 +28,10 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'bash{,-completion}' 'fish' 'starship' 'fzf' 'git' 'lazygit' 'chezmoi'
-    'neovim' 'less' 'tree' 'trash-cli' 'namcap' 'devtools' 'jq' 'btop' 'nvtop'
-    'bash-language-server' 'fish-lsp'
-    'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}'
-    '{odin,ols}'
+    'bash{,-completion,-language-server}' 'fish{,-lsp}' '{starship,fzf}' '{lazy,}git'
+    'neovim' 'less' 'tree' 'trash-cli' 'jq' '{namcap,devtools}' 'chezmoi'
+    'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}'
+    'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
