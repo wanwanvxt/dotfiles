@@ -18,7 +18,7 @@ _pkgs=(
 
     # window manager (niri)
     'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
-    'xdg-{utils,user-dirs}' 'dex' 'brightnessctl' 'playerctl'
+    'xdg-{utils,user-dirs,sound}' 'dex' 'brightnessctl' 'playerctl'
     'quickshell' 'cliphist'
 
     # looks & feel
