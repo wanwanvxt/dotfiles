@@ -83,7 +83,7 @@ binds {
     XF86AudioNext         allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // misc
-    Print      repeat=false { screenshot-screen; }
-    Alt+Print  repeat=false { screenshot-window; }
+    Print      repeat=false { spawn-sh "niri msg action screenshot-screen && xdg-play camera-shutter"; }
+    Alt+Print  repeat=false { spawn-sh "niri msg action screenshot-window && xdg-play camera-shutter"; }
     Ctrl+Print repeat=false { screenshot; }
 }
