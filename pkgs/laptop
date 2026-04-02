@@ -38,7 +38,7 @@ _pkgs=(
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
     '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc'
-     'vesktop' 'easyeffects' '{steam,gamemode,protonup-qt,pince}'
+     'vesktop' 'easyeffects' '{steam,gamemode,{lib32-,}mangohud,protonup-qt,pince}'
     'selectdefaultapplication-git'
 )
 
