@@ -80,7 +80,7 @@ local CloseButton = {
         end,
     },
     provider = utils.symbol_guard(" ", " x"),
-    hl = { fg = "gray" },
+    hl = { fg = "red" },
 }
 
 local BufferBlock = {
