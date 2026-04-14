@@ -60,9 +60,7 @@ return {
                 hide_dotfiles = false,
                 hide_gitignored = false,
                 hide_ignored = true,
-                hide_by_name = {
-                    ".git", "node_modules",
-                },
+                hide_by_name = { ".git", "node_modules", ".yolk_git", ".deployed_cache" },
             },
             follow_current_file = { enabled = true },
         },
