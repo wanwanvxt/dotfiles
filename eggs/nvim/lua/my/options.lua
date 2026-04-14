@@ -84,6 +84,7 @@ vim.opt.smartcase  = true
 vim.opt.splitbelow  = true
 vim.opt.splitright  = true
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.o.winborder     = "rounded"
 
 -- mouse
 vim.opt.mouse       = "n"
