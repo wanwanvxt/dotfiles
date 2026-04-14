@@ -23,7 +23,7 @@ pkgs:
 	fi
 
 dots:
-	@command -v chezmoi && chezmoi apply -S ./dots || true
+	@command -v yolk && yolk sync
 
 cachyos-repo:
 	@if ! grep -q "cachyos" /etc/pacman.conf; then \
