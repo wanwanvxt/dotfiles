@@ -1,7 +1,7 @@
 local utils = require("my.utils")
 
 -- display message when current file is not in utf-8 format
-vim.api.nvim_create_autocmd("BufRead", {
+vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
     group = vim.api.nvim_create_augroup("non_utf8_file", { clear = true }),
     callback = function()
@@ -33,6 +33,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- trailing whitespace when saving
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
+    group = vim.api.nvim_create_augroup("auto_trailing", { clear = true }),
     callback = function()
         local save = vim.fn.getpos(".")
         vim.cmd([[%s/\s\+$//e]])
@@ -51,7 +52,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     group = vim.api.nvim_create_augroup("large_file", { clear = true }),
     callback = function(ev)
         local size = vim.fn.getfsize(ev.file)
-        if size > 524288 then -- 0.5MiB
+        if size > 1048576 then -- 1MiB
             vim.bo.swapfile = false
             vim.bo.undolevels = -1
             vim.wo.relativenumber = false
