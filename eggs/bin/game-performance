@@ -23,4 +23,4 @@ guard gamemoderun
 guard prime-run
 guard mangohud
 
-exec "${GUARD_CMD[@]}" "$@"
+"${GUARD_CMD[@]}" "$@"

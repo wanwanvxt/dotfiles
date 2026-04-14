@@ -12,13 +12,12 @@ _pkgs=(
     'rtkit' 'pipewire{,-audio,-alsa,-pulse,-jack}' 'wireplumber'
 
     # graphics drivers
-    'mesa{,-utils}' 'vulkan-{icd-loader,tools}'
-    'vulkan-radeon' 'nvidia-{open-dkms,utils,prime}'
-    'lib32-{mesa,vulkan-icd-loader,vulkan-radeon,nvidia-utils}'
+    'mesa{,-utils}' 'vulkan-{icd-loader,tools,radeon}' 'nvidia-{open-dkms,utils,prime}'
+    'lib32-{mesa,vulkan-{icd-loader,radeon},nvidia-utils}'
 
     # window manager (niri)
     'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
-    'xdg-{utils,user-dirs,sound}' '{quickshell,cliphist}'
+    'xdg-{utils,user-dirs,sound}' 'quickshell'
 
     # looks & feel
     'nwg-look' 'qt{6,5}ct-kde' 'kvantum{,-qt5}'
@@ -28,8 +27,8 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'bash{,-completion,-language-server}' 'fish{,-lsp}' '{starship,fzf}' '{lazy,}git'
-    'neovim' 'less' 'tree' 'trash-cli' 'jq' '{namcap,devtools}' 'chezmoi'
+    'bash{,-completion,-language-server}' 'fish{,-lsp}' '{starship,fzf}' '{lazy,}git' 'yolk-bin'
+    'neovim' 'less' 'tree' 'trash-cli' 'jq' '{namcap,devtools,rebuild-detector}'
     'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}'
     'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}'
 
