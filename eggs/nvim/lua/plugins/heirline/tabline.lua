@@ -1,7 +1,7 @@
 local utils = require("my.utils")
 local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
-local shared = require("my.plugins.lines.shared")
+local shared = require("plugins.heirline.shared")
 
 local FileIcon = {
     condition = function()
@@ -12,7 +12,7 @@ local FileIcon = {
         self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(self.filepath, ext, { default = true })
     end,
     provider = function(self)
-        return string.format("%s ", self.icon)
+        return self.icon .. " "
     end,
     hl = function(self)
         return { fg = self.is_active and self.icon_color or "gray" }

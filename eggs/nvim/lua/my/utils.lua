@@ -23,4 +23,8 @@ function M.is_executable(name)
     return vim.fn.executable(name) > 0
 end
 
+function M.gh(repo)
+    return 'https://github.com/' .. repo
+end
+
 return M

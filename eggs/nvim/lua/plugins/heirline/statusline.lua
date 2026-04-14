@@ -1,7 +1,7 @@
 local utils = require("my.utils")
 local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
-local shared = require("my.plugins.lines.shared")
+local shared = require("plugins.heirline.shared")
 
 local Mode = {
     init = function(self)
@@ -47,7 +47,7 @@ local Mode = {
         end),
     },
     provider = function(self)
-        return string.format(" %s ", self.mode_names[self.mode])
+        return " " .. self.mode_names[self.mode] .. " "
     end,
     hl = function(self)
         return { bg = self.mode_colors[self.mode], fg = "black", bold = true }
@@ -63,7 +63,7 @@ local FileIcon = {
         self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(self.filepath, ext, { default = true })
     end,
     provider = function(self)
-        return string.format("%s ", self.icon)
+        return self.icon .. " "
     end,
     hl = function(self)
         return { fg = hl_conds.is_active() and self.icon_color or "gray" }
@@ -75,11 +75,23 @@ local FilePath = {
         local file_relpath = vim.fn.fnamemodify(self.filepath, ":.")
         if file_relpath == "" then return "[No Name]" end
 
-        if not hl_conds.width_percent_below(#file_relpath, 0.25) then
-            local p = vim.fn.fnamemodify(file_relpath, ":~:.")
-            return vim.fn.pathshorten(p)
+        local path = vim.fn.fnamemodify(file_relpath, ":~:.")
+        local env_vars = { "VIMRUNTIME" }
+
+        for _, var in ipairs(env_vars) do
+            local val = os.getenv(var)
+            if val and val ~= "" then
+                if path:find(val, 1, true) then
+                    path = path:gsub(val, "$" .. var)
+                    break
+                end
+            end
         end
-        return file_relpath
+
+        if not hl_conds.width_percent_below(#file_relpath, 0.25) then
+            return vim.fn.pathshorten(path)
+        end
+        return path
     end,
     hl = function()
         return { fg = hl_conds.is_active() and "white" or "gray" }
@@ -122,7 +134,7 @@ local FileEcoding = {
 
 local FileBlock = {
     init = function(self)
-        self.filepath = vim.api.nvim_buf_get_name(0)
+        self.filepath = vim.api.nvim_buf_get_name(0) or ""
     end,
     shared.Space,
     FileIcon,
@@ -140,7 +152,7 @@ local LSPActive = {
         for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
             table.insert(names, server.name)
         end
-        return string.format(" %s%s ", utils.symbol_guard(" ", ""), table.concat(names, " "))
+        return " " .. utils.symbol_guard(" ", "") .. table.concat(names, " ") .. " "
     end,
     hl = { bg = "bright_bg", fg = "purple" },
 }
@@ -163,21 +175,21 @@ local Diagnostics = {
     shared.Space,
     {
         provider = function(self)
-            return string.format("%s%d", utils.symbol_guard(" ", "E."), self.errors)
+            return utils.symbol_guard(" ", "E.") .. self.errors
         end,
         hl = { fg = "diag_error" },
     },
     shared.Space,
     {
         provider = function(self)
-            return string.format("%s%d", utils.symbol_guard(" ", "W."), self.warns)
+            return utils.symbol_guard(" ", "W.") .. self.warns
         end,
         hl = { fg = "diag_warn" },
     },
     shared.Space,
     {
         provider = function(self)
-            return string.format("%s%d", utils.symbol_guard(" ", "I."), self.infos+self.hints)
+            return utils.symbol_guard(" ", "I.") .. self.infos+self.hints
         end,
         hl = { fg = "diag_info" },
     },
