@@ -62,7 +62,7 @@ vim.opt.guicursor = {
 -- non-printable characters
 vim.opt.list = true
 vim.opt.listchars = {
-    tab      = utils.symbol_guard("➜ ", "> "),
+    tab      = utils.symbol_guard("⇥ ", "> "),
     extends  = utils.symbol_guard("»", ">"),
     precedes = utils.symbol_guard("«", "<"),
     nbsp     = utils.symbol_guard("␣", "~"),
