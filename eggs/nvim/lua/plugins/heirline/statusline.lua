@@ -59,14 +59,17 @@ local FileIcon = {
         return not vim.g.is_tty
     end,
     init = function(self)
-        local ext = vim.fn.fnamemodify(self.filepath, ":e")
-        self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(self.filepath, ext, { default = true })
+        self.icon, self.icon_hl, _ = require("mini.icons").get("file", self.filepath)
     end,
     provider = function(self)
         return self.icon .. " "
     end,
     hl = function(self)
-        return { fg = hl_conds.is_active() and self.icon_color or "gray" }
+        if hl_conds.is_active() then
+            return self.icon_hl
+        else
+            return { fg = "gray" }
+        end
     end,
 }
 
