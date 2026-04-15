@@ -1,5 +1,5 @@
 local utils = require("my.utils")
-utils.pack_add({ utils.gh("Cassin01/wf.nvim") })
+vim.pack.add({ utils.gh("Cassin01/wf.nvim") })
 
 -- config
 require("wf").setup()

@@ -56,7 +56,7 @@ local Mode = {
 
 local FileIcon = {
     condition = function()
-        return not vim.g.is_tty or not vim.g.pack_installing
+        return not vim.g.is_tty
     end,
     init = function(self)
         local ext = vim.fn.fnamemodify(self.filepath, ":e")
