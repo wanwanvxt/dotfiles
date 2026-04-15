@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     group = vim.api.nvim_create_augroup("large_file", { clear = true }),
     callback = function(ev)
         local size = vim.fn.getfsize(ev.file)
-        if size > 1048576 then -- 1MiB
+        if size > 1024*1024 then
             vim.bo.swapfile = false
             vim.bo.undolevels = -1
             vim.wo.relativenumber = false
