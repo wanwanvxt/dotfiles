@@ -1,6 +1,9 @@
 if not vim.g.is_tty then
     local utils = require("my.utils")
-    vim.pack.add({ utils.gh("lukas-reineke/indent-blankline.nvim") })
+    vim.pack.add({
+        utils.gh("lukas-reineke/indent-blankline.nvim"),
+        utils.gh("lukas-reineke/virt-column.nvim"),
+    })
 
     -- config
     require("ibl").setup({
@@ -19,5 +22,11 @@ if not vim.g.is_tty then
             show_exact_scope = true,
             injected_languages = true,
         },
+    })
+
+    -- config
+    require("virt-column").setup({
+        char = "▕",
+        highlight = "NonText",
     })
 end
