@@ -62,7 +62,9 @@ binds {
     Mod+Down  { switch-preset-window-height; }
     Mod+Left  { switch-preset-column-width-back; }
     Mod+Right { switch-preset-column-width; }
+    Mod+Alt+Up    { reset-window-height; }
     Mod+Alt+Down  { reset-window-height; }
+    Mod+Alt+left  { maximize-column; }
     Mod+Alt+Right { maximize-column; }
 
     // apps
