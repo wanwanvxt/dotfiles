@@ -27,4 +27,10 @@ function M.gh(repo)
     return 'https://github.com/' .. repo
 end
 
+function M.pack_add(arg)
+    vim.g.pack_installing = true
+    vim.pack.add(arg)
+    vim.g.pack_installing = false
+end
+
 return M

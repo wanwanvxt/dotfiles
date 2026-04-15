@@ -1,5 +1,5 @@
 local utils = require("my.utils")
-vim.pack.add({
+utils.pack_add({
     utils.gh("hrsh7th/nvim-cmp"),
     -- dependencies
     utils.gh("L3MON4D3/LuaSnip"),
