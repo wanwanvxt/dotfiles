@@ -6,7 +6,7 @@ require("plugins.neo-tree")
 require("plugins.which-key")
 
 require("plugins.autoclose")
-require("plugins.hlchunk")
+require("plugins.indent-blankline")
 require("plugins.virt-column")
 
 require("plugins.cmp")
