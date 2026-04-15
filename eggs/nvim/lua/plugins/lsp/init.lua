@@ -1,5 +1,5 @@
 local utils = require("my.utils")
-vim.pack.add({
+utils.pack_add({
     utils.gh("neovim/nvim-lspconfig"),
     -- dependencies
     utils.gh("hrsh7th/cmp-nvim-lsp"),

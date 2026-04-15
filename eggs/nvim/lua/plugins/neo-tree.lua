@@ -1,5 +1,5 @@
 local utils = require("my.utils")
-vim.pack.add({
+utils.pack_add({
     { src = utils.gh("nvim-neo-tree/neo-tree.nvim"), version = "v3.x" },
     -- dependencies
     utils.gh("nvim-lua/plenary.nvim"),
