@@ -35,8 +35,8 @@ vim.g.is_tty = utils.is_tty()
 vim.opt.swapfile    = false -- disable swapfiles
 vim.opt.autoread    = true  -- reload file if changed outside
 vim.opt.confirm     = true  -- ask for confirmation
-vim.opt.updatetime  = 300   -- CursorHold events
-vim.opt.timeoutlen  = 300   -- mapped key timeout
+vim.opt.updatetime  = 500   -- CursorHold events
+vim.opt.timeoutlen  = 500   -- mapped key timeout
 
 -- clipboard
 if vim.fn["provider#clipboard#Executable"]() ~= "" then
