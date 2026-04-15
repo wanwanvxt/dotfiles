@@ -1,11 +1,7 @@
 local M = {}
 
 function M.is_tty()
-    local term = os.getenv("TERM")
-    if vim.fn.has("gui_running") == 0 and term == "linux" then
-        return true
-    end
-    return false
+    return os.getenv("TERM") == "linux"
 end
 
 function M.symbol_guard(a, b)
