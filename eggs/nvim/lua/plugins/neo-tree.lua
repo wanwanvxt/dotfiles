@@ -28,6 +28,7 @@ require("neo-tree").setup({
             folder_closed = utils.symbol_guard("", ""),
             folder_open = utils.symbol_guard("", ""),
             folder_empty = utils.symbol_guard("", ""),
+            folder_empty_open = utils.symbol_guard("󰷏", ""),
             provider = function(icon, node, state)
                 if vim.g.is_tty then
                     icon.text = ""
