@@ -59,7 +59,14 @@ local FileIcon = {
         return not vim.g.is_tty
     end,
     init = function(self)
-        self.icon, self.icon_hl, _ = require("mini.icons").get("file", self.filepath)
+        local mini_icons = require("mini.icons")
+        -- wrap with `pcall` to avoid erros during packs installtion
+        local ok, _ = pcall(function()
+            self.icon, self.icon_hl, _ = mini_icons.get("file", self.filepath)
+        end)
+        if not ok then
+            self.icon, self.icon_hl, _ = mini_icons.get("default", "file")
+        end
     end,
     provider = function(self)
         return self.icon .. " "
