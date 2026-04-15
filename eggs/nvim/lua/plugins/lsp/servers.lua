@@ -1,16 +1,7 @@
 return {
     bashls = { cmd = { "bash-language-server", "start" } },
     fish_lsp = { cmd = { "fish-lsp", "start" } },
-    lua_ls = {
-        cmd = { "lua-language-server" },
-        settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { "vim" }
-                }
-            }
-        },
-    },
+    lua_ls = { cmd = { "lua-language-server" } },
     pylsp = { cmd = { "pylsp" } },
     clangd = { cmd = { "clangd" } },
     qmlls = { cmd = { "qmlls6" } },
