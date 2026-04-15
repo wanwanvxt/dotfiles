@@ -2,8 +2,8 @@ local utils = require("my.utils")
 vim.pack.add({
     utils.gh("hrsh7th/nvim-cmp"),
     -- dependencies
-    utils.gh("L3MON4D3/LuaSnip"),
-    utils.gh("saadparwaiz1/cmp_luasnip"),
+    utils.gh("hrsh7th/vim-vsnip"),
+    utils.gh("hrsh7th/vim-vsnip-integ"),
     utils.gh("hrsh7th/cmp-path"),
     utils.gh("hrsh7th/cmp-buffer"),
     utils.gh("hrsh7th/cmp-cmdline"),
@@ -12,11 +12,10 @@ vim.pack.add({
 
 -- config
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 cmp.setup({
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body)
         end,
     },
     window = {
@@ -27,8 +26,10 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            elseif vim.fn["vsnip#jumpable"](1) == 1 then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes(
+                    "<Plug>(vsnip-jump-next)", true, true, true
+                ), "")
             else
                 fallback()
             end
@@ -36,9 +37,10 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
+            elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes(
+                    "<Plug>(vsnip-jump-prev)", true, true, true
+                ), "")
                 fallback()
             end
         end),
@@ -48,7 +50,7 @@ cmp.setup({
         ["<Esc>"] = cmp.mapping.close(),
     }),
     sources = {
-        { name = "luasnip" },
+        { name = "vsnip" },
         { name = "path" },
         { name = "buffer" },
         { name = "nvim_lsp" },
