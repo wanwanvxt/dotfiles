@@ -27,15 +27,15 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'bash{,-completion,-language-server}' 'fish{,-lsp}' '{starship,fzf}' '{lazy,}git' 'yolk-bin'
-    'neovim' 'less' 'tree' 'trash-cli' 'jq' '{namcap,devtools,rebuild-detector}'
-    'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}'
+    'bash{,-completion,-language-server}' 'fish{,-lsp}' 'starship' '{lazy,}git' 'yolk-bin'
+    'neovim' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,rebuild-detector}'
+    'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}' 'zapret2'
     'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
     '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc'
-     'vesktop' 'easyeffects' '{steam,gamemode,{lib32-,}mangohud,protonup-qt,pince}'
+    'vesktop' 'easyeffects' '{steam,gamemode,{lib32-,}mangohud,protonup-qt,pince}'
     'selectdefaultapplication-git'
 )
 
