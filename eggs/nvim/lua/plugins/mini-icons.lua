@@ -1,6 +1,6 @@
 if not vim.g.is_tty then
     local utils = require("my.utils")
-    utils.pack_add({{ src = utils.gh("nvim-mini/mini.icons"), version = "stable" }})
+    vim.pack.add({{ src = utils.gh("nvim-mini/mini.icons"), version = "stable" }})
 
     -- config
     require("mini.icons").setup()

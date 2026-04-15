@@ -1,5 +1,5 @@
 local utils = require("my.utils")
-utils.pack_add({{ src = utils.gh("rebelot/heirline.nvim"), version = "stable" }})
+vim.pack.add({{ src = utils.gh("rebelot/heirline.nvim"), version = "stable" }})
 
 -- config
 local colors_ = function()
