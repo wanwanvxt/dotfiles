@@ -76,22 +76,25 @@ local FilePath = {
         if file_relpath == "" then return "[No Name]" end
 
         local path = vim.fn.fnamemodify(file_relpath, ":~:.")
-        local env_vars = { "VIMRUNTIME" }
+        local head, tail = path, ""
 
+        local env_vars = { "VIMRUNTIME" }
         for _, var in ipairs(env_vars) do
             local val = os.getenv(var)
             if val and val ~= "" then
-                if path:find(val, 1, true) then
-                    path = path:gsub(val, "$" .. var)
+                if path:sub(1, #val) == val then
+                    head = "$" .. var
+                    tail = path:sub(#val + 1)
                     break
                 end
             end
         end
 
-        if not hl_conds.width_percent_below(#file_relpath, 0.25) then
-            return vim.fn.pathshorten(path)
+        if not hl_conds.width_percent_below(#head+#tail, 0.25) then
+            return head .. vim.fn.pathshorten(tail)
         end
-        return path
+
+        return head .. tail
     end,
     hl = function()
         return { fg = hl_conds.is_active() and "white" or "gray" }
