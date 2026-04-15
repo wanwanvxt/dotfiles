@@ -7,7 +7,7 @@ if not vim.g.is_tty then
         indent = {
             enable = true,
             priority = 10,
-            chars = { "│" },
+            chars = { "▏" },
             style = { vim.api.nvim_get_hl(0, { name = "NonText" }) },
         },
     })
