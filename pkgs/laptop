@@ -28,7 +28,7 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion,-language-server}' 'fish{,-lsp}' 'starship' '{lazy,}git' 'yolk-bin'
-    'neovim' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,rebuild-detector}'
+    'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,rebuild-detector}'
     'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}' 'zapret2'
     'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}'
 
