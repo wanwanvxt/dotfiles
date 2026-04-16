@@ -41,6 +41,7 @@ cmp.setup({
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes(
                     "<Plug>(vsnip-jump-prev)", true, true, true
                 ), "")
+            else
                 fallback()
             end
         end),
