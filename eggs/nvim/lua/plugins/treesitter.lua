@@ -3,6 +3,6 @@ vim.pack.add({ utils.gh("romus204/tree-sitter-manager.nvim") })
 
 -- config
 require("tree-sitter-manager").setup({
-    auto_install = true,
+    auto_install = false,
     highlight = true,
 })
