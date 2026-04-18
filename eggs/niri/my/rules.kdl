@@ -6,7 +6,7 @@ window-rule {
 
 // floating
 window-rule {
-    match app-id="Thunar"
+    match app-id="thunar"
     exclude title="^.* - Thunar$"
 
     open-floating true
