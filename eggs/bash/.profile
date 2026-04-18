@@ -19,6 +19,7 @@ export FZF_DEFAULT_OPTS='--border --highlight-line'
 export NIRI_APP_TERMINAL='kitty -1'
 export NIRI_APP_FILE_MANAGER=thunar
 export NIRI_APP_BROWSER=firefox
+export NIRI_APP_TASK_MANAGER=tux-manager
 
 if [[ -z "$DISPLAY" ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
     if pgrep -u "$USER" -x niri >/dev/null 2>&1; then
