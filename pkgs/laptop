@@ -2,7 +2,7 @@
 
 _pkgs=(
     'base{,-devel}' 'linux{,-headers}' '{linux,sof}-firmware'
-    'btrfs-progs' 'efibootmgr' 'grub' 'zram-generator' 'pacman-contrib' 'yay'
+    'btrfs-progs' 'efibootmgr' 'grub' 'zram-generator' 'pacman-contrib' 'yay' 'rebuild-detector'
     'linux-cachyos-bore{,-headers}' 'cachyos-{keyring,{v3-,v4-,}mirrorlist,rate-mirrors}'
 
     # network & bluetooth
@@ -28,12 +28,12 @@ _pkgs=(
 
     # shell & cli tools
     'bash{,-completion,-language-server}' 'fish{,-lsp}' 'starship' '{lazy,}git' 'yolk-bin'
-    'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,rebuild-detector}'
+    'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,aurpublish}'
     'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
     'lua{,-language-server}' 'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}'
 
     # gui apps
-    'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}'
+    'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}' 'tuxmanager'
     '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc'
     'vesktop' 'easyeffects' '{steam,gamemode,{lib32-,}mangohud,protonup-qt,pince}'
     'selectdefaultapplication-git'
