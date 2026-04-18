@@ -71,6 +71,7 @@ binds {
     Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
     Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
     Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
+    Mod+P repeat=false { spawn-sh "$NIRI_APP_TASK_MANAGER"; }
 
     // media
     XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%+"; }
