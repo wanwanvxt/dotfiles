@@ -27,7 +27,6 @@ input {
 
     warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse max-scroll-amount="10%"
-    workspace-auto-back-and-forth
 
     mod-key        "Super"
     mod-key-nested "Alt"
