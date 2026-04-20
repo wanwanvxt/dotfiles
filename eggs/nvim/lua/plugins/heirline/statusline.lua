@@ -3,7 +3,7 @@ local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
 local shared = require("plugins.heirline.shared")
 
-local Mode = {
+local ViMode = {
     init = function(self)
         self.mode = vim.fn.mode()
     end,
@@ -81,12 +81,12 @@ local FileIcon = {
 }
 
 local FilePath = {
-    provider = function(self)
+    init = function(self)
         local file_relpath = vim.fn.fnamemodify(self.filepath, ":.")
         if file_relpath == "" then return "[No Name]" end
 
         local path = vim.fn.fnamemodify(file_relpath, ":~:.")
-        local head, tail = path, ""
+        local head, tail = "", path
 
         local env_vars = { "VIMRUNTIME" }
         for _, var in ipairs(env_vars) do
@@ -100,11 +100,15 @@ local FilePath = {
             end
         end
 
-        if not hl_conds.width_percent_below(#head+#tail, 0.25) then
-            return head .. vim.fn.pathshorten(tail)
+        if not hl_conds.width_percent_below(#head + #tail, 0.3) then
+            self.path = head .. vim.fn.pathshorten(tail)
+            return
         end
 
-        return head .. tail
+        self.path = head .. tail
+    end,
+    provider = function(self)
+        return self.path
     end,
     hl = function()
         return { fg = hl_conds.is_active() and "white" or "gray" }
@@ -131,14 +135,16 @@ local FileFlags = {
 }
 
 local FileEcoding = {
-    provider = function()
-        local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
-        local fmt = vim.bo.fileformat
-        local type = vim.bo.filetype
-        if not type or type == "" then
-            type = "unknown"
+    init = function(self)
+        self.enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
+        self.fmt = vim.bo.fileformat
+        self.type = vim.bo.filetype
+        if not self.type or self.type == "" then
+            self.type = "unknown"
         end
-        return string.format(" %s[%s] %s ", enc, fmt, type)
+    end,
+    provider = function(self)
+        return string.format(" %s[%s] %s ", self.enc, self.fmt, self.type)
     end,
     hl = function()
         return { bg = "bright_bg", fg = hl_conds.is_active() and "green" or "gray" }
@@ -221,7 +227,7 @@ local InactiveStatusLine = {
     shared.Align,
 }
 local DefaultStatusLine = {
-    Mode,
+    ViMode,
     FileBlock,
     shared.Align,
     Diagnostics,
