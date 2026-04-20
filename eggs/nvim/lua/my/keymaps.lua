@@ -1,7 +1,6 @@
 vim.keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
 vim.keymap.set("n", "<leader>q", "<cmd>x<cr>",      { silent = true, desc = "quit current window" })
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<cr>",    { silent = true, desc = "quit nvim" })
-vim.keymap.set("n", "<leader>e", "<cmd>Lex<cr>",    { silent = true, desc = "toggle netrw" })
 vim.keymap.set("t", "<Esc>",     [[<c-\><c-n>]])
 
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
