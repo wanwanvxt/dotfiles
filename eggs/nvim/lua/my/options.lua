@@ -17,19 +17,13 @@ vim.g.loaded_node_provider = 0
 
 -- disable builtin plugins not used
 local disabled_builtins = {
-    "2html_plugin", "zipPlugin", "gzip", "tarPlugin",
+    "2html_plugin", "loaded_netrw", "loaded_netrwPlugin",
+    "zipPlugin", "gzip", "tarPlugin",
     "matchit", "matchparen", "sql_completion"
 }
 for _, plugin in ipairs(disabled_builtins) do
     vim.g["loaded_" .. plugin] = 1
 end
-
--- netrw
-vim.g.netrw_banner       = 0
-vim.g.netrw_liststyle    = 3
-vim.g.netrw_browse_split = 4
-vim.g.netrw_winsize      = 25
-vim.g.netrw_bufsettings  = "noma nomod nu nobl nowrap ro"
 
 -- custom global variables
 vim.g.is_tty = utils.is_tty()

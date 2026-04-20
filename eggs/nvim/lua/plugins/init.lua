@@ -2,6 +2,7 @@ require("plugins.kanagawa")
 
 require("plugins.heirline")
 require("plugins.which-key")
+require("plugins.neo-tree")
 require("plugins.fzf")
 
 require("plugins.autoclose")
