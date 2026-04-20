@@ -8,8 +8,8 @@ local colors_ = function()
     return {
         bright_bg  = hl_utils.get_highlight("Folded").bg,
         bright_fg  = hl_utils.get_highlight("Folded").fg,
-        black      = hl_utils.get_highlight("Ignore").bg,
-        white      = hl_utils.get_highlight("Title").fg,
+        black      = hl_utils.get_highlight("WinSeparator").bg,
+        white      = hl_utils.get_highlight("Normal").fg,
 
         red        = hl_utils.get_highlight("Operator").fg,
         green      = hl_utils.get_highlight("String").fg,
