@@ -17,10 +17,10 @@ vim.diagnostic.config({
     float = { border = vim.o.winborder },
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = utils.symbol_guard("", "E"),
-            [vim.diagnostic.severity.WARN]  = utils.symbol_guard("", "W"),
-            [vim.diagnostic.severity.INFO]  = utils.symbol_guard("", "I"),
-            [vim.diagnostic.severity.HINT]  = utils.symbol_guard("", "I"),
+            [vim.diagnostic.severity.ERROR] = "E",
+            [vim.diagnostic.severity.WARN]  = "W",
+            [vim.diagnostic.severity.INFO]  = "I",
+            [vim.diagnostic.severity.HINT]  = "I",
         },
     },
 })
