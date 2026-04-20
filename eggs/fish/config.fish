@@ -1,6 +1,7 @@
 if status is-interactive
     set -g fish_greeting
 
+    alias fzf='fzf --border --highlight-line'
     alias rm="echo 'YOU SHOULD NOT USE THIS COMMAND.'; false"
     alias vim='nvim'
     alias vi='nvim'
