@@ -11,11 +11,11 @@ local ViMode = {
         mode_names = {
             n       = "NORMAL",
             v       = "VISUAL",
-            V       = "V-LINE",
-            ["\22"] = "V-BLOCK",
+            V       = "VISUAL LINE",
+            ["\22"] = "VISUAL BLOCK",
             s       = "SELECT",
-            S       = "S-LINE",
-            ["\19"] = "S-BLOCK",
+            S       = "SELECT LINE",
+            ["\19"] = "SELECT BLOCK",
             i       = "INSERT",
             R       = "REPLACE",
             c       = "COMMAND",
@@ -47,45 +47,19 @@ local ViMode = {
         end),
     },
     provider = function(self)
-        return " " .. self.mode_names[self.mode] .. " "
+        return string.format(" -- %s -- ", self.mode_names[self.mode])
     end,
     hl = function(self)
-        return { bg = self.mode_colors[self.mode], fg = "black", bold = true }
-    end,
-}
-
-local FileIcon = {
-    condition = function()
-        return not vim.g.is_tty
-    end,
-    init = function(self)
-        local mini_icons = require("mini.icons")
-        -- wrap with `pcall` to avoid erros during packs installtion
-        local ok, _ = pcall(function()
-            self.icon, self.icon_hl, _ = mini_icons.get("file", self.filepath)
-        end)
-        if not ok then
-            self.icon, self.icon_hl, _ = mini_icons.get("default", "file")
-        end
-    end,
-    provider = function(self)
-        return self.icon .. " "
-    end,
-    hl = function(self)
-        if hl_conds.is_active() then
-            return self.icon_hl
-        else
-            return { fg = "gray" }
-        end
+        return { bg = "bright_bg", fg = self.mode_colors[self.mode], bold = true }
     end,
 }
 
 local FilePath = {
-    init = function(self)
-        local file_relpath = vim.fn.fnamemodify(self.filepath, ":.")
-        if file_relpath == "" then return "[No Name]" end
+    provider = function(self)
+        local relpath = vim.fn.fnamemodify(self.filepath, ":.")
+        if relpath == "" then return "[No name]" end
 
-        local path = vim.fn.fnamemodify(file_relpath, ":~:.")
+        local path = vim.fn.fnamemodify(relpath, ":~:.")
         local head, tail = "", path
 
         local env_vars = { "VIMRUNTIME" }
@@ -100,18 +74,11 @@ local FilePath = {
             end
         end
 
-        if not hl_conds.width_percent_below(#head + #tail, 0.3) then
-            self.path = head .. vim.fn.pathshorten(tail)
-            return
+        if not hl_conds.width_percent_below(#head+#tail, 0.25) then
+            return head .. vim.fn.pathshorten(tail)
         end
 
-        self.path = head .. tail
-    end,
-    provider = function(self)
-        return self.path
-    end,
-    hl = function()
-        return { fg = hl_conds.is_active() and "white" or "gray" }
+        return head .. tail
     end,
 }
 
@@ -120,34 +87,47 @@ local FileFlags = {
         condition = function()
             return vim.bo.modified
         end,
-        provider = utils.symbol_guard(" ", " [+]"),
-        hl = function()
-            return { fg = hl_conds.is_active() and "white" or "gray" }
-        end,
+        provider = " [+]",
+        hl = { fg = "yellow" }
     },
     {
         condition = function()
             return not vim.bo.modifiable or vim.bo.readonly
         end,
-        provider = utils.symbol_guard(" 󰌾", " [RO]"),
+        provider = " [RO]",
         hl = { fg = "red" },
     },
 }
 
-local FileEcoding = {
+local FileType = {
     init = function(self)
-        self.enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
-        self.fmt = vim.bo.fileformat
         self.type = vim.bo.filetype
         if not self.type or self.type == "" then
             self.type = "unknown"
         end
     end,
     provider = function(self)
-        return string.format(" %s[%s] %s ", self.enc, self.fmt, self.type)
+        return string.format("[%s]", self.type)
     end,
     hl = function()
-        return { bg = "bright_bg", fg = hl_conds.is_active() and "green" or "gray" }
+        if hl_conds.is_active() then
+            return { fg = "blue" }
+        end
+    end,
+}
+
+local FileEcoding = {
+    init = function(self)
+        self.enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
+        self.fmt = vim.bo.fileformat
+    end,
+    provider = function(self)
+        return string.format("[%s/%s]", self.enc, self.fmt)
+    end,
+    hl = function()
+        if hl_conds.is_active() then
+            return { fg = "green" }
+        end
     end,
 }
 
@@ -155,25 +135,31 @@ local FileBlock = {
     init = function(self)
         self.filepath = vim.api.nvim_buf_get_name(0) or ""
     end,
-    shared.Space,
-    FileIcon,
-    FilePath,
-    FileFlags,
-    shared.Space,
-    FileEcoding,
+    {
+        shared.Space,
+        FilePath,
+        FileFlags,
+        shared.Space,
+        FileType,
+        shared.Space,
+        FileEcoding,
+        shared.Space,
+    },
 }
 
 local LSPActive = {
+    init = function(self)
+        self.servers = {}
+        for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
+            table.insert(self.servers, server.name)
+        end
+    end,
     condition = hl_conds.lsp_attached,
     update = { "LspAttach", "LspDetach" },
-    provider = function()
-        local names = {}
-        for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-            table.insert(names, server.name)
-        end
-        return " " .. utils.symbol_guard(" ", "") .. table.concat(names, " ") .. " "
+    hl = { fg = "purple" },
+    provider = function(self)
+        return string.format(" [%s] ", table.concat(self.servers, " "))
     end,
-    hl = { bg = "bright_bg", fg = "purple" },
 }
 
 local Diagnostics = {
@@ -191,48 +177,56 @@ local Diagnostics = {
         end,
     },
     update = { "DiagnosticChanged", "BufEnter" },
-    shared.Space,
     {
-        provider = function(self)
-            return utils.symbol_guard(" ", "E.") .. self.errors
-        end,
-        hl = { fg = "diag_error" },
+        { provider = "[" },
+        {
+            provider = function(self)
+                return string.format("E.%d", self.errors)
+            end,
+            hl = { fg = "diag_error" },
+        },
+        shared.Space,
+        {
+            provider = function(self)
+                return string.format("W.%d", self.warns)
+            end,
+            hl = { fg = "diag_warn" },
+        },
+        shared.Space,
+        {
+            provider = function(self)
+                return string.format("I.%d", self.infos+self.hints)
+            end,
+            hl = { fg = "diag_info" },
+        },
+        { provider = "]" },
     },
-    shared.Space,
-    {
-        provider = function(self)
-            return utils.symbol_guard(" ", "W.") .. self.warns
-        end,
-        hl = { fg = "diag_warn" },
-    },
-    shared.Space,
-    {
-        provider = function(self)
-            return utils.symbol_guard(" ", "I.") .. self.infos+self.hints
-        end,
-        hl = { fg = "diag_info" },
-    },
-    shared.Space,
 }
 
 local Location = {
     provider = " %l/%L:%c ",
-    hl = { bg = "green", fg = "black", bold = true },
+    hl = { bg = "bright_bg", fg = "green", bold = true },
 }
 
 ---
 local InactiveStatusLine = {
     condition = hl_conds.is_not_active,
-    FileBlock,
-    shared.Align,
+    hl = { fg = "gray" },
+    {
+        FileBlock,
+        shared.Align,
+    },
 }
 local DefaultStatusLine = {
-    ViMode,
-    FileBlock,
-    shared.Align,
-    Diagnostics,
-    LSPActive,
-    Location,
+    hl = { fg = "white" },
+    {
+        ViMode,
+        FileBlock,
+        shared.Align,
+        Diagnostics,
+        LSPActive,
+        Location,
+    },
 }
 
 return {
