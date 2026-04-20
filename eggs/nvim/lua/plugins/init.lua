@@ -1,5 +1,4 @@
 require("plugins.kanagawa")
-require("plugins.mini-icons")
 
 require("plugins.heirline")
 require("plugins.which-key")
