@@ -42,8 +42,13 @@ local FileBlock = {
     end,
     on_click = {
         name = "TablineFileBlockOnClick",
-        callback = function(_, minwid)
-            vim.api.nvim_win_set_buf(0, minwid)
+        callback = function(_, minwid, _, button)
+            if button == "l" then
+                vim.api.nvim_win_set_buf(0, minwid)
+            elseif button == "m" then
+                vim.api.nvim_buf_delete(minwid, { force = true })
+                vim.cmd.redrawtabline()
+            end
         end,
         minwid = function(self)
             return self.bufnr
