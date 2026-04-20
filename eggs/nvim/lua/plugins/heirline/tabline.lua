@@ -3,30 +3,18 @@ local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
 local shared = require("plugins.heirline.shared")
 
-local FileIcon = {
-    condition = function()
-        return not vim.g.is_tty
-    end,
-    init = function(self)
-        self.icon, self.icon_hl, _ = require("mini.icons").get("file", self.filepath)
-    end,
-    provider = function(self)
-        return self.icon .. " "
-    end,
-    hl = function(self)
-        if self.is_active then
-            return self.icon_hl
-        else
-            return { fg = "gray" }
-        end
-    end,
-}
-
 local FileName = {
     provider = function(self)
         local filename = vim.fn.fnamemodify(self.filepath, ":t")
-        if filename == "" then return "[No Name]" end
+        if filename == "" then return "[No name]" end
         return filename
+    end,
+    hl = function(self)
+        if self.is_active then
+            return { fg = "white", underline = true }
+        else
+            return { fg = "gray" }
+        end
     end,
 }
 
@@ -35,14 +23,15 @@ local FileFlags = {
         condition = function(self)
             return vim.api.nvim_get_option_value("modified", { buf = self.bufnr })
         end,
-        provider = utils.symbol_guard(" ", " [+]"),
+        provider = " [+]",
+        hl = { fg = "yellow" }
     },
     {
         condition = function(self)
             return not vim.api.nvim_get_option_value("modifiable", { buf = self.bufnr })
                 or vim.api.nvim_get_option_value("readonly", { buf = self.bufnr })
         end,
-        provider = utils.symbol_guard(" 󰌾", " [RO]"),
+        provider = " [RO]",
         hl = { fg = "red" },
     },
 }
@@ -60,40 +49,21 @@ local FileBlock = {
             return self.bufnr
         end,
     },
-    FileIcon,
-    FileName,
-    FileFlags,
-}
-
-local CloseButton = {
-    condition = function(self)
-        return not vim.api.nvim_get_option_value("modified", { buf = self.bufnr })
-            and not vim.g.is_tty
-    end,
-    on_click = {
-        name = "TablineCloseBufferOnClick",
-        callback = function(_, minwid)
-            vim.schedule(function()
-                vim.api.nvim_buf_delete(minwid, { force = false })
-                vim.cmd.redrawtabline()
-            end)
-        end,
-        minwid = function(self)
-            return self.bufnr
-        end,
+    {
+        FileName,
+        FileFlags,
     },
-    provider = utils.symbol_guard(" ", " x"),
-    hl = { fg = "red" },
 }
 
 local BufferBlock = {
     hl = function(self)
         return self.is_active and "TabLineSel" or "TabLine"
     end,
-    shared.Space,
-    FileBlock,
-    CloseButton,
-    shared.Space,
+    {
+        shared.Space,
+        FileBlock,
+        { provider = "▕" },
+    },
 }
 
 local get_bufs = function()
