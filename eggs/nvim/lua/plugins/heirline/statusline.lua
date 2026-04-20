@@ -47,7 +47,7 @@ local ViMode = {
         end),
     },
     provider = function(self)
-        return string.format(" -- %s -- ", self.mode_names[self.mode])
+        return string.format(" %s ", self.mode_names[self.mode])
     end,
     hl = function(self)
         return { bg = "bright_bg", fg = self.mode_colors[self.mode], bold = true }
