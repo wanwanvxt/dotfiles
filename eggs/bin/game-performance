@@ -1,26 +1,27 @@
-#!/bin/env bash
+#!/bin/env fish
 
-GUARD_CMD=()
-guard() {
-    local CMD="$1"
-    shift
+set guard_cmd
 
-    if ! command -v "$CMD" >/dev/null 2>&1; then
-        echo "Warning: '$CMD' not found! Skipping..."
+function guard
+    set -l cmd $argv[1]
+    set -e argv[1]
+    set -l rest $argv
+
+    if not command -v "$cmd" >/dev/null 2>&1
+        echo "Warning: '$cmd' not found! Skipping..."
         return 0
-    fi
+    end
 
-    case "$CMD" in
-        gamemoderun)
-            export LD_PRELOAD="${LD_PRELOAD:+$LD_PRELOAD:}/usr/\$LIB/libgamemode.so"
-            ;;
-    esac
+    switch "$cmd"
+        case 'gamemoderun'
+            set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
+    end
 
-    GUARD_CMD+=("$CMD" "$@")
-}
+    set -a guard_cmd $cmd $rest
+end
 
 guard gamemoderun
 guard prime-run
 guard mangohud
 
-exec "${GUARD_CMD[@]}" "$@"
+exec $guard_cmd $argv
