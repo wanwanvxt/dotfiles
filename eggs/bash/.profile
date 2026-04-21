@@ -14,6 +14,7 @@ fi
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
+export MANPAGER='nvim +Man!'
 
 export NIRI_APP_TERMINAL='kitty -1'
 export NIRI_APP_FILE_MANAGER=thunar
