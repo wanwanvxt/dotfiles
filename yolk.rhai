@@ -1,3 +1,6 @@
+import "chameleon" as chameleon;
+
+export const colors = chameleon::theme;
 export let eggs = #{
     bash: #{
         targets: #{
