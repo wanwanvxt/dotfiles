@@ -1,27 +1,11 @@
 #!/bin/env fish
 
-set guard_cmd
+set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
 
-function guard
-    set -l cmd $argv[1]
-    set -e argv[1]
-    set -l rest $argv
-
-    if not command -v "$cmd" >/dev/null 2>&1
-        echo "Warning: '$cmd' not found! Skipping..."
-        return 0
-    end
-
-    switch "$cmd"
-        case 'gamemoderun'
-            set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
-    end
-
-    set -a guard_cmd $cmd $rest
-end
-
-guard gamemoderun
-guard prime-run
-guard mangohud
-
-exec $guard_cmd $argv
+exec \
+    gamemoderun \
+# {% if SYSTEM.hostname == "laptop" %}
+    #<yolk> prime-run \
+# {% end %}
+    mangohud \
+    $argv
