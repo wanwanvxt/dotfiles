@@ -17,6 +17,7 @@ require("neo-tree").setup({
         directory = {
             { "indent" },
             { "current_filter" },
+            { "icon" },
             { "name" },
         },
         file = {
@@ -36,17 +37,23 @@ require("neo-tree").setup({
         indent = {
             enabled = true,
             indent_size = 2,
-            padding = 1,
+            padding = 0,
             with_markers = true,
             indent_marker = "│",
             last_indent_marker = "└",
             highlight = "NonText",
-            with_expanders = true,
-            expander_collapsed = utils.symbol_guard("▸", "[+]"),
-            expander_expanded = utils.symbol_guard("▾", "[-]"),
-            expander_highlight = "NonText",
+            with_expanders = false,
         },
         current_filter = { enabled = true },
+        icon = {
+            enabled = true,
+            highlight = "NonText",
+            use_filtered_colors = true,
+            folder_open = "⯆",
+            folder_closed = "⯈",
+            folder_empty = "⯈",
+            folder_empty_open = "⯆",
+        },
         name = {
             enabled = true,
             use_git_status_colors = true,
