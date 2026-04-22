@@ -26,7 +26,7 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'bash{,-completion}' 'fish' 'starship' '{lazy,}git' 'yolk-bin' 'thaimeleon'
+    'bash{,-completion}' 'fish' 'starship' '{lazy,}git{,-lfs}' 'yolk-bin' 'thaimeleon'
     'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,aurpublish}'
     'xdg-{utils,user-dirs,sound}' 'dex' '{brightnessctl,playerctl}' 'wl-clipboard'
     '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
