@@ -16,8 +16,7 @@ _pkgs=(
     'lib32-{mesa,vulkan-{icd-loader,radeon},nvidia-utils}'
 
     # window manager (niri)
-    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
-    'xdg-{utils,user-dirs,sound}' 'quickshell'
+    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}' 'quickshell'
 
     # looks & feel
     'nwg-look' 'qt{6,5}ct-kde' 'kvantum{,-qt5}'
@@ -27,9 +26,10 @@ _pkgs=(
     'fcitx5{,-configtool,-bamboo}'
 
     # shell & cli tools
-    'bash{,-completion}' 'fish' 'starship' '{lazy,}git' 'yolk-bin'
+    'bash{,-completion}' 'fish' 'starship' '{lazy,}git' 'yolk-bin' 'thaimeleon'
     'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,aurpublish}'
-    'dex' '{brightnessctl,playerctl}' 'wl-clipboard' '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
+    'xdg-{utils,user-dirs,sound}' 'dex' '{brightnessctl,playerctl}' 'wl-clipboard'
+    '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
     ## development
     'bash-language-server' 'fish-lsp' 'lua{,-language-server}' 'python{,-pip,-lsp-server}'
     '{clang,cmake}' '{odin,ols}'
