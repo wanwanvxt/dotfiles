@@ -2,27 +2,6 @@
 
 set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
 
-set gs_args
-set game_args
-
-set found_seps 0
-for arg in $argv
-    if test $arg = '--'
-        set found_seps 1
-        continue
-    end
-
-    if test $found_seps -eq 0
-        set gs_args $gs_args $arg
-    else
-        set game_args $game_args $arg
-    end
-end
-
-exec \
-    gamemoderun \
-    gamescope \
-        --mangoapp \
-        $gs_args \
-        -- \
-    $game_args
+set -q GS_ARGS; or set GS_ARGS
+set GS_ARGS (string split ' ' -- $GS_ARGS)
+exec gamemoderun gamescope --mangoapp $GS_ARGS -- $argv
