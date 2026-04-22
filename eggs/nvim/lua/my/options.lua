@@ -17,7 +17,8 @@ vim.g.loaded_node_provider = 0
 
 -- disable builtin plugins not used
 local disabled_builtins = {
-    "2html_plugin", "loaded_netrw", "loaded_netrwPlugin",
+    "tutor_mode_plugin", "2html_plugin",
+    "loaded_netrw", "loaded_netrwPlugin",
     "zipPlugin", "gzip", "tarPlugin",
     "matchit", "matchparen", "sql_completion"
 }
