@@ -32,7 +32,7 @@ _pkgs=(
     '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
     ## development
     'bash-language-server' 'fish-lsp' 'lua{,-language-server}' 'python{,-pip,-lsp-server}'
-    '{clang,cmake}' '{odin,ols}'
+    '{clang,cmake}' '{odin,ols}' 'rust'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}' 'tuxmanager'
