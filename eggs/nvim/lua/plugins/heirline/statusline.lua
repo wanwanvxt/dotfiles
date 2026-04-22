@@ -230,7 +230,9 @@ local DefaultStatusLine = {
 }
 
 return {
-    hl = "StatusLine",
+    hl = function()
+        return hl_conds.is_active() and "StatusLine" or "StatusLineNC"
+    end,
     fallthrough = false,
     InactiveStatusLine,
     DefaultStatusLine,
