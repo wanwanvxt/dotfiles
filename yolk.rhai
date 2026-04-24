@@ -27,10 +27,10 @@ export let eggs = #{
     bin: #{
         targets: #{
             "xterm":                 "~/.local/bin/xterm",
-            "game-performance":      "~/.local/bin/game-performance",
-            "gamescope-performance": "~/.local/bin/gamescope-performance",
+            "game-run":      "~/.local/bin/game-run",
+            "gamescope-run": "~/.local/bin/gamescope-run",
         },
-        templates: ["game-performance"]
+        templates: ["game-run"]
     },
 
     xdg: #{
