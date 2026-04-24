@@ -26,7 +26,7 @@ export let eggs = #{
 
     bin: #{
         targets: #{
-            "xterm":                 "~/.local/bin/xterm",
+            "xterm":         "~/.local/bin/xterm",
             "game-run":      "~/.local/bin/game-run",
             "gamescope-run": "~/.local/bin/gamescope-run",
         },
@@ -54,6 +54,7 @@ export let eggs = #{
     },
     kitty: #{
         targets: "~/.config/kitty",
+        templates: ["colors.conf"]
     },
 
     gaming: #{
