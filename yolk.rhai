@@ -51,6 +51,7 @@ export let eggs = #{
             "config.kdl": "~/.config/niri/config.kdl",
             "my":         "~/.config/niri/my",
         },
+        templates: ["**/*.kdl"],
     },
     kitty: #{
         targets: "~/.config/kitty",
