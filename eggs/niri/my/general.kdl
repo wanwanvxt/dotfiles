@@ -78,18 +78,19 @@ layout {
     border {
         on
         width          2
-        active-color   "#00ff99"
-        inactive-color "#808080"
+        active-color   "#acc189" // {< rcol(colors.fg_green) >}
+        inactive-color "#877e89" // {< rcol(colors.muted) >}
     }
     shadow {
         on
         softness 10
         spread   2
         offset   x=0 y=0
-        color    "#00000080"
+        color    "#1e1e21" // {< rcol(colors.surface) >}
         draw-behind-window false
     }
-    insert-hint { color "#00ff9980"; }
+    // {# rcol(colors.fg_green + "80") #}
+    insert-hint { color "#acc18980"; }
     background-color "transparent"
 }
 
@@ -102,8 +103,8 @@ recent-windows {
     open-delay-ms 150
 
     highlight {
-        active-color  "#00ff99"
-        urgent-color  "#ffaa00"
+        active-color  "#acc189" // {< rcol(colors.fg_green) >}
+        urgent-color  "#dfac79" // {< rcol(colors.fg_yellow) >}
         padding       20
         corner-radius 5
     }
@@ -116,18 +117,18 @@ recent-windows {
 
 overview {
     zoom             0.75
-    backdrop-color   "#222222"
+    backdrop-color   "#27262a" // {< rcol(colors.base) >}
     workspace-shadow {
         softness 15
         spread   5
         offset   x=0 y=0
-        color    "#00000080"
+        color    "#1e1e21" // {< rcol(colors.surface) >}
     }
 }
 
 // misc
 prefer-no-csd
-screenshot-path "~/pictures/screenshots/screenshot_%Y%m%d-%H%M%S.png"
+screenshot-path "~/pictures/screenshots/Screenshot %Y-%m-%d_%H%M%S.png"
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
     xcursor-size  24
