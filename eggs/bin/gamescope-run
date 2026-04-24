@@ -2,6 +2,6 @@
 
 set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
 
-set -q GS_ARGS; or set GS_ARGS
-set GS_ARGS (string split ' ' -- $GS_ARGS)
-exec gamemoderun gamescope --mangoapp $GS_ARGS -- $argv
+set -q GAMESCOPE_ARGS; or set GAMESCOPE_ARGS
+set GAMESCOPE_ARGS (string split ' ' -- $GAMESCOPE_ARGS)
+exec gamemoderun gamescope --mangoapp $GAMESCOPE_ARGS -- $argv
