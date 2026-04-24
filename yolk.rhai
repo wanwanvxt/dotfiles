@@ -54,7 +54,7 @@ export let eggs = #{
     },
     kitty: #{
         targets: "~/.config/kitty",
-        templates: ["colors.conf"]
+        templates: ["**/*.conf"],
     },
 
     gaming: #{
