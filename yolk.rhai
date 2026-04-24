@@ -1,6 +1,10 @@
 import "chameleon" as chameleon;
 
 export const theme = #{
+    cursor: #{
+        name: "Bibata-Modern-Ice",
+        size: 24,
+    },
     colors: chameleon::theme,
 };
 export let eggs = #{
