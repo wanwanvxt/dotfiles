@@ -78,18 +78,18 @@ layout {
     border {
         on
         width          2
-        active-color   "#acc189" // {< rcol(colors.fg_green) >}
-        inactive-color "#877e89" // {< rcol(colors.muted) >}
+        active-color   "#acc189" // {< rcol(theme.colors.fg_green) >}
+        inactive-color "#877e89" // {< rcol(theme.colors.muted) >}
     }
     shadow {
         on
         softness 10
         spread   2
         offset   x=0 y=0
-        color    "#1e1e21" // {< rcol(colors.surface) >}
+        color    "#1e1e21" // {< rcol(theme.colors.surface) >}
         draw-behind-window false
     }
-    // {# rcol(colors.fg_green + "80") #}
+    // {# rcol(theme.colors.fg_green + "80") #}
     insert-hint { color "#acc18980"; }
     background-color "transparent"
 }
@@ -103,8 +103,8 @@ recent-windows {
     open-delay-ms 150
 
     highlight {
-        active-color  "#acc189" // {< rcol(colors.fg_green) >}
-        urgent-color  "#dfac79" // {< rcol(colors.fg_yellow) >}
+        active-color  "#acc189" // {< rcol(theme.colors.fg_green) >}
+        urgent-color  "#dfac79" // {< rcol(theme.colors.fg_yellow) >}
         padding       20
         corner-radius 5
     }
@@ -117,12 +117,12 @@ recent-windows {
 
 overview {
     zoom             0.75
-    backdrop-color   "#27262a" // {< rcol(colors.base) >}
+    backdrop-color   "#27262a" // {< rcol(theme.colors.base) >}
     workspace-shadow {
         softness 15
         spread   5
         offset   x=0 y=0
-        color    "#1e1e21" // {< rcol(colors.surface) >}
+        color    "#1e1e21" // {< rcol(theme.colors.surface) >}
     }
 }
 
