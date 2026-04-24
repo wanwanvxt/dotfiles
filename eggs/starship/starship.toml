@@ -6,28 +6,28 @@ add_newline = false
 
 [username]
 format = "[$user]($style)"
-style_user = "bright-green"
+style_user = "green"
 show_always = true
 
 [hostname]
 format = "[$hostname]($style)"
-style = "bright-green"
+style = "green"
 ssh_only = false
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)"
-read_only = "[readonly]"
-style = "cyan"
+read_only = "[RO]"
+style = "blue"
 read_only_style = "red"
 truncate_to_repo = false
 
 [git_branch]
 format = "[\\[$branch\\]]($style)"
-style = "purple"
+style = "yellow"
 
 [git_status]
 format = "[\\[$all_status$ahead_behind\\]]($style)"
-style = "bright-blue"
+style = "cyan"
 conflicted = "="
 ahead = ">"
 behind = "<"
