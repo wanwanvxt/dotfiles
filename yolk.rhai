@@ -5,6 +5,14 @@ export const theme = #{
         name: "Bibata-Modern-Ice",
         size: 24,
     },
+    font: #{
+        name: "sans-serif",
+        size: 12,
+    },
+    font_mono: #{
+        name: "monospace",
+        size: 12,
+    },
     colors: chameleon::theme,
 };
 export let eggs = #{
@@ -61,6 +69,10 @@ export let eggs = #{
     },
     waypaper: #{
         targets: "~/.config/waypaper",
+    },
+    rofi: #{
+        targets: "~/.config/rofi",
+        templates: ["**/*.rasi"],
     },
     kitty: #{
         targets: "~/.config/kitty",

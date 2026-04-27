@@ -1,0 +1,16 @@
+configuration {
+    modes: "drun,run";
+// {# rq(theme.font_mono.name + " " + theme.font_mono.size) #}
+    font: "monospace 12";
+    show-icons: true;
+    disable-history: true;
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
+}
+@theme "~/.config/rofi/theme.rasi"
