@@ -68,6 +68,7 @@ binds {
     Mod+Alt+Right { maximize-column; }
 
     // apps
+    Mod+W repeat=false { spawn "waypaper"; }
     Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
     Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
     Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
