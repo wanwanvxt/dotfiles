@@ -6,7 +6,7 @@
     fg0: #d9d2d5; // {< rcol(theme.colors.text) >}
     fg1: #bdb4bb; // {< rcol(theme.colors.subtext) >}
 
-    // {# rq(theme.font_mono.name + " " + theme.font_mono.size) #}
+// {# rq(theme.font_mono.name + " " + theme.font_mono.size) #}
     font: "monospace 12";
 
     background-color: @bg0;
@@ -36,6 +36,7 @@ icon-search {
     size: 24px;
 }
 icon-search, entry, element-icon, element-text {
+    background-color: "transparent";
     vertical-align: 0.5;
 }
 entry {
