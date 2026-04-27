@@ -94,6 +94,13 @@ layout {
     background-color "transparent"
 }
 
+blur {
+    passes     2
+    offset     3
+    noise      0.05
+    saturation 1.5
+}
+
 animations {
     // using default
 }
@@ -116,8 +123,8 @@ recent-windows {
 }
 
 overview {
-    zoom             0.75
-    backdrop-color   "#27262a" // {< rcol(theme.colors.base) >}
+    zoom           0.75
+    backdrop-color "#27262a" // {< rcol(theme.colors.base) >}
     workspace-shadow {
         softness 15
         spread   5
