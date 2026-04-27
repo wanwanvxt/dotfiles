@@ -16,7 +16,8 @@ _pkgs=(
     'lib32-{mesa,vulkan-{icd-loader,radeon},nvidia-utils}'
 
     # window manager (niri)
-    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}' 'quickshell'
+    'niri' 'xwayland-satellite' 'xdg-desktop-portal-{gtk,wlr}'
+    '{waypaper,swaybg}' 'rofi'
 
     # looks & feel
     'nwg-look' 'qt{6,5}ct-kde' 'kvantum{,-qt5}'
