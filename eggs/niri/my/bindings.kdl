@@ -68,8 +68,8 @@ binds {
     Mod+Alt+Right { maximize-column; }
 
     // apps
-    Mod+R repeat=false { spawn-sh "rofi -show drun"; }
-    Mod+W repeat=false { spawn "waypaper"; }
+    Mod+R repeat=false { spawn-sh "~/.config/niri/my/scripts/toggle rofi -show drun"; }
+    Mod+W repeat=false { spawn-sh "~/.config/niri/my/scripts/toggle waypaper"; }
     Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
     Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
     Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
