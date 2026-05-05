@@ -78,7 +78,7 @@ layout {
     border {
         on
         width          2
-        active-color   "#aec087" // {< rcol(theme.colors.fg_accent_3) >}
+        active-color   "#acc189" // {< rcol(theme.colors.fg_green) >}
         inactive-color "#877e89" // {< rcol(theme.colors.muted) >}
     }
     shadow {
@@ -89,8 +89,8 @@ layout {
         color    "#1e1e21" // {< rcol(theme.colors.surface) >}
         draw-behind-window false
     }
-    // {# rcol(theme.colors.fg_accent_3 + "80") #}
-    insert-hint { color "#aec08780"; }
+    // {# rcol(theme.colors.fg_green + "80") #}
+    insert-hint { color "#acc18980"; }
     background-color "transparent"
 }
 
@@ -110,8 +110,8 @@ recent-windows {
     open-delay-ms 150
 
     highlight {
-        active-color  "#aec087" // {< rcol(theme.colors.fg_accent_3) >}
-        urgent-color  "#f19ca4" // {< rcol(theme.colors.fg_accent_2) >}
+        active-color  "#acc189" // {< rcol(theme.colors.fg_green) >}
+        urgent-color  "#dfac79" // {< rcol(theme.colors.fg_yellow) >}
         padding       20
         corner-radius 5
     }
