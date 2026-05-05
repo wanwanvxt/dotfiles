@@ -32,8 +32,8 @@ _pkgs=(
     'xdg-{utils,user-dirs,sound}' 'dex' '{brightnessctl,playerctl}' 'wl-clipboard'
     '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
     ## development
-    'bash-language-server' 'fish-lsp' 'lua{,-language-server}' 'python{,-pip,-lsp-server}'
-    '{clang,cmake}' '{odin,ols}' 'rust'
+    'bash-language-server' 'fish-lsp' 'vim-language-server' 'lua{,-language-server}'
+    'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}' 'rust'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}' 'tuxmanager'
