@@ -24,7 +24,9 @@ local FileFlags = {
             return vim.api.nvim_get_option_value("modified", { buf = self.bufnr })
         end,
         provider = " [+]",
-        hl = { fg = "yellow" }
+        hl = function(self)
+            return { fg = self.is_active and "red" or "gray" }
+        end,
     },
     {
         condition = function(self)
@@ -32,7 +34,9 @@ local FileFlags = {
                 or vim.api.nvim_get_option_value("readonly", { buf = self.bufnr })
         end,
         provider = " [RO]",
-        hl = { fg = "red" },
+        hl = function(self)
+            return { fg = self.is_active and "yellow" or "gray" }
+        end,
     },
 }
 

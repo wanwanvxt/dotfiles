@@ -88,14 +88,22 @@ local FileFlags = {
             return vim.bo.modified
         end,
         provider = " [+]",
-        hl = { fg = "yellow" }
+        hl = function()
+            if hl_conds.is_active() then
+                return { fg = "yellow" }
+            end
+        end,
     },
     {
         condition = function()
             return not vim.bo.modifiable or vim.bo.readonly
         end,
         provider = " [RO]",
-        hl = { fg = "red" },
+        hl = function()
+            if hl_conds.is_active() then
+                return { fg = "red" }
+            end
+        end,
     },
 }
 
