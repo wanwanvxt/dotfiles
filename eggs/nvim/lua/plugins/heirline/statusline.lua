@@ -11,17 +11,17 @@ local ViMode = {
         mode_names = {
             n       = "NORMAL",
             v       = "VISUAL",
-            V       = "VISUAL LINE",
-            ["\22"] = "VISUAL BLOCK",
+            V       = "V-LINE",
+            ["\22"] = "V-BLOCK",
             s       = "SELECT",
-            S       = "SELECT LINE",
-            ["\19"] = "SELECT BLOCK",
+            S       = "S-LINE",
+            ["\19"] = "S-BLOCK",
             i       = "INSERT",
             R       = "REPLACE",
             c       = "COMMAND",
             r       = "PROMPT",
             ["!"]   = "SHELL",
-            t       = "TERMINAL",
+            t       = "TERM",
         },
         mode_colors = {
             n       = "green",
@@ -50,7 +50,7 @@ local ViMode = {
         return string.format(" %s ", self.mode_names[self.mode])
     end,
     hl = function(self)
-        return { bg = "bright_bg", fg = self.mode_colors[self.mode], bold = true }
+        return { bg = self.mode_colors[self.mode], fg = "black", bold = true }
     end,
 }
 
@@ -166,7 +166,7 @@ local LSPActive = {
     update = { "LspAttach", "LspDetach" },
     hl = { fg = "purple" },
     provider = function(self)
-        return string.format(" [%s] ", table.concat(self.servers, " "))
+        return string.format("[%s]", table.concat(self.servers, " "))
     end,
 }
 
@@ -232,7 +232,9 @@ local DefaultStatusLine = {
         FileBlock,
         shared.Align,
         Diagnostics,
+        shared.Space,
         LSPActive,
+        shared.Space,
         Location,
     },
 }

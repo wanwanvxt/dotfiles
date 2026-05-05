@@ -44,6 +44,11 @@ local FileBlock = {
     init = function(self)
         self.filepath = vim.api.nvim_buf_get_name(self.bufnr)
     end,
+    hl = function(self)
+        if not self.is_active then
+            return { italic = true }
+        end
+    end,
     on_click = {
         name = "TablineFileBlockOnClick",
         callback = function(_, minwid, _, button)
@@ -71,7 +76,7 @@ local BufferBlock = {
     {
         shared.Space,
         FileBlock,
-        { provider = "▕" },
+        { provider = utils.symbol_guard("▕", " ") },
     },
 }
 
