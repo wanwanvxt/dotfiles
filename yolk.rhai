@@ -78,11 +78,12 @@ export let eggs = #{
         targets: "~/.config/kitty",
         templates: ["**/*.conf"],
     },
-
-    gaming: #{
+    gamemode: #{
         targets: #{
             "gamemode.ini": "~/.config/gamemode.ini",
-            "MangoHud":     "~/.config/MangoHud",
         },
+    },
+    MangoHud: #{
+        targets: "~/.config/MangoHud",
     },
 };
