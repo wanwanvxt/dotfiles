@@ -46,6 +46,7 @@ end
 vim.cmd.colorscheme("default")
 vim.opt.number         = true
 vim.opt.relativenumber = true
+vim.opt.cursorline     = true
 vim.opt.showmode       = false
 vim.opt.ruler          = false
 vim.opt.colorcolumn    = "80,110"
@@ -87,6 +88,6 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.o.winborder     = "rounded"
 
 -- mouse
-vim.opt.mouse       = "n"
-vim.opt.mousemodel  = "popup"
+vim.opt.mouse       = "a"
+vim.opt.mousemodel  = "extend"
 vim.opt.mousescroll = { "ver:3", "hor:0" }
