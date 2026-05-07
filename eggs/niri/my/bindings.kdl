@@ -1,9 +1,9 @@
 recent-windows {
     binds {
-        Alt+Tab         { next-window; }
-        Alt+Shift+Tab   { previous-window; }
-        Alt+Grave       { next-window     filter="app-id"; }
-        Alt+Shift+Grave { previous-window filter="app-id"; }
+        Alt+Tab         { next-window     scope="workspace"; }
+        Alt+Shift+Tab   { previous-window scope="workspace"; }
+        Alt+Grave       { next-window     scope="workspace" filter="app-id"; }
+        Alt+Shift+Grave { previous-window scope="workspace" filter="app-id"; }
     }
 }
 
