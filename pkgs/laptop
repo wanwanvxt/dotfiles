@@ -6,7 +6,7 @@ _pkgs=(
     'linux-cachyos-bore{,-headers}' 'cachyos-{keyring,{v3-,v4-,}mirrorlist,rate-mirrors}'
 
     # network & bluetooth
-    'networkmanager' 'openssh' 'bluez{,-utils}'
+    'networkmanager' 'openssh' 'zapret2' 'cloudflare-warp-bin' 'bluez{,-utils}'
 
     # audio (pipewire)
     'rtkit' 'pipewire{,-audio,-alsa,-pulse,-jack}' 'wireplumber'
@@ -30,16 +30,17 @@ _pkgs=(
     'bash{,-completion}' 'fish' 'starship' '{lazy,}git{,-lfs}' 'yolk-bin' 'thaimeleon'
     'neovim' 'tree-sitter-cli' 'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' '{namcap,devtools,aurpublish}'
     'xdg-{utils,user-dirs,sound}' 'dex' '{brightnessctl,playerctl}' 'wl-clipboard'
-    '{btop,nvtop}' '{zapret2,cloudflare-warp-bin}'
+    '{btop,nvtop}'
     ## development
     'bash-language-server' 'fish-lsp' 'vim-language-server' 'lua{,-language-server}'
-    'python{,-pip,-lsp-server}' '{clang,cmake}' '{odin,ols}' 'rust'
+    'python{,-pip,-lsp-server}' '{gcc,clang,cmake}' '{odin,ols}' 'rust'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}' 'tuxmanager'
     '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc' 'qbittorrent'
-    'vesktop' 'easyeffects' '{steam,gamescope,gamemode,{lib32-,}mangohud,protonup-qt,pince}'
-    'selectdefaultapplication-git'
+    'vesktop' 'easyeffects' 'selectdefaultapplication-git'
+    ## gaming
+    'steam' 'gamescope' 'gamemode' '{lib32-,}mangohud' 'protonplus' 'pince'
 )
 
 eval echo "${_pkgs[@]}"
