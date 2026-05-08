@@ -1,7 +1,7 @@
 #!/bin/env fish
 
-set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
-
 set -q GAMESCOPE_ARGS; or set GAMESCOPE_ARGS
 set GAMESCOPE_ARGS (string split ' ' -- $GAMESCOPE_ARGS)
-exec gamemoderun gamescope --mangoapp $GAMESCOPE_ARGS -- $argv
+
+exec performancemode \
+    gamescope --mangoapp $GAMESCOPE_ARGS -- $argv

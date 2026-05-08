@@ -1,11 +1,9 @@
 #!/bin/env fish
 
-set -gx LD_PRELOAD "$LD_PRELOAD:/usr/\$LIB/libgamemode.so"
+set primerun
+if command -v prime-run >/dev/null
+    set primerun 'prime-run'
+end
 
-exec \
-    gamemoderun \
-# {% if SYSTEM.hostname == "laptop" %}
-    #<yolk> prime-run \
-# {% end %}
-    mangohud \
-    $argv
+exec performancemode \
+    $primerun mangohud $argv
