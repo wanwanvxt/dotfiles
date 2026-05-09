@@ -5,5 +5,5 @@ if not powerprofilesctl list | string match -q '*performance:*'
 end
 
 exec systemd-inhibit --why 'Performance mode' \
-    powerprofilesctl launch -p performance \
+    powerprofilesctl launch -p performance -r 'Performance mode' \
     -- $argv
