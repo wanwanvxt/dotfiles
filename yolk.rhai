@@ -68,7 +68,10 @@ export let eggs = #{
         templates: ["**/*.kdl"],
     },
     kitty: #{
-        targets: "~/.config/kitty",
+        targets: #{
+            "kitty.conf": "~/.config/kitty/kitty.conf",
+        },
+        templates: ["**/*.conf"],
     },
     gamemode: #{
         targets: #{
