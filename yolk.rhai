@@ -57,6 +57,9 @@ export let eggs = #{
         },
     },
 
+    matugen: #{
+        targets: "~/.config/matugen",
+    },
     niri: #{
         targets: #{
             "config.kdl": "~/.config/niri/config.kdl",

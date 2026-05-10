@@ -1,0 +1,5 @@
+[config]
+version_check = false
+fallback_color = "#00ff99"
+prefer = "value"
+caching = true
