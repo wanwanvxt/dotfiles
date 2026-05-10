@@ -67,12 +67,6 @@ export let eggs = #{
         },
         templates: ["**/*.kdl"],
     },
-    waypaper: #{
-        targets: "~/.config/waypaper",
-    },
-    rofi: #{
-        targets: "~/.config/rofi",
-    },
     kitty: #{
         targets: "~/.config/kitty",
     },
