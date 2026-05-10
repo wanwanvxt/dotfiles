@@ -23,7 +23,7 @@ pkgs:
 	fi
 
 dots:
-	@command -v yolk && yolk sync
+	yolk sync
 
 cachyos-repo:
 	@if ! grep -q "cachyos" /etc/pacman.conf; then \

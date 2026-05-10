@@ -1,5 +1,3 @@
-import "chameleon" as chameleon;
-
 export const theme = #{
     cursor: #{
         name: "Bibata-Modern-Ice",
@@ -13,7 +11,6 @@ export const theme = #{
         name: "monospace",
         size: 12,
     },
-    colors: chameleon::theme,
 };
 export let eggs = #{
     bash: #{
@@ -72,11 +69,9 @@ export let eggs = #{
     },
     rofi: #{
         targets: "~/.config/rofi",
-        templates: ["**/*.rasi"],
     },
     kitty: #{
         targets: "~/.config/kitty",
-        templates: ["**/*.conf"],
     },
     gamemode: #{
         targets: #{

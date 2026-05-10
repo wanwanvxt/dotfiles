@@ -1,12 +1,11 @@
 * {
-    bg0: #27262a80; // {< rcol(theme.colors.base + "80") >}
-    bg1: #1e1e21; // {< rcol(theme.colors.surface) >}
-    bg2: #aec087; // {< rcol(theme.colors.fg_accent_3) >}
+    bg0: #27262a80;
+    bg1: #1e1e21;
+    bg2: #aec087;
 
-    fg0: #d9d2d5; // {< rcol(theme.colors.text) >}
-    fg1: #bdb4bb; // {< rcol(theme.colors.subtext) >}
+    fg0: #d9d2d5;
+    fg1: #bdb4bb;
 
-// {# rq(theme.font_mono.name + " " + theme.font_mono.size) #}
     font: "monospace 12";
 
     background-color: @bg0;
