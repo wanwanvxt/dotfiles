@@ -58,7 +58,7 @@ layout {
 
     center-focused-column "on-overflow"
     always-center-single-column
-    default-column-display "normal"
+    default-column-display "tabbed"
 
     default-column-width { proportion 0.6667; }
     preset-column-widths {
@@ -78,18 +78,32 @@ layout {
     border {
         on
         width          2
-        active-color   "#00ff99"
-        inactive-color "#808080"
+        active-color   "#74a467" // {< rcol(theme.colors.fg_accent_1) >}
+        inactive-color "#6d7468" // {< rcol(theme.colors.muted) >}
+        urgent-color   "#a8944b" // {< rcol(theme.colors.fg_accent_2) >}
     }
     shadow {
         on
         softness 10
         spread   2
         offset   x=0 y=0
-        color    "#1e1e1e"
+        color    "#0f140b" // {< rcol(theme.colors.surface) >}
         draw-behind-window false
     }
-    insert-hint { color "#00ff99aa"; }
+    tab-indicator {
+        hide-when-single-tab
+        place-within-column
+        gap   2
+        width 4
+        gaps-between-tabs 2
+        corner-radius 999
+        position "left"
+        length total-proportion=0.125
+        active-color   "#74a467" // {< rcol(theme.colors.fg_accent_1) >}
+        inactive-color "#6d7468" // {< rcol(theme.colors.muted) >}
+        urgent-color   "#a8944b" // {< rcol(theme.colors.fg_accent_2) >}
+    }
+    insert-hint { color "#74a467aa"; } // {< rcol(theme.colors.fg_accent_1 + "aa") >}
     background-color "transparent"
 }
 
@@ -109,8 +123,8 @@ recent-windows {
     open-delay-ms 150
 
     highlight {
-        active-color  "#00ff99"
-        urgent-color  "#ffaa33"
+        active-color  "#74a467" // {< rcol(theme.colors.fg_accent_1) >}
+        urgent-color  "#a8944b" // {< rcol(theme.colors.fg_accent_2) >}
         padding       20
         corner-radius 5
     }
@@ -123,12 +137,12 @@ recent-windows {
 
 overview {
     zoom           0.75
-    backdrop-color "#272727"
+    backdrop-color "#141a10" // {< rcol(theme.colors.base) >}
     workspace-shadow {
-        softness 15
+        softness 10
         spread   5
         offset   x=0 y=0
-        color    "#1e1e1e"
+        color    "#0f140b" // {< rcol(theme.colors.surface) >}
     }
 }
 

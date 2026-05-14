@@ -9,18 +9,18 @@ local ViMode = {
     end,
     static = {
         mode_names = {
-            n       = "NORMAL",
-            v       = "VISUAL",
+            n       = "NOR",
+            v       = "VIS",
             V       = "V-LINE",
-            ["\22"] = "V-BLOCK",
-            s       = "SELECT",
+            ["\22"] = "V-BLK",
+            s       = "SEL",
             S       = "S-LINE",
-            ["\19"] = "S-BLOCK",
-            i       = "INSERT",
-            R       = "REPLACE",
-            c       = "COMMAND",
-            r       = "PROMPT",
-            ["!"]   = "SHELL",
+            ["\19"] = "S-BLK",
+            i       = "INS",
+            R       = "REPL",
+            c       = "CMD",
+            r       = "PROM",
+            ["!"]   = "SH",
             t       = "TERM",
         },
         mode_colors = {
@@ -207,6 +207,12 @@ local Diagnostics = {
             end,
             hl = { fg = "diag_info" },
         },
+        {
+            provider = function(self)
+                return string.format("H.%d", self.hints)
+            end,
+            hl = { fg = "diag_hint" },
+        },
         { provider = "]" },
     },
 }
@@ -219,14 +225,12 @@ local Location = {
 ---
 local InactiveStatusLine = {
     condition = hl_conds.is_not_active,
-    hl = { fg = "gray" },
     {
         FileBlock,
         shared.Align,
     },
 }
 local DefaultStatusLine = {
-    hl = { fg = "white" },
     {
         ViMode,
         FileBlock,

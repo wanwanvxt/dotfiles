@@ -43,7 +43,6 @@ if vim.fn["provider#clipboard#Executable"]() ~= "" then
     vim.opt.clipboard:append("unnamedplus")
 end
 
-vim.cmd.colorscheme("default")
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.cursorline     = true

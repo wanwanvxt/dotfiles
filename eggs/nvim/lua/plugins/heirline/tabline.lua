@@ -11,9 +11,7 @@ local FileName = {
     end,
     hl = function(self)
         if self.is_active then
-            return { fg = "white", underline = true }
-        else
-            return { fg = "gray" }
+            return { bold = true, undercurl = true }
         end
     end,
 }
@@ -25,7 +23,9 @@ local FileFlags = {
         end,
         provider = " [+]",
         hl = function(self)
-            return { fg = self.is_active and "red" or "gray" }
+            if self.is_active then
+                return { fg = "yellow" }
+            end
         end,
     },
     {
@@ -35,7 +35,9 @@ local FileFlags = {
         end,
         provider = " [RO]",
         hl = function(self)
-            return { fg = self.is_active and "yellow" or "gray" }
+            if self.is_active then
+                return { fg = "red" }
+            end
         end,
     },
 }

@@ -23,6 +23,7 @@ pkgs:
 	fi
 
 dots:
+	thaimeleon default_wall.jpg -w chameleon.rhai
 	yolk sync
 
 cachyos-repo:
