@@ -1,5 +1,10 @@
 local utils = require("my.utils")
-vim.pack.add({ utils.gh("m4xshen/autoclose.nvim") })
 
--- config
-require("autoclose").setup()
+utils.lazy({
+    name = "autoclose",
+    packs = { utils.gh("m4xshen/autoclose.nvim") },
+    event = "InsertEnter",
+    config = function()
+        require("autoclose").setup()
+    end,
+})

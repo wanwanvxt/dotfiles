@@ -1,9 +1,13 @@
 local utils = require("my.utils")
-vim.pack.add({ utils.gh("ibhagwan/fzf-lua") })
 
--- config
-local fzf = require("fzf-lua")
-fzf.setup()
+utils.lazy({
+    name = "fzf",
+    packs = { utils.gh("ibhagwan/fzf-lua") },
+    cmd = "FzfLua",
+    config = function()
+        require("fzf-lua").setup()
+    end,
+})
 
-vim.keymap.set("n", "<leader>ff", fzf.files,     { silent = true, desc = "fzf files" })
-vim.keymap.set("n", "<leader>fg", fzf.live_grep, { silent = true, desc = "fzf live grep" })
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>",     { silent = true, desc = "fzf files" })
+vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { silent = true, desc = "fzf live grep" })
