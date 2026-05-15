@@ -41,21 +41,43 @@ export let eggs = #{
     },
 
     bash: #{
-        targets: #{
-            ".bashrc":       "~/.bashrc",
-            ".profile":      "~/.profile",
-            ".bash_profile": "~/.bash_profile",
-        },
+        targets: "~",
+        strategy: "merge",
     },
     fish: #{
-        targets: #{
-            "config.fish": "~/.config/fish/config.fish",
-        },
+        targets: "~/.config/fish",
+        strategy: "merge",
     },
-    starship: #{
-        targets: #{
-            "starship.toml": "~/.config/starship.toml",
-        },
+
+    _config: #{
+        targets: "~/.config",
+        strategy: "merge",
+    },
+
+    bin: #{
+        targets: "~/.local/bin",
+        strategy: "merge",
+    },
+
+    fontconfig: #{
+        targets: "~/.config/fontconfig/conf.d",
+        strategy: "merge",
+    },
+
+    "xdg-portal": #{
+        targets: "~/.config/xdg-desktop-portal",
+        strategy: "merge",
+    },
+
+    niri: #{
+        targets: "~/.config/niri",
+        templates: ["**/*.kdl"],
+        strategy: "merge",
+    },
+
+    kitty: #{
+        targets: "~/.config/kitty",
+        templates: ["**/*.conf"],
     },
 
     nvim: #{
@@ -63,44 +85,6 @@ export let eggs = #{
         templates: ["**/*.lua"],
     },
 
-    bin: #{
-        targets: #{
-            "xterm":           "~/.local/bin/xterm",
-            "performancemode": "~/.local/bin/performancemode",
-            "game-run":        "~/.local/bin/game-run",
-            "gamescope-run":   "~/.local/bin/gamescope-run",
-        },
-    },
-
-    xdg: #{
-        targets: #{
-            "user-dirs.conf":    "~/.config/user-dirs.conf",
-            "user-dirs.dirs":    "~/.config/user-dirs.dirs",
-            "niri-portals.conf": "~/.config/xdg-desktop-portal/niri-portals.conf",
-        },
-    },
-    fontconfig: #{
-        targets: #{
-            "52-default-fonts.conf": "~/.config/fontconfig/conf.d/52-default-fonts.conf",
-        },
-    },
-
-    niri: #{
-        targets: #{
-            "config.kdl": "~/.config/niri/config.kdl",
-            "my":         "~/.config/niri/my",
-        },
-        templates: ["**/*.kdl"],
-    },
-    kitty: #{
-        targets: "~/.config/kitty",
-        templates: ["**/*.conf"],
-    },
-    gamemode: #{
-        targets: #{
-            "gamemode.ini": "~/.config/gamemode.ini",
-        },
-    },
     MangoHud: #{
         targets: "~/.config/MangoHud",
     },
