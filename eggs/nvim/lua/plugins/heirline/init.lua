@@ -38,8 +38,9 @@ require("heirline").setup({
     }
 })
 
-vim.api.nvim_create_autocmd("ColorScheme", {
+vim.api.nvim_create_autocmd({ "ColorScheme", "Signal" }, {
     group = vim.api.nvim_create_augroup("Heirline", { clear = true }),
+    pattern = { "*", "SIGUSR1" },
     callback = function()
         require("heirline.utils").on_colorscheme(colors)
     end,
