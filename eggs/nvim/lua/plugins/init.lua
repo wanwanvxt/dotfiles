@@ -3,7 +3,7 @@ local plugins = {
 
     -- lazy load
     "heirline", "virt-column", "which-key", "neo-tree", "fzf",
-    "cmp", "treesitter", "lsp", "autoclose", "colorizer",
+    "cmp", "lsp", "autoclose", "treesitter", "colorizer",
 }
 
 for _, plg in ipairs(plugins) do

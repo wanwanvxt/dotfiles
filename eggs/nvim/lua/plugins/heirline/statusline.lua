@@ -19,7 +19,7 @@ local ViMode = {
             i       = "INS",
             R       = "REPL",
             c       = "CMD",
-            r       = "PROM",
+            r       = "HIT",
             ["!"]   = "SH",
             t       = "TERM",
         },
