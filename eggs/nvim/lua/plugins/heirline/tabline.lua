@@ -3,6 +3,13 @@ local hl_utils = require("heirline.utils")
 local hl_conds = require("heirline.conditions")
 local shared = require("plugins.heirline.shared")
 
+local Bufnr = {
+    provider = function(self)
+        return string.format("%d. ", self.bufnr)
+    end,
+    hl = "Comment",
+}
+
 local FileName = {
     provider = function(self)
         local filename = vim.fn.fnamemodify(self.filepath, ":t")
@@ -11,7 +18,7 @@ local FileName = {
     end,
     hl = function(self)
         if self.is_active then
-            return { bold = true, undercurl = true }
+            return { bold = true }
         end
     end,
 }
@@ -77,6 +84,7 @@ local BufferBlock = {
     end,
     {
         shared.Space,
+        Bufnr,
         FileBlock,
         { provider = utils.symbol_guard("▕", " ") },
     },
