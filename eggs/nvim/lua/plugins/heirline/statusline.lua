@@ -207,6 +207,7 @@ local Diagnostics = {
             end,
             hl = { fg = "diag_info" },
         },
+        shared.Space,
         {
             provider = function(self)
                 return string.format("H.%d", self.hints)
