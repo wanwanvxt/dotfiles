@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 -- language
 vim.cmd([[language en_US.UTF-8]])
 
--- disable language providers (faster startup)
+-- disable language providers
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
@@ -17,10 +17,8 @@ vim.g.loaded_node_provider = 0
 
 -- disable builtin plugins not used
 local disabled_builtins = {
-    "tutor_mode_plugin", "2html_plugin",
-    "loaded_netrw", "loaded_netrwPlugin",
-    "zipPlugin", "gzip", "tarPlugin",
-    "matchit", "matchparen", "sql_completion"
+    "tutor_mode_plugin", "2html_plugin", "netrw", "netrwPlugin", "fzf",
+    "zipPlugin", "gzip", "tarPlugin", "matchit", "matchparen", "sql_completion"
 }
 for _, plugin in ipairs(disabled_builtins) do
     vim.g["loaded_" .. plugin] = 1
