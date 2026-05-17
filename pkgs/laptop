@@ -39,7 +39,7 @@ _pkgs=(
     '{xarchiver,tar,7zip,unrar}' 'imv' 'vlc{,-plugins-all}' 'keepassxc' 'qbittorrent'
     'vesktop' 'easyeffects' 'selectdefaultapplication-git' 'zeal'
     ## gaming
-    'steam' 'gamescope' 'gamemode' '{lib32-,}mangohud' 'protonplus' 'pince'
+    'steam' 'gamescope' 'gamemode' '{lib32-,}mangohud' 'protonplus' 'protontricks' 'pince'
 )
 
 eval echo "${_pkgs[@]}"
