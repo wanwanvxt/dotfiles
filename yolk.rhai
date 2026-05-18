@@ -54,6 +54,10 @@ export let eggs = #{
         strategy: "merge",
     },
 
+    fastfetch: #{
+        targets: "~/.config/fastfetch",
+    },
+
     bin: #{
         targets: "~/.local/bin",
         strategy: "merge",
