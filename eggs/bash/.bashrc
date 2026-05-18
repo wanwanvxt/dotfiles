@@ -9,4 +9,5 @@ alias vi='nvim'
 alias lg='lazygit'
 
 eval "$(fzf --bash)"
-eval "$(starship init bash)"
+
+PS1='\[\e[1;32m\]\u\[\e[m\]@\[\e[1;33m\]\h\[\e[m\]:\[\e[1;34m\]\W\[\e[m\] \$ '
