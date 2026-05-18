@@ -1,33 +1,33 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''$username@$hostname:$directory $git_branch$git_status
-$shell $status$character '''
+$status$character '''
 add_newline = false
 
 [username]
 format = "[$user]($style)"
-style_user = "green"
+style_user = "bright-green"
 show_always = true
 
 [hostname]
 format = "[$hostname]($style)"
-style = "green"
+style = "bright-green"
 ssh_only = false
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)"
 read_only = "[RO]"
-style = "blue"
-read_only_style = "red"
+style = "bright-blue"
+read_only_style = "bright-red"
 truncate_to_repo = false
 
 [git_branch]
 format = "[\\[$branch\\]]($style)"
-style = "yellow"
+style = "bright-yellow"
 
 [git_status]
-format = "[\\[$all_status$ahead_behind\\]]($style)"
-style = "cyan"
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+style = "bright-cyan"
 conflicted = "="
 ahead = ">"
 behind = "<"
@@ -41,13 +41,9 @@ renamed = "~"
 deleted = "x"
 typechanged = "%"
 
-[shell]
-format = "$indicator"
-disabled = false
-
 [status]
 format = "[\\[$status\\]]($style)"
-style = "red"
+style = "bright-red"
 disabled = false
 
 [character]
