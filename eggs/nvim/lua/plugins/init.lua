@@ -1,5 +1,5 @@
 local plugins = {
-    "kanagawa",
+    "kanagawa", "mini-icons",
 
     -- lazy load
     "heirline", "virt-column", "which-key", "neo-tree", "fzf",

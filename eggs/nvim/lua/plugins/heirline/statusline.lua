@@ -54,6 +54,22 @@ local ViMode = {
     end,
 }
 
+local FileIcon = {
+    init = function(self)
+        local filetype = vim.bo.filetype
+        self.icon, self.icon_hl = require("mini.icons").get("filetype", filetype)
+    end,
+    condition = function()
+        return not vim.g.is_tty
+    end,
+    provider = function(self)
+        return string.format("%s ", self.icon)
+    end,
+    hl = function(self)
+        return self.icon_hl
+    end,
+}
+
 local FilePath = {
     provider = function(self)
         local relpath = vim.fn.fnamemodify(self.filepath, ":.")
@@ -107,34 +123,24 @@ local FileFlags = {
     },
 }
 
-local FileType = {
-    init = function(self)
-        self.type = vim.bo.filetype
-        if not self.type or self.type == "" then
-            self.type = "unknown"
-        end
-    end,
-    provider = function(self)
-        return string.format("[%s]", self.type)
-    end,
-    hl = function()
-        if hl_conds.is_active() then
-            return { fg = "blue" }
-        end
-    end,
-}
-
 local FileEcoding = {
     init = function(self)
         self.enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         self.fmt = vim.bo.fileformat
+        if self.fmt == "dos" then
+            self.fmt = "CRLF"
+        elseif self.fmt == "unix" then
+            self.fmt = "LF"
+        elseif self.fmt == "mac" then
+            self.fmt = "CR"
+        end
     end,
     provider = function(self)
-        return string.format("[%s/%s]", self.enc, self.fmt)
+        return string.format("[%s %s]", self.enc, self.fmt)
     end,
     hl = function()
         if hl_conds.is_active() then
-            return { fg = "green" }
+            return { fg = "cyan" }
         end
     end,
 }
@@ -145,10 +151,9 @@ local FileBlock = {
     end,
     {
         shared.Space,
+        FileIcon,
         FilePath,
         FileFlags,
-        shared.Space,
-        FileType,
         shared.Space,
         FileEcoding,
         shared.Space,
@@ -166,7 +171,7 @@ local LSPActive = {
     update = { "LspAttach", "LspDetach" },
     hl = { fg = "purple" },
     provider = function(self)
-        return string.format("[%s]", table.concat(self.servers, " "))
+        return string.format("%s%s", utils.symbol_guard(" ", ""), table.concat(self.servers, " "))
     end,
 }
 
@@ -186,35 +191,28 @@ local Diagnostics = {
     },
     update = { "DiagnosticChanged", "BufEnter" },
     {
-        { provider = "[" },
+        shared.Space,
         {
             provider = function(self)
-                return string.format("E.%d", self.errors)
+                return string.format("%s%d", utils.symbol_guard(" ", "E."), self.errors)
             end,
             hl = { fg = "diag_error" },
         },
         shared.Space,
         {
             provider = function(self)
-                return string.format("W.%d", self.warns)
+                return string.format("%s%d", utils.symbol_guard(" ", "W."), self.warns)
             end,
             hl = { fg = "diag_warn" },
         },
         shared.Space,
         {
             provider = function(self)
-                return string.format("I.%d", self.infos+self.hints)
+                return string.format("%s%d", utils.symbol_guard(" ", "I."), self.infos+self.hints)
             end,
             hl = { fg = "diag_info" },
         },
         shared.Space,
-        {
-            provider = function(self)
-                return string.format("H.%d", self.hints)
-            end,
-            hl = { fg = "diag_hint" },
-        },
-        { provider = "]" },
     },
 }
 

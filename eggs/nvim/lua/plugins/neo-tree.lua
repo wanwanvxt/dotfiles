@@ -25,6 +25,7 @@ utils.lazy({
                 },
                 file = {
                     { "indent" },
+                    { "icon" },
                     { "name" },
                     { "modified" },
                     { "clipboard" },
@@ -52,10 +53,11 @@ utils.lazy({
                     enabled = true,
                     highlight = "NonText",
                     use_filtered_colors = true,
-                    folder_open = "⯆",
-                    folder_closed = "⯈",
-                    folder_empty = "⯈",
-                    folder_empty_open = "⯆",
+                    folder_open = utils.symbol_guard("", "[-]"),
+                    folder_closed = utils.symbol_guard("", "[+]"),
+                    folder_empty = utils.symbol_guard("", "[+]"),
+                    folder_empty_open = utils.symbol_guard("", "[+]"),
+                    default = "*",
                 },
                 name = {
                     enabled = true,
