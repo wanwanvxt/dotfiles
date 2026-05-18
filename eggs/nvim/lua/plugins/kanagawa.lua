@@ -4,8 +4,8 @@ if not vim.g.is_tty then
 
     -- config
     local set_colorscheme = function()
-        local colors_file = vim.fn.stdpath("config") .. "/lua/my/chameleon.lua"
-        local colors = dofile(colors_file)
+        local chameleon = vim.fn.stdpath("config") .. "/lua/my/chameleon.lua"
+        local colors = dofile(chameleon)
 
         require("kanagawa").setup({
             colors = {
