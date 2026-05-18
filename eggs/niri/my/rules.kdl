@@ -27,6 +27,7 @@ window-rule {
 }
 window-rule {
     match app-id="^xarchiver$" title="^Extract files$"
+    match app-id="^firefox$" title="^About Mozilla Firefox$"
     match app-id="^steam$" title="^System Information$"
 
     open-floating true
