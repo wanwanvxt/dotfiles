@@ -18,8 +18,7 @@ window-rule {
 window-rule {
     match app-id="^xdg-desktop-portal-gtk$"
     match app-id="^firefox$" title="^Library$"
-    match app-id="^steam$" title="^Steam Settings$"
-    match app-id="^steam$" title="^Add Non-Steam Game$"
+    match app-id="^steam$" title="^(Steam Settings)|(Add Non-Steam Game)$"
 
     open-floating true
     default-column-width  { fixed 1000; }
