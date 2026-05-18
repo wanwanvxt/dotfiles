@@ -64,15 +64,19 @@ export let eggs = #{
         strategy: "merge",
     },
 
+    niri: #{
+        targets: "~/.config/niri",
+        templates: ["**/*.kdl"],
+        strategy: "merge",
+    },
+
     "xdg-portal": #{
         targets: "~/.config/xdg-desktop-portal",
         strategy: "merge",
     },
 
-    niri: #{
-        targets: "~/.config/niri",
-        templates: ["**/*.kdl"],
-        strategy: "merge",
+    katoshell: #{
+        targets: "~/.config/quickshell/katoshell",
     },
 
     kitty: #{
