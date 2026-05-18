@@ -49,25 +49,6 @@ export let eggs = #{
         strategy: "merge",
     },
 
-    _config: #{
-        targets: "~/.config",
-        strategy: "merge",
-    },
-
-    fastfetch: #{
-        targets: "~/.config/fastfetch",
-    },
-
-    bin: #{
-        targets: "~/.local/bin",
-        strategy: "merge",
-    },
-
-    fontconfig: #{
-        targets: "~/.config/fontconfig/conf.d",
-        strategy: "merge",
-    },
-
     niri: #{
         targets: "~/.config/niri",
         templates: ["**/*.kdl"],
@@ -79,8 +60,31 @@ export let eggs = #{
         strategy: "merge",
     },
 
+    fontconfig: #{
+        targets: "~/.config/fontconfig/conf.d",
+        strategy: "merge",
+    },
+
     katoshell: #{
         targets: "~/.config/quickshell/katoshell",
+    },
+
+    bin: #{
+        targets: "~/.local/bin",
+        strategy: "merge",
+    },
+
+    _config: #{
+        targets: "~/.config",
+        strategy: "merge",
+    },
+
+    fastfetch: #{
+        targets: "~/.config/fastfetch",
+    },
+
+    btop: #{
+        targets: "~/.config/btop",
     },
 
     kitty: #{
