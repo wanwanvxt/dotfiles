@@ -74,6 +74,14 @@ local FileBlock = {
             return { italic = true }
         end
     end,
+    {
+        FileIcon,
+        FileName,
+        FileFlags,
+    },
+}
+
+local BufferBlock = {
     on_click = {
         name = "TablineFileBlockOnClick",
         callback = function(_, minwid, _, button)
@@ -88,14 +96,6 @@ local FileBlock = {
             return self.bufnr
         end,
     },
-    {
-        FileIcon,
-        FileName,
-        FileFlags,
-    },
-}
-
-local BufferBlock = {
     hl = function(self)
         return self.is_active and "TabLineSel" or "TabLine"
     end,
