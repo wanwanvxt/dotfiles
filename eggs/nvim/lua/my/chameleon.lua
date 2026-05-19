@@ -1,5 +1,5 @@
 return {
-    is_light_theme = false, -- {< rr("is_light_theme.*,", `is_light_theme = ${theme.colors.is_light_theme},`) >}
+    is_light_theme = false, -- {< rr("=.*,", `= ${theme.colors.is_light_theme},`) >}
     base        = "#141a10", -- {< rcol(theme.colors.base) >}
     highlight   = "#1a2016", -- {< rcol(theme.colors.highlight) >}
     surface     = "#0f140b", -- {< rcol(theme.colors.surface) >}
