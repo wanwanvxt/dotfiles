@@ -73,6 +73,7 @@ export let eggs = #{
 
     katoshell: #{
         targets: "~/.config/quickshell/katoshell",
+        templates: ["**/*.qml"],
     },
 
     bin: #{
