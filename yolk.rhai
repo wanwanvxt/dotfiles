@@ -28,6 +28,12 @@ fn lighten(hexCol, thres) {
     return color_rgb_to_hex(newRgb);
 }
 
+export const defaultApps = #{
+    terminal: "kitty -1",
+    fileManager: "thunar",
+    browser: "firefox",
+    taskManager: "tux-manager",
+};
 export const theme = #{
     cursor: #{
         name: "Bibata-Modern-Ice",

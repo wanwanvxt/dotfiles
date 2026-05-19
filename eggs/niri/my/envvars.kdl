@@ -17,4 +17,8 @@ environment {
     GLFW_IM_MODULE "ibus"
     SDL_IM_MODULE  "fcitx"
     XMODIFIERS     "@im=fcitx"
+
+    // default apps
+    TERMINAL "kitty -1" // {< rq(defaultApps.terminal) >}
+    BROWSER "firefox" // {< rq(defaultApps.browser) >}
 }

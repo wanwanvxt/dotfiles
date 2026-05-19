@@ -68,10 +68,10 @@ binds {
     Mod+Alt+Right { maximize-column; }
 
     // apps
-    Mod+T repeat=false { spawn-sh "$NIRI_APP_TERMINAL"; }
-    Mod+E repeat=false { spawn-sh "$NIRI_APP_FILE_MANAGER"; }
-    Mod+B repeat=false { spawn-sh "$NIRI_APP_BROWSER"; }
-    Mod+P repeat=false { spawn-sh "$NIRI_APP_TASK_MANAGER"; }
+    Mod+T repeat=false { spawn-sh "kitty -1"; } // {< rq(defaultApps.terminal) >}
+    Mod+E repeat=false { spawn-sh "thunar"; } // {< rq(defaultApps.fileManager) >}
+    Mod+B repeat=false { spawn-sh "firefox"; } // {< rq(defaultApps.browser) >}
+    Mod+P repeat=false { spawn-sh "tux-manager"; } // {< rq(defaultApps.taskManager) >}
 
     // media
     XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 2%+"; }
