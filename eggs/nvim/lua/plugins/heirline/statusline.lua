@@ -66,7 +66,9 @@ local FileIcon = {
         return string.format("%s ", self.icon)
     end,
     hl = function(self)
-        return self.icon_hl
+        if hl_conds.is_active() then
+            return self.icon_hl
+        end
     end,
 }
 
