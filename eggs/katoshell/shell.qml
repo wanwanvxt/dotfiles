@@ -5,6 +5,9 @@
 
 import QtQuick
 import Quickshell
+import qs.common.config
+import qs.services.niri
+import qs.modules.background
 
 ShellRoot {
     id: root
@@ -12,6 +15,15 @@ ShellRoot {
     property bool initialized: false
 
     Component.onCompleted: {
+        Config._init()
+        NiriService._init()
         initialized = true
+    }
+
+    Loader {
+        active: root.initialized
+        sourceComponent: Component {
+            Wallpaper {}
+        }
     }
 }
