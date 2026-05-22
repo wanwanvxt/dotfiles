@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import qs.common.config
+import qs.modules.background.items
 
 Scope {
     Variants {
@@ -22,29 +22,7 @@ Scope {
             WlrLayershell.namespace: "katoshell.wallpaper"
             color: "transparent"
 
-            readonly property string wallpaperPath: {
-                if (Config.data.wallpaper.current == "" || Config.data.wallpaper.current.length == 0) {
-                    return Quickshell.shellPath("common/assets/img/default.jpg")
-                } else {
-                    return `${Config.data.wallpaper.folderPath}/${Config.data.wallpaper.current}`
-                }
-            }
-
-            Image {
-                anchors.fill: parent
-                source: root.wallpaperPath
-                sourceSize {
-                    width: parent.width
-                    height: parent.height
-                }
-                asynchronous: true
-                fillMode: Image.PreserveAspectCrop
-                onStatusChanged: {
-                    if (status == Image.Error) {
-                        console.error("Failed to load background image")
-                    }
-                }
-            }
+            WallpaperImage {}
         }
     }
 }

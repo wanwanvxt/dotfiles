@@ -5,7 +5,6 @@ import Niri
 
 Singleton {
     id: root
-
     readonly property alias ready: niriInstance.ready
     readonly property alias windows: niriInstance.windows
     readonly property alias workspaces: niriInstance.workspaces

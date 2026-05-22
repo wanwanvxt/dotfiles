@@ -6,17 +6,18 @@
 import QtQuick
 import Quickshell
 import qs.common.config
+import qs.common.utils
 import qs.services.niri
 import qs.modules.background
 
 ShellRoot {
     id: root
-
     property bool initialized: false
 
     Component.onCompleted: {
         Config._init()
         NiriService._init()
+        WndPopupStateMgr._init()
         initialized = true
     }
 
@@ -24,6 +25,13 @@ ShellRoot {
         active: root.initialized
         sourceComponent: Component {
             Wallpaper {}
+        }
+    }
+
+    LazyLoader {
+        active: root.initialized
+        Component {
+            WallSelector {}
         }
     }
 }
