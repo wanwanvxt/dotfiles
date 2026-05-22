@@ -3,6 +3,7 @@ return {
     fish_lsp = { cmd = { "fish-lsp", "start" } },
     vimls    = { cmd = { "vim-language-server", "--stdio" } },
     lua_ls   = { cmd = { "lua-language-server" } },
+    pylsp    = { cmd = { "pylsp" } },
     ruff     = { cmd = { "ruff", "server" } },
     clangd   = { cmd = { "clangd" } },
     qmlls    = { cmd = { "qmlls6" } },
