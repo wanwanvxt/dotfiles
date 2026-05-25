@@ -30,7 +30,7 @@ _pkgs=(
     'bash{,-completion}' 'fish' 'starship' 'fastfetch' 'yolk-bin' 'thaimeleon' '{git{,-lfs},lazygit}'
     'less' 'tree' 'fzf' 'ripgrep' 'jq' 'trash-cli' 'dex' 'gdu' 'xdg-{utils,user-dirs,sound}'
     'btop' 'nvtop' 'power-profiles-daemon' 'brightnessctl' 'playerctl' 'wl-clipboard'
-    'ffmpeg' 'imagemagick' 'neovim' 'tree-sitter-cli' '{namcap,devtools,aurpublish}'
+    'ffmpeg' 'imagemagick' 'neovim' '{namcap,devtools,aurpublish}'
 
     # gui apps
     'kitty' 'firefox' '{thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}' 'tuxmanager'
