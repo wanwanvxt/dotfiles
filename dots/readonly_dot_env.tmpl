@@ -1,0 +1,26 @@
+PATH="$HOME/.local/bin:$PATH"
+
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_STATE_HOME="$HOME/.local/state"
+
+{{ range $key, $value := .xdgUserDirs -}}
+{{ $key }}="{{ $value }}"
+{{ end }}
+
+FZF_DEFAULT_OPTS='--border --highlight-line'
+
+EDITOR="{{ .defaultApps.editor }}"
+VISUAL="{{ .defaultApps.editor }}"
+PAGER="{{ .defaultApps.pager }}"
+MANPAGER="{{ .defaultApps.manpager }}"
+TERMINAL="{{ .defaultApps.terminal }}"
+BROWSER="{{ .defaultApps.browser }}"
+FILE_MANAGER="{{ .defaultApps.fileManager }}"
+
+{{ if eq .defaultApps.ime "fcitx5" -}}
+GLFW_IM_MODULE=ibus
+SDL_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+{{ end -}}

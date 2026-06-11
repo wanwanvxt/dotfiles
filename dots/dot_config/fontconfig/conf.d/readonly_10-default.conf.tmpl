@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<fontconfig>
+    <alias binding="same">
+        <family>sans-serif</family>
+        <prefer>
+            {{ range .theme.fonts.sansSerif -}}
+            <family>{{ . }}</family>
+            {{ end }}
+        </prefer>
+    </alias>
+    <alias binding="same">
+        <family>serif</family>
+        <prefer>
+            {{ range .theme.fonts.serif -}}
+            <family>{{ . }}</family>
+            {{ end }}
+        </prefer>
+    </alias>
+    <alias binding="same">
+        <family>monospace</family>
+        <prefer>
+            {{ range .theme.fonts.monospace -}}
+            <family>{{ . }}</family>
+            {{ end }}
+        </prefer>
+    </alias>
+    <alias binding="same">
+        <family>emoji</family>
+        <prefer>
+            {{ range .theme.fonts.emoji -}}
+            <family>{{ . }}</family>
+            {{ end }}
+        </prefer>
+    </alias>
+</fontconfig>
+
+<!-- vim: ft=xml
+-->

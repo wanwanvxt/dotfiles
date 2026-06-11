@@ -1,0 +1,36 @@
+[xdgUserDirs]
+XDG_DESKTOP_DIR     ="$HOME/documents"
+XDG_DOWNLOAD_DIR    ="$HOME/documents"
+XDG_TEMPLATES_DIR   ="$HOME/documents"
+XDG_PUBLICSHARE_DIR ="$HOME/documents"
+XDG_DOCUMENTS_DIR   ="$HOME/documents"
+XDG_MUSIC_DIR       ="$HOME/music"
+XDG_PICTURES_DIR    ="$HOME/pictures"
+XDG_VIDEOS_DIR      ="$HOME/videos"
+XDG_PROJECTS_DIR    ="$HOME/projects"
+
+[uwsm]
+defaultId = "niri.desktop"
+
+[defaultApps]
+terminal    = "kitty"
+browser     = "firefox"
+fileManager = "nemo"
+editor      = "nvim"
+ime         = "fcitx5"
+pager       = "less"
+manpager    = "nvim +Man!"
+
+[theme]
+isLightTheme = false
+
+[theme.xcursor]
+name = "Bibata-Modern-Ice"
+size = 24
+
+[theme.fonts]
+sansSerif = [ "Noto Sans" ]
+serif     = [ "Noto Serif" ]
+monospace = [ "0xProto Nerd Font", "Noto Sans Mono" ]
+emoji     = [ "Noto Color Emoji" ]
+size      = 12
