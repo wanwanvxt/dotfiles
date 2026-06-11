@@ -6,6 +6,6 @@ gtk-cursor-theme-name={{ .appearance.xcursor.name }}
 gtk-cursor-theme-size={{ .appearance.xcursor.size }}
 gtk-button-images=1
 gtk-menu-images=1
-{{ if not .appearance.isLightTheme }}gtk-application-prefer-dark-theme=1{{ end }}
+gtk-application-prefer-dark-theme={{ if not .appearance.isLightTheme }}0{{ else }}1{{ end }}
 
 # vim: ft=dosini
