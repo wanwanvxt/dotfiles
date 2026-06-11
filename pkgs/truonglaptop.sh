@@ -31,7 +31,7 @@ packages=(
     qt6ct-kde qt5ct-kde # Qt
     ## programs
     fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-bamboo
-    kitty firefox nemo
+    kitty firefox nemo nemo-fileroller file-roller imv mpv
 )
 
 services=()
