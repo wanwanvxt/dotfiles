@@ -1,9 +1,0 @@
-#!/bin/env fish
-
-set primerun
-if command -v prime-run >/dev/null
-    set primerun 'prime-run'
-end
-
-exec performancemode \
-    $primerun mangohud $argv

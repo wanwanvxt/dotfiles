@@ -1,9 +1,0 @@
-#!/bin/env fish
-
-if not powerprofilesctl list | string match -q '*performance:*'
-    exec $argv
-end
-
-exec systemd-inhibit --why 'Performance mode' \
-    powerprofilesctl launch -p performance -r 'Performance mode' \
-    -- $argv

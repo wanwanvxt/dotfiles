@@ -1,7 +1,0 @@
-#!/bin/env fish
-
-set -q GAMESCOPE_ARGS; or set GAMESCOPE_ARGS
-set GAMESCOPE_ARGS (string split ' ' -- $GAMESCOPE_ARGS)
-
-exec performancemode \
-    gamescope --mangoapp $GAMESCOPE_ARGS -- $argv
