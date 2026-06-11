@@ -24,7 +24,9 @@ pager       = "less"
 manpager    = "nvim +Man!"
 
 [appearance]
-isLightTheme = false
+isLightTheme  = false
+iconTheme     = "Papirus-Light"
+iconThemeDark = "Papirus-Dark"
 
 [appearance.xcursor]
 name = "Bibata-Modern-Ice"
@@ -40,5 +42,3 @@ size      = 12
 [appearance.gtk]
 theme         = "adw-gtk3" # sync with GTK4
 themeDark     = "adw-gtk3-dark"
-iconTheme     = "Papirus-Light"
-iconThemeDark = "Papirus-Dark"

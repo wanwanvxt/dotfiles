@@ -4,7 +4,7 @@ SCHEMA='org.gnome.desktop.interface'
 
 if command -v gsettings >/dev/null 2>&1; then
     gsettings set $SCHEMA gtk-theme "{{ if .appearance.isLightTheme }}{{ .appearance.gtk.theme }}{{ else }}{{ .appearance.gtk.themeDark }}{{ end }}"
-    gsettings set $SCHEMA icon-theme "{{ if .appearance.isLightTheme }}{{ .appearance.gtk.iconTheme }}{{ else }}{{ .appearance.gtk.iconThemeDark }}{{ end }}"
+    gsettings set $SCHEMA icon-theme "{{ if .appearance.isLightTheme }}{{ .appearance.iconTheme }}{{ else }}{{ .appearance.iconThemeDark }}{{ end }}"
     gsettings set $SCHEMA font-name "Sans {{ .appearance.fontconfig.size }}"
     gsettings set $SCHEMA cursor-theme "{{ .appearance.xcursor.name }}"
     gsettings set $SCHEMA cursor-size {{ .appearance.xcursor.size }}

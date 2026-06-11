@@ -1,6 +1,6 @@
 [Settings]
 gtk-theme-name={{ if .appearance.isLightTheme }}{{ .appearance.gtk.theme }}{{ else }}{{ .appearance.gtk.themeDark }}{{ end }}
-gtk-icon-theme-name={{ if .appearance.isLightTheme }}{{ .appearance.gtk.iconTheme }}{{ else }}{{ .appearance.gtk.iconThemeDark }}{{ end }}
+gtk-icon-theme-name={{ if .appearance.isLightTheme }}{{ .appearance.iconTheme }}{{ else }}{{ .appearance.iconThemeDark }}{{ end }}
 gtk-font-name=Sans {{ .appearance.fontconfig.size }}
 gtk-cursor-theme-name={{ .appearance.xcursor.name }}
 gtk-cursor-theme-size={{ .appearance.xcursor.size }}
