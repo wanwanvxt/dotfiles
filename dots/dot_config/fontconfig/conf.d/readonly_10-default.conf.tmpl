@@ -3,7 +3,7 @@
     <alias binding="same">
         <family>sans-serif</family>
         <prefer>
-            {{ range .theme.fonts.sansSerif -}}
+            {{ range .appearance.fonts.sansSerif -}}
             <family>{{ . }}</family>
             {{ end }}
         </prefer>
@@ -11,7 +11,7 @@
     <alias binding="same">
         <family>serif</family>
         <prefer>
-            {{ range .theme.fonts.serif -}}
+            {{ range .appearance.fonts.serif -}}
             <family>{{ . }}</family>
             {{ end }}
         </prefer>
@@ -19,7 +19,7 @@
     <alias binding="same">
         <family>monospace</family>
         <prefer>
-            {{ range .theme.fonts.monospace -}}
+            {{ range .appearance.fonts.monospace -}}
             <family>{{ . }}</family>
             {{ end }}
         </prefer>
@@ -27,7 +27,7 @@
     <alias binding="same">
         <family>emoji</family>
         <prefer>
-            {{ range .theme.fonts.emoji -}}
+            {{ range .appearance.fonts.emoji -}}
             <family>{{ . }}</family>
             {{ end }}
         </prefer>

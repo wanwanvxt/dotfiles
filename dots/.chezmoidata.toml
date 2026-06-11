@@ -21,14 +21,14 @@ ime         = "fcitx5"
 pager       = "less"
 manpager    = "nvim +Man!"
 
-[theme]
+[appearance]
 isLightTheme = false
 
-[theme.xcursor]
+[appearance.xcursor]
 name = "Bibata-Modern-Ice"
 size = 24
 
-[theme.fonts]
+[appearance.fonts]
 sansSerif = [ "Noto Sans" ]
 serif     = [ "Noto Serif" ]
 monospace = [ "0xProto Nerd Font", "Noto Sans Mono" ]
