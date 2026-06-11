@@ -26,8 +26,9 @@ packages=(
     quickshell qml-niri brightnessctl playerctl
     ## looks & feel
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation ttf-0xproto-nerd
-    bibata-cursor-theme-bin papirus-icon-theme adw-gtk-theme
-    nwg-look qt6ct-kde qt5ct-kde
+    bibata-cursor-theme-bin papirus-icon-theme
+    adw-gtk-theme glib2 dconf # GTK
+    qt6ct-kde qt5ct-kde # Qt
     ## programs
     fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-bamboo
     kitty firefox nemo
