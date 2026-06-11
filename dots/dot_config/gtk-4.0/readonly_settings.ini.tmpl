@@ -1,0 +1,8 @@
+[Settings]
+gtk-icon-theme-name={{ if .appearance.isLightTheme }}{{ .appearance.gtk.iconTheme }}{{ else }}{{ .appearance.gtk.iconThemeDark }}{{ end }}
+gtk-font-name=Sans {{ .appearance.fontconfig.size }}
+gtk-cursor-theme-name={{ .appearance.xcursor.name }}
+gtk-cursor-theme-size={{ .appearance.xcursor.size }}
+gtk-application-prefer-dark-theme={{ if not .appearance.isLightTheme }}0{{ else }}1{{ end }}
+
+# vim: ft=dosini
