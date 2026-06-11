@@ -28,9 +28,15 @@ isLightTheme = false
 name = "Bibata-Modern-Ice"
 size = 24
 
-[appearance.fonts]
+[appearance.fontconfig]
 sansSerif = [ "Noto Sans" ]
 serif     = [ "Noto Serif" ]
 monospace = [ "0xProto Nerd Font", "Noto Sans Mono" ]
 emoji     = [ "Noto Color Emoji" ]
 size      = 12
+
+[appearance.gtk]
+theme         = "adw-gtk3" # sync with GTK4
+themeDark     = "adw-gtk3-dark"
+iconTheme     = "Papirus-Light"
+iconThemeDark = "Papirus-Dark"
