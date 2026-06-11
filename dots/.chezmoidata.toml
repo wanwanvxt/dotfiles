@@ -13,13 +13,12 @@ XDG_PROJECTS_DIR    = "$HOME/projects"
 defaultId = "niri.desktop"
 
 [defaultApps]
-terminal    = { cmd = "kitty",   desktop = "kitty.desktop" }
-browser     = { cmd = "firefox", desktop = "firefox.desktop" }
-fileManager = { cmd = "nemo",    desktop = "nemo.desktop" }
-editor      = { cmd = "nvim",    desktop = "nvim.desktop" }
-image       = { cmd = "imv",     desktop = "imv.desktop" }
-video       = { cmd = "mpv",     desktop = "mpv.desktop" }
-
+terminal    = "kitty"
+browser     = "firefox"
+fileManager = "nemo"
+editor      = "nvim"
+image       = "imv"
+video       = "mpv"
 ime         = "fcitx5"
 pager       = "less"
 manpager    = "nvim +Man!"
