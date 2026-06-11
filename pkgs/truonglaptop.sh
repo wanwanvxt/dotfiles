@@ -25,9 +25,8 @@ packages=(
     xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
     quickshell qml-niri brightnessctl playerctl
     ## looks & feel
-    bibata-cursor-theme-bin papirus-icon-theme
-    noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-    ttf-liberation ttf-0xproto-nerd
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation ttf-0xproto-nerd
+    bibata-cursor-theme-bin papirus-icon-theme adw-gtk-theme
     nwg-look qt6ct-kde qt5ct-kde
     ## programs
     fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-bamboo
