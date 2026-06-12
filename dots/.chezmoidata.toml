@@ -15,7 +15,7 @@ defaultId = "niri.desktop"
 [defaultApps]
 terminal    = "kitty"
 browser     = "firefox"
-fileManager = "nemo"
+fileManager = "thunar"
 editor      = "nvim"
 image       = "imv"
 video       = "mpv"
