@@ -26,7 +26,7 @@ packages=(
     bibata-cursor-theme-bin papirus-icon-theme
     {adw-gtk-theme,glib2,dconf} qt{6,5}ct-kde
     ## programs
-    fcitx5{,-gtk,-qt,-configtool,-bamboo} kitty firefox imv mpv
+    fcitx5{,-gtk,-qt,-configtool,-bamboo} kitty firefox imv mpv xarchiver
     {thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}
     steam protonplus
 )
