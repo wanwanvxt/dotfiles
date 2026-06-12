@@ -15,7 +15,7 @@ packages=(
 
     # clis
     bash{,-completion} fish git{,-lfs} lazygit neovim{,-symlinks} man-db
-    starship fzf chezmoi less tree ripgrep jq htop nvtop gdu 7zip unarchiver
+    starship fzf chezmoi less tree ripgrep jq htop nvtop gdu 7zip unrar
     trash-cli xdg-{utils,user-dirs,sound} wl-clipboard
 
     # window manager (niri)
