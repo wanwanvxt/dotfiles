@@ -24,7 +24,7 @@ packages=(
     ## looks & feel
     noto-fonts{,-cjk,-emoji} ttf-{liberation,0xproto-nerd}
     bibata-cursor-theme-bin papirus-icon-theme
-    {adw-gtk-theme,glib2,dconf} qt{6,5}ct-kde
+    {adw-gtk-theme,glib2,dconf} {darkly,qt{6,5}ct-kde}
     ## programs
     fcitx5{,-gtk,-qt,-configtool,-bamboo} kitty firefox imv mpv xarchiver
     {thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer}
