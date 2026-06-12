@@ -42,3 +42,6 @@ size      = 12
 [appearance.gtk]
 theme         = "adw-gtk3" # sync with GTK4
 themeDark     = "adw-gtk3-dark"
+
+[appearance.qt]
+platformTheme = "qt6ct"
