@@ -31,4 +31,10 @@ packages=(
     steam protonplus
 )
 
-services=()
+services=(
+    +NetworkManager
+    +bluetooth
+    +greetd
+
+    +user:pipewire{,-pulse}
+)
