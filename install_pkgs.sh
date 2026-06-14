@@ -59,16 +59,18 @@ apply_services() {
 
 BASEDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd)
 HOST=$(uname -n)
-TARGET_FILE="$BASEDIR/pkgs/$HOST.sh"
+PKGS="$BASEDIR/pkgs/$HOST.sh"
+PKGS_LOCAL="$BASEDIR/pkgs/$HOST.local.sh"
 
-if [[ ! -f "$TARGET_FILE" ]]; then
-    echo "File '$TARGET_FILE' not found!"
+if [[ ! -f "$PKGS" ]]; then
+    echo "File '$PKGS' not found!"
     exit 1
 fi
 
 packages=()
 services=()
-source "$TARGET_FILE"
+source "$PKGS"
+[[ -f "$PKGS_LOCAL" ]] && source "$PKGS_LOCAL"
 
 install_packages
 apply_services
