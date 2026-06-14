@@ -19,7 +19,7 @@ install_packages() {
             echo $UNDEFINED_PKGS
 
             read -rp '>> Set these undefined packages as non-explicitly? [yes/NO]: ' CONFIRM;
-            CONFIRM=$(echo "$confirm" | tr '[:upper:]' '[:lower:]')
+            CONFIRM=$(echo "$CONFIRM" | tr '[:upper:]' '[:lower:]')
 
             if [[ "$CONFIRM" = 'y' ]] || [[ "$CONFIRM" = 'yes' ]]; then
                 $PACMAN -D --asdeps $UNDEFINED_PKGS
