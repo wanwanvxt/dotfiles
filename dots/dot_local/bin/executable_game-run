@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+command -v prime-run >/dev/null 2>&1   && CMD+=(prime-run)
+command -v gamemoderun >/dev/null 2>&1 && CMD+=(gamemoderun)
+[[ -z "$GAMESCOPE_ARGS" ]] && command -v mangohud >/dev/null 2>&1 && CMD+=(mangohud)
+
+CMD+=("$@")
+
+if [[ -n "$GAMESCOPE_ARGS" ]] && command -v gamescope >/dev/null 2>&1; then
+    command -v mangohud >/dev/null 2>&1 && GAMESCOPE_ARGS="$GAMESCOPE_ARGS --mangoapp"
+    exec gamescope $GAMESCOPE_ARGS -- "${CMD[@]}"
+fi
+
+exec "${CMD[@]}"
