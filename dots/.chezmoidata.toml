@@ -13,15 +13,16 @@ XDG_PROJECTS_DIR    = "$HOME/projects"
 defaultId = "niri.desktop"
 
 [defaultApps]
-terminal    = "kitty"
-browser     = "firefox"
-fileManager = "thunar"
-editor      = "nvim"
-image       = "imv"
-video       = "mpv"
-ime         = "fcitx5"
-pager       = "less"
-manpager    = "nvim +Man!"
+terminal    = { exe = "kitty",   desktop = "kitty.desktop" }
+browser     = { exe = "firefox", desktop = "firefox.desktop" }
+fileManager = { exe = "thunar",  desktop = "thunar.desktop" }
+editor      = { exe = "nvim",    desktop = "nvim.desktop" }
+image       = { exe = "imv",     desktop = "imv.desktop" }
+video       = { exe = "mpv",     desktop = "mpv.desktop" }
+music       = { exe = "mpv",     desktop = "mpv.desktop" }
+ime         = { exe = "fcitx5" }
+pager       = { exe = "less" }
+manpager    = { exe = "nvim +Man!" }
 
 [appearance]
 isLightTheme  = false

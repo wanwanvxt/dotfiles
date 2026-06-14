@@ -11,15 +11,15 @@ XDG_STATE_HOME="$HOME/.local/state"
 
 FZF_DEFAULT_OPTS='--border --highlight-line'
 
-EDITOR="{{ .defaultApps.editor }}"
-VISUAL="{{ .defaultApps.editor }}"
-PAGER="{{ .defaultApps.pager }}"
-MANPAGER="{{ .defaultApps.manpager }}"
-TERMINAL="{{ .defaultApps.terminal }}"
-BROWSER="{{ .defaultApps.browser }}"
-FILE_MANAGER="{{ .defaultApps.fileManager }}"
+EDITOR="{{ .defaultApps.editor.exe }}"
+VISUAL="{{ .defaultApps.editor.exe }}"
+PAGER="{{ .defaultApps.pager.exe }}"
+MANPAGER="{{ .defaultApps.manpager.exe }}"
+TERMINAL="{{ .defaultApps.terminal.exe }}"
+BROWSER="{{ .defaultApps.browser.exe }}"
+FILE_MANAGER="{{ .defaultApps.fileManager.exe }}"
 
-{{ if eq .defaultApps.ime "fcitx5" -}}
+{{ if eq .defaultApps.ime.exe "fcitx5" -}}
 GLFW_IM_MODULE=ibus
 SDL_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
