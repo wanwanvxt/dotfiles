@@ -5,7 +5,7 @@ chezmoi managed --include=files | while read -r TARGET_FILE; do
 
     [[ -L "$DEST_PATH" ]] && continue
 
-    if [[ -z "$DEST_PATH" ]]; then
+    if [[ -x "$DEST_PATH" ]]; then
         chmod 555 "$DEST_PATH"
     else
         chmod 444 "$DEST_PATH"
