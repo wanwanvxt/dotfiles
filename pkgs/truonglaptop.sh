@@ -2,6 +2,8 @@ packages=(
     base{,-devel} linux{,-headers} linux-zen{,-headers}
     {linux,sof}-firmware amd-ucode efibootmgr grub terminus-font
     pacman{,-contrib} yay rate-mirrors
+    ## performance
+    zram-generator power-profiles-daemon
 
     # network & bluetooth
     networkmanager openssh zapret2 bluez{,-utils}
@@ -17,8 +19,6 @@ packages=(
     bash{,-completion} fish git{,-lfs} lazygit neovim{,-symlinks} man-db
     starship fzf chezmoi less tree ripgrep jq htop nvtop gdu 7zip unrar
     trash-cli xdg-{utils,user-dirs,sound,terminal-exec} wl-clipboard
-    ## performance
-    zram-generator power-profiles-daemon
 
     # window manager (niri)
     greetd{,-tuigreet} uwsm niri xwayland-satellite xdg-desktop-portal{,-gtk,-wlr}
@@ -29,7 +29,7 @@ packages=(
     {adw-gtk-theme,glib2,dconf} {darkly,qt{6,5}ct-kde}
     ## programs
     fcitx5{,-gtk,-qt,-configtool,-bamboo} kitty firefox imv mpv{,-mpris,-modernz,-thumbfast-git}
-    {thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer} xarchiver
+    {thunar{,-archive-plugin,-volman},gvfs,tumbler,ffmpegthumbnailer} xarchiver scrcpy
     steam protonplus gamescope gamemode mangohud
 )
 
