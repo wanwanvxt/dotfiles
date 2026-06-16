@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-if command -v gsettings >/dev/null 2>&1; then
+if command -v gsettings &>/dev/null; then
     gsettings set org.gnome.desktop.interface 'gtk-theme'    "{{ if .appearance.isLightTheme }}{{ .appearance.gtk.theme }}{{ else }}{{ .appearance.gtk.themeDark }}{{ end }}"
     gsettings set org.gnome.desktop.interface 'icon-theme'   "{{ if .appearance.isLightTheme }}{{ .appearance.iconTheme }}{{ else }}{{ .appearance.iconThemeDark }}{{ end }}"
     gsettings set org.gnome.desktop.interface 'font-name'    "Sans {{ .appearance.fontconfig.size }}"

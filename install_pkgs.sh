@@ -39,18 +39,18 @@ apply_services() {
             SYSTEMCTL='systemctl --user'
         fi
 
-        if ! $SYSTEMCTL list-unit-files "$SERVICE.service" >/dev/null 2>&1; then
+        if ! $SYSTEMCTL list-unit-files "$SERVICE.service" &>/dev/null; then
             echo "Service '$SERVICE.service' not found!"
             continue
         fi
 
         case "$ACTION" in
             +)
-                $SYSTEMCTL is-enabled "$SERVICE.service" >/dev/null 2>&1 \
+                $SYSTEMCTL is-enabled "$SERVICE.service" &>/dev/null \
                     || $SYSTEMCTL enable "$SERVICE.service"
                 ;;
             -)
-                $SYSTEMCTL is-enabled "$SERVICE.service" >/dev/null 2>&1 \
+                $SYSTEMCTL is-enabled "$SERVICE.service" &>/dev/null \
                     && $SYSTEMCTL disable "$SERVICE.service"
                 ;;
         esac
