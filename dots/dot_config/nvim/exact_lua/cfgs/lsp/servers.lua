@@ -7,6 +7,6 @@ return {
     pylsp    = { cmd = { "pylsp" } },
     ruff     = { cmd = { "ruff", "server" } },
     clangd   = { cmd = { "clangd" } },
-    qmlls    = { cmd = { "qmlls" } },
+    qmlls    = { cmd = { "qmlls6" } },
     ols      = { cmd = { "ols" } },
 }
