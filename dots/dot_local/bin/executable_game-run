@@ -1,14 +1,24 @@
 #!/usr/bin/bash
 
-command -v prime-run >/dev/null 2>&1   && CMD+=(prime-run)
-command -v gamemoderun >/dev/null 2>&1 && CMD+=(gamemoderun)
-[[ -z "$GAMESCOPE_ARGS" ]] && command -v mangohud >/dev/null 2>&1 && CMD+=(mangohud)
+[[ $# -eq 0 ]] && exit 1
 
-CMD+=("$@")
+cmd=()
 
-if [[ -n "$GAMESCOPE_ARGS" ]] && command -v gamescope >/dev/null 2>&1; then
-    command -v mangohud >/dev/null 2>&1 && GAMESCOPE_ARGS="$GAMESCOPE_ARGS --mangoapp"
-    exec gamescope $GAMESCOPE_ARGS -- "${CMD[@]}"
-fi
+has() {
+    command -v "$1" >/dev/null 2>&1
+}
 
-exec "${CMD[@]}"
+is_gamescope_child() {
+    if [[ -n "$GAMESCOPE_WAYLAND_DISPLAY" ]] || [[ "$XDG_CURRENT_DESKTOP" == "gamescope" ]]; then
+        return 0
+    fi
+    return 1
+}
+
+has gamemoderun && cmd+=(gamemoderun)
+has prime-run   && cmd+=(prime-run)
+! is_gamescope_child && has mangohud && cmd+=(mangohud)
+
+cmd+=("$@")
+
+exec "${cmd[@]}"
