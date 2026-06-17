@@ -2,7 +2,7 @@ pragma Singleton
 
 import QtQuick
 import Quickshell
-import qs.common.utils
+import qs.utils
 
 Singleton {
     QtObject {

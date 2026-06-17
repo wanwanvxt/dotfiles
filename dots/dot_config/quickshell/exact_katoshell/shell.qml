@@ -6,8 +6,7 @@
 import QtQuick
 import Quickshell
 import qs.common.theme
-import qs.services.apps
-import qs.services.niri
+import qs.services
 
 ShellRoot {
     id: root
@@ -21,9 +20,9 @@ ShellRoot {
     }
 
     Component.onCompleted: {
+        NiriCtl._init()
+        AppsCtl._init()
         Theme._init()
-        NiriService._init()
-        AppsService._init()
         rootInternal.initialized = true
     }
 
