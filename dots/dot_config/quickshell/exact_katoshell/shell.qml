@@ -5,19 +5,25 @@
 
 import QtQuick
 import Quickshell
+import qs.common.theme
+import qs.services.apps
 import qs.services.niri
 
 ShellRoot {
     id: root
+
     readonly property bool ready: rootInternal.initialized
 
     QtObject {
         id: rootInternal
+
         property bool initialized: false
     }
 
     Component.onCompleted: {
+        Theme._init()
         NiriService._init()
+        AppsService._init()
         rootInternal.initialized = true
     }
 
