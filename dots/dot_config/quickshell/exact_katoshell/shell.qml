@@ -23,6 +23,7 @@ ShellRoot {
         NiriCtl._init()
         AppsCtl._init()
         Theme._init()
+        WndPopupState._init()
         rootInternal.initialized = true
     }
 
