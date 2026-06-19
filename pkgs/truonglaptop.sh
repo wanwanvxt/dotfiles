@@ -35,8 +35,10 @@ packages=(
 
 services=(
     +NetworkManager
+    +zapret2
     +bluetooth
     +greetd
 
     +user:pipewire{,-pulse}
+    +user:wireplumber
 )
