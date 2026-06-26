@@ -1,0 +1,7 @@
+for f in ~/.config/environment.d/*.conf; do
+    set -a
+    [[ -f "$f" ]] && source "$f"
+    set +a
+done
+
+# vim: ft=bash

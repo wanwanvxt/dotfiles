@@ -1,8 +1,0 @@
-Host aur.archlinux.org
-    IdentityFile ~/.ssh/aur
-    User aur
-    AddressFamily inet
-
-Host codeberg.org github.com
-    IdentityFile ~/.ssh/git
-    User git

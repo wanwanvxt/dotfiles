@@ -1,0 +1,43 @@
+#!/usr/bin/fish
+
+set wallpaper_path $argv[1]
+if test -f "$wallpaper_path"
+    thaimeleon "$wallpaper_path" -w "$HOME/.config/yolk/chameleon.rhai"
+end
+
+yolk sync; and chezmoi apply --force
+
+set gtk_settings_path "$HOME/.config/gtk-3.0/settings.ini"
+if test -f "$gtk_settings_path"
+    while read -l line
+        string match -qr '^\s*(#|\[|$)' -- "$line"; and continue
+
+        set -l parts (string split -m1 '=' -- "$line")
+        test (count $parts) -eq 2; or continue
+
+        set -l key (string trim -- $parts[1])
+        set -l value (string trim -- $parts[2])
+        set value (string trim -c '"' -- $value)
+
+        switch $key
+            case 'gtk-theme-name'
+                gsettings set org.gnome.desktop.interface gtk-theme "$value"
+
+            case 'gtk-icon-theme-name'
+                gsettings set org.gnome.desktop.interface icon-theme "$value"
+
+            case 'gtk-font-name'
+                gsettings set org.gnome.desktop.interface font-name "$value"
+
+            case 'gtk-cursor-theme-name'
+                gsettings set org.gnome.desktop.interface cursor-theme "$value"
+
+            case 'gtk-application-prefer-dark-theme'
+                if contains -- "$value" 1 true
+                    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+                else
+                    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+                end
+        end
+    end < "$gtk_settings_path"
+end

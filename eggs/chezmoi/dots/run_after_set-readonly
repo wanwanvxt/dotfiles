@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+chezmoi managed --include=files --path-style=absolute | while read -r TARGET_FILE; do
+    [[ -L "$TARGET_FILE" ]] && continue
+
+    if [[ -x "$TARGET_FILE" ]]; then
+        chmod 555 "$TARGET_FILE"
+    else
+        chmod 444 "$TARGET_FILE"
+    fi
+done

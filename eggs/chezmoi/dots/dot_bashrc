@@ -1,0 +1,13 @@
+[[ $- != *i* ]] && return
+
+alias la='ls --color=auto -lAh'
+alias ls='ls --color=auto'
+alias tree='tree -C'
+alias grep='grep --color=auto'
+alias rm="echo 'Using trash-cli instead!'; false"
+alias lg=lazygit
+
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
+
+# vim: ft=bash

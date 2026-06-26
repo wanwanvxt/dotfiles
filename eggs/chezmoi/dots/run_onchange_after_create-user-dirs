@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# {% print_map(data.xdg_user_dirs, |k, v| `mkdir -p "$HOME/${v}"${"\n"}`) %}
+mkdir -p "$HOME/documents"
+mkdir -p "$HOME/documents"
+mkdir -p "$HOME/downloads"
+mkdir -p "$HOME/music"
+mkdir -p "$HOME/pictures"
+mkdir -p "$HOME/projects"
+mkdir -p "$HOME/documents"
+mkdir -p "$HOME/documents"
+mkdir -p "$HOME/videos"
+# {% end %}

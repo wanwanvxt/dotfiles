@@ -1,0 +1,162 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+        repeat-delay 250
+        repeat-rate  25
+        track-layout "global"
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        accel-speed   0.5
+        accel-profile "adaptive"
+        scroll-factor 1.5
+        scroll-method "two-finger"
+    }
+
+    mouse {
+        accel-profile "flat"
+        scroll-factor 1.0
+        scroll-method "no-scroll"
+    }
+
+    warp-mouse-to-focus mode="center-xy"
+    focus-follows-mouse max-scroll-amount="10%"
+
+    mod-key        "Super"
+    mod-key-nested "Alt"
+}
+
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 50
+        delay-ms      100
+        max-speed     3000
+    }
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms       50
+        max-speed      3000
+    }
+
+    hot-corners { top-left; }
+}
+
+layout {
+    gaps 10
+    struts {
+        top 0
+        bottom 0
+        left 0
+        right 0
+    }
+
+    center-focused-column "on-overflow"
+    always-center-single-column
+    default-column-display "tabbed"
+
+    default-column-width { proportion 0.75; }
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+    }
+    preset-window-heights {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+    }
+
+    focus-ring { off; }
+    border {
+        on
+        width          2
+        active-color   "#90c483" // {< replace_quoted(data.appearance.colors.fg_accent_1) >}
+        inactive-color "#778071" // {< replace_quoted(data.appearance.colors.muted) >}
+        urgent-color   "#c7b269" // {< replace_quoted(data.appearance.colors.fg_accent_2) >}
+    }
+    shadow {
+        on
+        softness 10
+        spread   2
+        offset   x=0 y=0
+        color    "#11180a" // {< replace_quoted(data.appearance.colors.surface) >}
+        draw-behind-window false
+    }
+    tab-indicator {
+        hide-when-single-tab
+        place-within-column
+        gap   2
+        width 4
+        gaps-between-tabs 2
+        corner-radius 999
+        position "left"
+        length total-proportion=0.125
+        active-color   "#90c483" // {< replace_quoted(data.appearance.colors.fg_accent_1) >}
+        inactive-color "#778071" // {< replace_quoted(data.appearance.colors.muted) >}
+        urgent-color   "#c7b269" // {< replace_quoted(data.appearance.colors.fg_accent_2) >}
+    }
+    insert-hint { color "#90c483aa"; } // {< replace_quoted(`${data.appearance.colors.fg_accent_1}aa`) >}
+    background-color "transparent"
+}
+
+blur {
+    passes     3
+    offset     3
+    noise      0.1
+    saturation 1.5
+}
+
+animations {
+    // using default
+}
+
+recent-windows {
+    debounce-ms   150
+    open-delay-ms 150
+
+    highlight {
+        active-color  "#90c483" // {< replace_quoted(data.appearance.colors.fg_accent_1) >}
+        urgent-color  "#c7b269" // {< replace_quoted(data.appearance.colors.fg_accent_2) >}
+        padding       20
+        corner-radius 5
+    }
+
+    previews {
+        max-height 720
+        max-scale  0.5
+    }
+}
+
+overview {
+    zoom           0.75
+    backdrop-color "#18210e" // {< replace_quoted(data.appearance.colors.base) >}
+    workspace-shadow {
+        softness 10
+        spread   5
+        offset   x=0 y=0
+        color    "#11180a" // {< replace_quoted(data.appearance.colors.surface) >}
+    }
+}
+
+// misc
+prefer-no-csd
+cursor {
+    xcursor-theme "Bibata-Modern-Ice" // {< replace_quoted(data.appearance.xcursor.theme) >}
+    // {% `${TABSTOP}xcursor-size ${data.appearance.xcursor.size}${"\n"}` %}
+    xcursor-size 24
+    // {% end %}
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}
+// {# replace_quoted(`~/${data.xdg_user_dirs.pictures}/screenshot/Screenshot %Y-%m-%d_%H%M%S.png`) #}
+screenshot-path "~/pictures/screenshot/Screenshot %Y-%m-%d_%H%M%S.png"
+xwayland-satellite { path "xwayland-satellite"; }
+hotkey-overlay { skip-at-startup; }

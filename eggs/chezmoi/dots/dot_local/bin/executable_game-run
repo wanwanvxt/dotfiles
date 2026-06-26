@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+[[ $# -eq 0 ]] && exit 1
+
+has() {
+    command -v "$1" 2>/dev/null
+}
+
+cmd=()
+
+has gamemoderun && cmd+=(gamemoderun)
+has prime-run && cmd+=(prime-run)
+[[ ! -n "$GAMESCOPE_WAYLAND_DISPLAY" ]] && [[ ! "$XDG_CURRENT_DESKTOP" == "gamescope" ]] \
+    && has mangohud && cmd+=(mangohud)
+
+cmd+=("$@")
+
+exec "${cmd[@]}"

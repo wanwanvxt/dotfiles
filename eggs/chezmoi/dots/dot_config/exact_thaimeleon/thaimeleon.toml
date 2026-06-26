@@ -1,0 +1,94 @@
+[main]
+# Between 0.0 to 1.0. When the mean lightness is higher than the lightness threshold, thaimeleon will use a light theme.
+light_theme_threshold = 0.9
+
+# Write to cache
+write_to_cache = false
+# Reuses themes from the cache in order to save time and performance. Note: Thaimeleon uses file paths to tell apart images.
+read_cache = false
+# By default, thaimeleon writes to cache directory in thaimeleon/themes.toml. To specitify custom cache, use cache_path
+# cache_path = "/home/thairanaru/.cache/thaimeleon/themes.toml"
+
+# Runs mini-batch kmeans in parallel as opposed to online kmeans
+run_in_parallel = true
+
+[light]
+# The base minimum and maximum in OKLAB.
+base_lightness_minimum = 0.97
+base_lightness_maximum = 1
+
+# Light difference between highlight and base colors.
+highlight_lightness_difference = 0.02
+# Weighted distance between surface and base colors. Set this value to positive only.
+surface_distance = 0.0225
+
+
+# Read more about sets here https://codeberg.org/thairanaru/thaimeleon/src/branch/main/palette.md
+# The DPS contrast between the base color and Set 2.
+set_2_dps_contrast = 7.5
+# DPS doesn't really work well with low contrasts, so you can manually adjust the final value. This value can be positive or negative.
+set_2_lightness_correction = 0.01
+# The DPS contrast between the base color and Set 3, etc.
+set_3_dps_contrast = 40
+set_4_dps_contrast = 62.5
+set_5_dps_contrast = 75
+
+# Higher the value, the more Thaimeleon takes account of lightness of the colors of the image while generating neutral colors. More specfically, it's a power coeffient and should not be negative.
+neutral_chroma_blend = 1
+
+# Chroma minimums and maximums in OKLCH for non-accent colors
+bg_neutral_chroma_minimum = 0
+bg_neutral_chroma_maximum = 0.02
+fg_neutral_chroma_minimum = 0
+fg_neutral_chroma_maximum = 0.025
+
+# When determining accent hues, Thaimeleon will try to use colors not within the prefered hue angle.
+prefered_hue_angle = 50
+# Minimum angle for accent colors in degrees. However, thaimeleon uses this as a guideline than a strict rule. Minimum hue angle of 36 will always be enforced, while minimum hue angle great than 60 will always be disobeyed.
+minimum_hue_angle = 45
+
+# Read more in https://codeberg.org/thairanaru/thaimeleon/src/branch/main/how-it-works.md. TLDR: Setting the value will make some accent colors appear more faded.
+maximum_accent_hue_center_translation = 0.015
+# TLDR: Higher the radius baseline, the more chroma the color has
+fg_accent_radius_baseline = 0.06
+rg_accent_radius_baseline = 0.045
+bg_accent_radius_baseline = 0.0175
+
+# Chroma minimums for labelled accent colors
+red_chroma_minimum    = 0.09
+yellow_chroma_minimum = 0.07
+green_chroma_minimum  = 0.05
+
+[dark]
+# Dark themes are lot less sensetive to high chromas and lightness gaps. Use this power wisely.
+base_lightness_minimum = 0.185
+base_lightness_maximum = 0.28
+highlight_lightness_difference = 0.025
+surface_distance = 0.035
+
+set_2_dps_contrast = 7.5
+set_2_lightness_correction = -0.05
+set_3_dps_contrast = 30
+set_4_dps_contrast = 60
+set_5_dps_contrast = 75
+
+neutral_chroma_blend = 1
+
+bg_neutral_chroma_minimum = 0
+bg_neutral_chroma_maximum = 0.04
+fg_neutral_chroma_minimum = 0
+fg_neutral_chroma_maximum = 0.025
+
+prefered_hue_angle = 50
+minimum_hue_angle  = 45
+
+maximum_accent_hue_center_translation = 0.025
+fg_accent_radius_baseline = 0.05
+rg_accent_radius_baseline = 0.0425
+bg_accent_radius_baseline = 0.035
+
+red_chroma_minimum    = 0.09
+yellow_chroma_minimum = 0.07
+green_chroma_minimum  = 0.05
+
+# vim: ft=toml

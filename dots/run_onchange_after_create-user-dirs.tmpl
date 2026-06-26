@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-
-{{ range $key, $value := .xdgUserDirs }}
-mkdir -p "{{ $value }}"
-{{ end }}
-
-# vim: ft=bash

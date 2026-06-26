@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <icon>terminal</icon>
+        <name>Open Terminal Here</name>
+        <unique-id>custom-action-01</unique-id>
+        <command>xdg-terminal-exec --dir=%f</command>
+        <description>Open terminal in current directory</description>
+        <directories/>
+    </action>
+</actions>
