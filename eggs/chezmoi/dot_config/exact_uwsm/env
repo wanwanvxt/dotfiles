@@ -4,7 +4,7 @@ export QT_QPA_PLATFORM=wayland;xcb
 export ELECTRON_OZONE_PLATFORM_HINT=auto
 export SDL_VIDEODRIVER=wayland
 export SDL_VIDEO_DRIVER=wayland
-# export PROTON_ENABLE_WAYLAND=1
+export PROTON_ENABLE_WAYLAND=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # {# replace_quoted(data.appearance.xcursor.theme) #}
